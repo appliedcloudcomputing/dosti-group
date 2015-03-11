@@ -11,11 +11,13 @@ var Response = {
 };
 
 exports.save = function(params) {
-	if(!params || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
+	console.log("*******************************************************PARAMETERS :"+ JSON.stringify(params));
+	/*if(!params || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
 		|| !params.enterprise || !params.address || !params.contactTime || !params.personalNote) {
 		params.error(Response.ParametersEmpty);
-	} else {
+	} else {*/
 
+		console.log("**********************SAVING CALLED ");
 		//SAVING USER
 		var user = new User();
 		user.set("name", params.name);
@@ -27,9 +29,12 @@ exports.save = function(params) {
 		user.set("address", params.address);
 		user.set("contactTime", params.contactTime);
 		user.set("personalNote", params.personalNote);
+		user.set("password","");
+		user.set("username",params.email);
 		
 		user.save(null, {
 			success: function(user) {
+				console.log("User Save successfully");
 				params.success(Response.SaveSuccess);
 			},
 			error: function(user, error) {
@@ -37,7 +42,7 @@ exports.save = function(params) {
 				params.error(Response.InternalServerError);
 			}
  		});
-	}
+	//}
 };
 
 exports.update = function(params) {

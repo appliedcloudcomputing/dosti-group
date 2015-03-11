@@ -61,7 +61,7 @@ Parse.Cloud.define('saveUser', function(req, res) {
 });
 
 //BEFORE SAVE
-
+/*
 Parse.Cloud.beforeSave('User', function(req, res) {
 	var client = req.object;
 	var currentUser = client.get('lastUpdatedBy');
@@ -76,7 +76,7 @@ Parse.Cloud.beforeSave('User', function(req, res) {
 		res.error(Response.LoginError);
 	}
 });
-
+*/
 /*-----------------------------------------------END USER-----------------------------------------------*/
 
 
