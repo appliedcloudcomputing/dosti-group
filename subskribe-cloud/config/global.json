@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Dosti Group": {
+            "applicationId": "ivDEfuaBrK5EJFnenmqzrIKAiCeD7dH5hLGjLMRG", 
+            "masterKey": "01oxOl98OXgIinTAZvUfD6qHwGQ2wutFxB7O63IX"
+        }, 
+        "_default": {
+            "link": "Dosti Group"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.5"
+    }
+}
