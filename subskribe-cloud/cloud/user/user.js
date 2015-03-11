@@ -23,10 +23,10 @@ exports.save = function(params) {
 		user.set("mobile", params.mobile);
 		user.set("telephone", params.telephone);
 		user.set("email", params.email);
-		user.set("enterprise", enterprise);
-		user.set("address", address);
-		user.set("contactTime", contactTime);
-		user.set("personalNote", personalNote);
+		user.set("enterprise", params.enterprise);
+		user.set("address", params.address);
+		user.set("contactTime", params.contactTime);
+		user.set("personalNote", params.personalNote);
 		
 		user.save(null, {
 			success: function(user) {
@@ -58,10 +58,10 @@ exports.update = function(params) {
 					user.set("mobile", params.mobile);
 					user.set("telephone", params.telephone);
 					user.set("email", params.email);
-					user.set("enterprise", enterprise);
-					user.set("address", address);
-					user.set("contactTime", contactTime);
-					user.set("personalNote", personalNote);
+					user.set("enterprise", params.enterprise);
+					user.set("address", params.address);
+					user.set("contactTime", params.contactTime);
+					user.set("personalNote", params.personalNote);
 					user.set("lastUpdatedBy", currentUser);
 					user.save(null, {
 						success: function(user) {
