@@ -79,7 +79,8 @@ exports.update = function(params) {
 							params.error(Response.InternalServerError);
 						}
 			 		});
-				} else {
+				} 
+				else {
 					params.error(Response.NotFound);
 				}
 			},
