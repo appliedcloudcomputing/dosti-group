@@ -25,6 +25,7 @@ exports.save = function(params) {
 		user.set("mobile", params.mobile);
 		user.set("telephone", params.telephone);
 		user.set("email", params.email);
+		user.set("password",params.password);
 		user.set("enterprise", params.enterprise);
 		user.set("address", params.address);
 		user.set("contactTime", params.contactTime);
@@ -46,6 +47,7 @@ exports.save = function(params) {
 };
 
 exports.update = function(params) {
+	console.log("User updated successfully");
 	if(!params || !params.id || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
 		|| !params.enterprise || !params.address || !params.contactTime || !params.personalNote) {
 		params.error(Response.ParametersEmpty);

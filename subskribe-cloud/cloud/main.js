@@ -18,6 +18,7 @@ var Response = {
 /*-----------------------------------------------USER-----------------------------------------------*/
 
 Parse.Cloud.define('saveUser', function(req, res) {
+	console.log("save user called main.js");
 	if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
@@ -25,6 +26,7 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
+			password: req.params.password,
 			enterprise: req.params.enterprise,
 			address: req.params.address,
 			contactTime: req.params.contactTime,
