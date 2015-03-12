@@ -30,7 +30,6 @@ exports.save = function(params) {
 		user.set("address", params.address);
 		user.set("contactTime", params.contactTime);
 		user.set("personalNote", params.personalNote);
-		user.set("password","");
 		user.set("username",params.email);
 		
 		user.save(null, {

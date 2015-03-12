@@ -84,7 +84,7 @@
                     <div id="UpdatePanel1">
 	
                             <div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
-                               <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold; color:#19bc9c;">Registration Form &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> <br /></strong> <p>
+                               <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold; color:#19bc9c;margin-left:-1%;">Registration Form<br /> <br /></strong> <p>
                             </div>
                             <div class="col-lg-12">
                                 <div class="col-lg-2" style="padding: 5px;">
@@ -100,17 +100,17 @@
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="f_name" id="f_name"/>
-                                    <input name="firstName" placeholder="First Name" type="text" id="txtFname" class="form-control medium" style="width:100%;" /><span id="RequiredFieldValidator2" style="color:Green;font-size:Smaller;display:none;">First name is compulsory</span>
+                                    <input name="firstName" placeholder="First Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
                                     
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="m_name" id="m_name" />
-                                    <input name="middleName" placeholder="Middle Name" type="text" id="txtMname" class="form-control medium" style="width:100%;" />
+                                    <input name="middleName" placeholder="Middle Name" required="required" title="Middle Name is compulsory" type="text" id="txtMname" class="form-control medium" style="width:100%;" />
                                     
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="l_name" id="l_name" />
-                                    <input name="lastName" placeholder="Last Name" type="text" id="txtLname" class="form-control medium" style="width:100%;" />
+                                    <input name="lastName" placeholder="Last Name" type="text" required="required" title="Last Name is compulsory" id="txtLname" class="form-control medium" style="width:100%;" />
                                     
                                     <span id="RequiredFieldValidator3" style="color:Green;font-size:Smaller;display:none;">Last name is compulsory</span>
                                 </div>
@@ -288,7 +288,7 @@
                                 </div>
                                 <div class="col-lg-3 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-                                    <input name="mobileNumber" placeholder="Enter Mobile Number" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
+                                    <input name="mobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
                                     
                                     <span id="RequiredFieldValidator15" style="color:Green;font-size:Smaller;display:none;">Mobile No. is compulsory</span>
                                 </div>
@@ -310,7 +310,7 @@
                                 </div>
                                 <div class="col-lg-6 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender7_ClientState" id="TextBoxWatermarkExtender7_ClientState" />
-                                    <input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" placeholder="Email@domain.com"/>
+                                    <input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" pattern="" required="required" title="Email Id is compulsory" placeholder="Email@domain.com"/>
                                     <span id="RequiredFieldValidator4" style="color:Green;font-size:Smaller;display:none;">Email Id is compulsory</span>
                                     <span id="RegularExpressionValidatoremailid" style="color:Green;font-size:Smaller;visibility:hidden;">Enter a valid email address to sign up</span>
                                 </div>
@@ -365,13 +365,13 @@
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-                                    <input name="txtFlat" placeholder="Flat No." type="text" id="txtState" class="form-control medium" style="width:100%;" />
+                                    <input name="txtFlat" placeholder="Flat No." required="required" type="text" id="txtState" class="form-control medium" style="width:100%;" />
                                     <span id="RequiredFieldValidator5" style="color:Green;font-size:Smaller;display:none;">State is Compulsory</span>
                                     
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-                                    <input name="txtBuild" placeholder="Building Name" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+                                    <input name="txtBuild" placeholder="Building Name" required="required" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
                                     <span id="RequiredFieldValidator6" style="color:Green;font-size:Smaller;display:none;">City is Compulsory</span>
                                     
                                 </div>
@@ -385,13 +385,13 @@
                                 </div>
                                 <div class="col-lg-3 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-                                    <input name="txtArea" placeholder="Area" type="text" id="txtState" class="form-control medium" style="width:100%;" />
+                                    <input name="txtArea" placeholder="Area" required="required" type="text" id="txtState" class="form-control medium" style="width:100%;" />
                                     <span id="RequiredFieldValidator5" style="color:Green;font-size:Smaller;display:none;">State is Compulsory</span>
                                     
                                 </div>
                                 <div class="col-lg-3 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-                                    <input name="txtSubArea" placeholder="Sub Area" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+                                    <input name="txtSubArea" placeholder="Sub Area" required="required" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
                                     <span id="RequiredFieldValidator6" style="color:Green;font-size:Smaller;display:none;">City is Compulsory</span>
                                     
                                 </div>
@@ -406,13 +406,13 @@
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-                                    <input name="txtCity" placeholder="City" type="text" id="txtState" class="form-control medium" style="width:100%;" />
+                                    <input name="txtCity" placeholder="City" required="required" type="text" id="txtState" class="form-control medium" style="width:100%;" />
                                     <span id="RequiredFieldValidator5" style="color:Green;font-size:Smaller;display:none;">State is Compulsory</span>
                                     
                                 </div>
                                 <div class="col-lg-2 " style="padding: 5px;">
                                     <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-                                    <input name="txtPin" placeholder="Pin Code" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+                                    <input name="txtPin" placeholder="Pin Code" required="required" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
                                     <span id="RequiredFieldValidator6" style="color:Green;font-size:Smaller;display:none;">City is Compulsory</span>
                                     
                                 </div>
