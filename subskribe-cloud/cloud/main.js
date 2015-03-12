@@ -13,8 +13,6 @@ var Response = {
 	DeleteSuccess: 'Resource deleted successfully!'
 };
 
-
-
 /*-----------------------------------------------USER-----------------------------------------------*/
 
 Parse.Cloud.define('saveUser', function(req, res) {
