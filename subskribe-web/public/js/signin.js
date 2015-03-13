@@ -5,9 +5,7 @@ $(function () {
 	if('placeholder' in test) jQuery.support.placeholder = true;
 	
 	if (!$.support.placeholder) {
-		
 		$('.field').find ('label').show ();
-		
 	}
 	
 });

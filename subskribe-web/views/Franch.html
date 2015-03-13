@@ -2,70 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
     <meta charset="utf-8">
-    <title>
-	Franchisee Enquiry
-</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<link href="/css/sb-admin.css" rel="stylesheet" type="text/css" />
-<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes"> 
-    
-<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-
-<link href="/css/font-awesome.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    
-<link href="/css/style.css" rel="stylesheet" type="text/css">
-<link href="/css/pages/forms.css" rel="stylesheet" type="text/css">
-
+    <title>Franchisee Enquiry</title>
+	<% include partials/links.html %>
 </head>
 
 <body>
-	
-	<div class="navbar navbar-fixed-top">
-	
-	<div class="navbar-inner">
-		
-		<div class="container">
-			
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			
-			<a class="brand" href="index.html">
-				Bootstrap Admin Template				
-			</a>		
-			
-			<div class="nav-collapse">
-				<ul class="nav pull-right">
-					<li class="">						
-						<a href="login.html" class="">
-							Already have an account? Login now
-						</a>
-						
-					</li>
-					<li class="">						
-						<a href="index.html" class="">
-							<i class="icon-chevron-left"></i>
-							Back to Homepage
-						</a>
-						
-					</li>
-				</ul>
-				
-			</div><!--/.nav-collapse -->	
-	
-		</div> <!-- /container -->
-		
-	</div> <!-- /navbar-inner -->
-	
-</div> <!-- /navbar -->
-
-
-
+<% include partials/navbar.html %>
 <div class="account-container register">
 	
 	<div class="content clearfix">
@@ -85,57 +27,57 @@
 <div class="row">
     <div id="UpdatePanel1">
 
-<div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
-   <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold; color:#19bc9c;margin-left:-1%;">Registration Form<br /> <br /></strong> <p>
-</div>
-<div class="col-lg-12">
-    <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
-        <strong>My Name <span style="color: red;">*</span>:</strong>
+    <div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
+       <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold; color:#19bc9c;margin-left:-1%;">Registration Form<br /> <br /></strong> <p>
     </div>
-    <div class="col-lg-1 " style="padding: 5px;">
-<select name="ddlTitle" id="ddlTitle" class="form-control medium" style="width:100%;">
-<option value="Mr.">Mr.</option>
-<option value="Ms.">Ms.</option>
-
-</select>
-		<span id="RequiredFieldValidator11" style="color:Green;font-size:Smaller;visibility:hidden;">Select Title</span>
-	</div>
-	<div class="col-lg-2 " style="padding: 5px;">
-		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="firstName" placeholder="First Name" type="text" id="txtFname" class="form-control medium" style="width:100%;" /><span id="RequiredFieldValidator2" style="color:Green;font-size:Smaller;display:none;">First name is compulsory</span>                                  
-   </div>
-	<div class="col-lg-2 " style="padding: 5px;">
-		<input type="hidden" name="m_name" id="m_name" />
-		<input name="middleName" placeholder="Middle Name" type="text" id="txtMname" class="form-control medium" style="width:100%;" />                                   
-	</div>
-	<div class="col-lg-2 " style="padding: 5px;">
-		<input type="hidden" name="l_name" id="l_name" />
-		<input name="lastName" placeholder="Last Name" type="text" id="txtLname" class="form-control medium" style="width:100%;" />                                    
-		</div>
-	<div class="col-lg-2 " style="padding: 5px;">
-	</div>
-</div>
-	<div class="col-lg-12">
-	<div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
-		<strong>My Date Of Birth <span style="color: red;">*</span>:</strong>                                    
-	</div>
-<div class="col-lg-2 " style="padding: 5px;">
-<select name="dobMonth" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ddlDobMonth\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlDobMonth" class="form-control medium" style="width:100%;">
-<option value="1">January</option>
-<option value="2">February</option>
-<option selected="selected" value="3">March</option>
-<option value="4">April</option>
-<option value="5">May</option>
-<option value="6">June</option>
-<option value="7">July</option>
-<option value="8">August</option>
-<option value="9">September</option>
-<option value="10">October</option>
-<option value="11">November</option>
-<option value="12">December</option>
+    <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
+            <strong>My Name <span style="color: red;">*</span>:</strong>
+        </div>
+        <div class="col-lg-1 " style="padding: 5px;">
+            <select name="ddlTitle" id="ddlTitle" class="form-control medium" style="width:100%;">
+	<option value="Mr.">Mr.</option>
+	<option value="Ms.">Ms.</option>
 
 	</select>
-    </div>
+	</div>
+	<div class="col-lg-2 " style="padding: 5px;">
+	<input type="hidden" name="f_name" id="f_name"/>
+	<input name="firstName" placeholder="First Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
+	   </div>
+		<div class="col-lg-2 " style="padding: 5px;">
+			<input type="hidden" name="m_name" id="m_name" />
+			<input name="middleName" placeholder="Middle Name" required="required" title="Middle Name is compulsory" type="text" id="txtMname" class="form-control medium" style="width:100%;" />                                   
+		</div>
+		<div class="col-lg-2 " style="padding: 5px;">
+			<input type="hidden" name="l_name" id="l_name" />
+			<input name="lastName" placeholder="Last Name" required="required" title="Last Name is compulsory" type="text" id="txtLname" class="form-control medium" style="width:100%;" />                                    
+			</div>
+		<div class="col-lg-2 " style="padding: 5px;">
+		</div>
+	</div>
+	<div class="col-lg-12">
+		<div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
+			<strong>My Date Of Birth <span style="color: red;">*</span>:</strong>                                    
+		</div>
+	<div class="col-lg-2 " style="padding: 5px;">
+	<select name="dobMonth" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ddlDobMonth\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlDobMonth" class="form-control medium" style="width:100%;">
+				<option value="1">January</option>
+				<option value="2">February</option>
+				<option selected="selected" value="3">March</option>
+				<option value="4">April</option>
+				<option value="5">May</option>
+				<option value="6">June</option>
+				<option value="7">July</option>
+				<option value="8">August</option>
+				<option value="9">September</option>
+				<option value="10">October</option>
+				<option value="11">November</option>
+				<option value="12">December</option>
+
+	</select>
+    <span id="RequiredFieldValidator12" style="color:Green;font-size:Smaller;visibility:hidden;">Select Month</span>
+</div>
 <div class="col-lg-2 " style="padding: 5px;">
 <select name="dobDate" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ddlDobDay\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlDobDay" class="form-control medium" style="width:100%;">
 		<option value="1">1</option>
@@ -174,7 +116,7 @@
     <span id="RequiredFieldValidator13" style="color:Green;font-size:Smaller;visibility:hidden;">Select Day</span>
 </div>
 <div class="col-lg-2 " style="padding: 5px;">
-<select name="dobYear" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ddlDobYear\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlDobYear" class="form-control medium" style="width:100%;">
+    <select name="dobYear" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ddlDobYear\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlDobYear" class="form-control medium" style="width:100%;">
 		<option value="1930">1930</option>
 		<option value="1931">1931</option>
 		<option value="1932">1932</option>
@@ -268,14 +210,14 @@
 		<option value="2020">2020</option>
 
 	</select>
-   </div>
-<div class="col-lg-2" style="padding: 5px;">
+       </div>
+    <div class="col-lg-2" style="padding: 5px;">
+    </div>
+    <div class="col-lg-2" style="padding: 5px;">
+    </div>
 </div>
-<div class="col-lg-2" style="padding: 5px;">
-</div>
-</div>
-							
-							
+
+
 <div class="col-lg-12">
     <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
         <strong> Contact Number <span style="color: red;">*</span>:</strong>
@@ -283,7 +225,7 @@
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-        <input name="mobileNumber" placeholder="Enter Mobile Number" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
+        <input name="mobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender1_ClientState" id="TextBoxWatermarkExtender1_ClientState" />
@@ -293,21 +235,21 @@
     <div class="col-lg-4 " style="padding: 5px;">
     </div>
 </div>
-
 							
-    <div class="col-lg-12">
-        <div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
-            <strong>Email <span style="color: red;">*</span>:</strong>
-          <br/>  
-	   </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-            <input type="hidden" name="TextBoxWatermarkExtender7_ClientState" id="TextBoxWatermarkExtender7_ClientState" />
-            <input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
-			<br/>
-		</div>
+							
+<div class="col-lg-12">
+    <div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
+        <strong>Email <span style="color: red;">*</span>:</strong>
+      <br/>  
+   </div>
+    <div class="col-lg-6 " style="padding: 5px;">
+        <input type="hidden" name="TextBoxWatermarkExtender7_ClientState" id="TextBoxWatermarkExtender7_ClientState" />
+        <input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
+		<br/>
 	</div>
+</div>
+
 	
-								
 	<div class="col-lg-12">
 		<div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
         <strong> Password <span style="color: red;">*</span>:</strong>
@@ -315,12 +257,12 @@
 		</div>
 		<div class="col-lg-6 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender7_ClientState" id="TextBoxWatermarkExtender7_ClientState" />
-        <input name="txtPassword" type="password" id="txtEmailId" class="form-control medium" style="width:100%;" placeholder="Enter Password"/>
+        <input name="txtPassword" type="password" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
         </br>
 		</div>
 	</div>
-	
 								
+																
 <div class="col-lg-12">
 	<div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
         <strong>Business Location<span style="color: red;">*</span>:</strong>
@@ -331,47 +273,47 @@
     </div>
     <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-        <input name="txtFlat" placeholder="Flat No." type="text" id="txtState" class="form-control medium" style="width:100%;" />
+        <input name="txtFlat" required="required" placeholder="Flat No." type="text" id="txtState" class="form-control medium" style="width:100%;" />
         </div>
     <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-        <input name="txtBuild" placeholder="Building Name" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+        <input name="txtBuild" required="required" placeholder="Building Name" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
 	</div>
 </div>
-
-
+							
+							
+    <div class="col-lg-12">
+        <div class="col-lg-2 " style="padding: 5px;">
+            <strong><span style="color: red;"></span></strong>
+            <br />
+		</div>
+        <div class="col-lg-3 " style="padding: 5px;">
+            <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
+            <input name="txtArea" required="required" placeholder="Area" type="text" id="txtState" class="form-control medium" style="width:100%;" />
+		</div>
+        <div class="col-lg-3 " style="padding: 5px;">
+            <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
+            <input name="txtSubArea" required="required" placeholder="Sub Area" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+		</div>
+	</div>
+                               
+							   
 <div class="col-lg-12">
     <div class="col-lg-2 " style="padding: 5px;">
         <strong><span style="color: red;"></span></strong>
         <br />
 	</div>
-    <div class="col-lg-3 " style="padding: 5px;">
-        <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-        <input name="txtArea" placeholder="Area" type="text" id="txtState" class="form-control medium" style="width:100%;" />
-	</div>
-    <div class="col-lg-3 " style="padding: 5px;">
-        <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-        <input name="txtSubArea" placeholder="Sub Area" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
-	</div>
-</div>
-   
-   
-<div class="col-lg-12">
-    <div class="col-lg-2 " style="padding: 5px;">
-        <strong><span style="color: red;"></span></strong>
-        <br />
-	</div>
     <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-        <input name="txtCity" placeholder="City" type="text" id="txtState" class="form-control medium" style="width:100%;" />
+        <input name="txtCity" required="required" placeholder="City" type="text" id="txtState" class="form-control medium" style="width:100%;" />
    </div>
    <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-        <input name="txtPin" placeholder="Pin Code" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+        <input name="txtPin" required="required" placeholder="Pin Code" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
 	</div>
 </div>
-								
-								
+	
+	
 	<div class="col-lg-12">
     <div class="col-lg-2" style="padding: 5px;color: #19bc9c;">
         <strong>Contact me on <span style="color: red;">*</span>:</strong>
@@ -381,32 +323,33 @@
         </label-->
     </div>
     
-	<div class='col-sm-6'>
-	</br>
-		<div class="form-group">
-			<div class='input-group date' id='datetimepicker1'>
-			<input type='text' class="form-control" />
-			<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-			</span>
-			</div>
+<div class='col-sm-6'>
+</br>
+	<div class="form-group">
+		<div class='input-group date' id='datetimepicker1'>
+		<input type='text' class="form-control" />
+		<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+		</span>
 		</div>
 	</div>
-   </div>
-   
-							   
-   <div class="col-lg-12">
-   </br>
-    <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
-        <strong>Personal Note <span style="color: red;">*</span>:</strong>
-        <br />
-        <!--label style="font-size: x-small; color: #19bc9c;">
-            Post your enquiry or suggestion
-        </label-->
-    </div>
-    <div class="col-lg-6 " style="padding: 5px;">
-        <input type="hidden"  name="TextBoxWatermarkExtender14_ClientState" id="TextBoxWatermarkExtender14_ClientState" />
-        <textarea name="personalNote" placeholder="Post your quiry or suggestion" rows="2" cols="20" id="txtComment" class="form-control medium" style="width:100%;">
-		</textarea><br><br>
+</div>
+</div>
+
+
+<div class="col-lg-12">
+</br>
+<div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
+    <strong>Personal Note <span style="color: red;">*</span>:</strong>
+    <br />
+    <!--label style="font-size: x-small; color: #19bc9c;">
+        Post your enquiry or suggestion
+    </label-->
+</div>
+<div class="col-lg-6 " style="padding: 5px;">
+    <input type="hidden"  name="TextBoxWatermarkExtender14_ClientState" id="TextBoxWatermarkExtender14_ClientState" />
+    <textarea name="personalNote" placeholder="Post your quiry or suggestion" rows="2" cols="20" id="txtComment" class="form-control medium" style="width:100%;">
+	</textarea><br><br>
+	
  <input type="hidden"  name="hideval" value="true"  /> 
  <input type="submit" class="styled-button-8" value="Submit Details" /> 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 

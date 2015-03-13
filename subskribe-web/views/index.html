@@ -2,86 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
     <meta charset="utf-8">
-    <title>
-	New User Registration
-</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<link href="/css/sb-admin.css" rel="stylesheet" type="text/css" />
-<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes"> 
-    
-<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-
-<link href="/css/font-awesome.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    
-<link href="/css/style.css" rel="stylesheet" type="text/css">
-<link href="/css/pages/forms.css" rel="stylesheet" type="text/css">
-
+    <title>New User Registration</title>
+    <% include partials/links.html %>
 </head>
 
 <body>
-	
-	<div class="navbar navbar-fixed-top">
-	
-	<div class="navbar-inner">
-		
-		<div class="container">
-			
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			
-			<a class="brand" href="index.html">
-				Bootstrap Admin Template				
-			</a>		
-			
-			<div class="nav-collapse">
-				<ul class="nav pull-right">
-					<li class="">						
-						<a href="login.html" class="">
-							Already have an account? Login now
-						</a>
-						
-					</li>
-					<li class="">						
-						<a href="index.html" class="">
-							<i class="icon-chevron-left"></i>
-							Back to Homepage
-						</a>
-						
-					</li>
-				</ul>
-				
-			</div><!--/.nav-collapse -->	
-	
-		</div> <!-- /container -->
-		
-	</div> <!-- /navbar-inner -->
-	
-</div> <!-- /navbar -->
-
-
+	<% include partials/navbar.html %>
 
 <div class="account-container register">
-	
 	<div class="content clearfix">
-		
 		<form action="/users/save" method="post">
-		
         <div>
             <header><!-- start of header -->
-    
-    </div>
-</header>
-            <div class="content" style="padding-top: 2%; padding-bottom: 1%; padding-top: 3%; padding-left: 15%;">
-                <script type="text/javascript">
-
-</script>
+    		</header>
+    	</div>
+    <div class="content" style="padding-top: 2%; padding-bottom: 1%; padding-top: 3%; padding-left: 15%;">
 
 <div class="row">
     <div id="UpdatePanel1">
@@ -102,15 +37,15 @@
 	</div>
 	<div class="col-lg-2 " style="padding: 5px;">
 	<input type="hidden" name="f_name" id="f_name"/>
-	<input name="firstName" placeholder="First Name" type="text" id="txtFname" class="form-control medium" style="width:100%;" /><span id="RequiredFieldValidator2" style="color:Green;font-size:Smaller;display:none;">First name is compulsory</span>                                  
+	<input name="firstName" placeholder="First Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
 	   </div>
 		<div class="col-lg-2 " style="padding: 5px;">
 			<input type="hidden" name="m_name" id="m_name" />
-			<input name="middleName" placeholder="Middle Name" type="text" id="txtMname" class="form-control medium" style="width:100%;" />                                   
+			<input name="middleName" placeholder="Middle Name" required="required" title="Middle Name is compulsory" type="text" id="txtMname" class="form-control medium" style="width:100%;" />                                   
 		</div>
 		<div class="col-lg-2 " style="padding: 5px;">
 			<input type="hidden" name="l_name" id="l_name" />
-			<input name="lastName" placeholder="Last Name" type="text" id="txtLname" class="form-control medium" style="width:100%;" />                                    
+			<input name="lastName" placeholder="Last Name" required="required" title="Last Name is compulsory" type="text" id="txtLname" class="form-control medium" style="width:100%;" />                                    
 			</div>
 		<div class="col-lg-2 " style="padding: 5px;">
 		</div>
@@ -284,7 +219,7 @@
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-        <input name="mobileNumber" placeholder="Enter Mobile Number" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
+        <input name="mobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender1_ClientState" id="TextBoxWatermarkExtender1_ClientState" />
@@ -303,7 +238,7 @@
    </div>
     <div class="col-lg-6 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender7_ClientState" id="TextBoxWatermarkExtender7_ClientState" />
-        <input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
+        <input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
 		<br/>
 	</div>
 </div>
@@ -316,7 +251,7 @@
 		</div>
 		<div class="col-lg-6 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender7_ClientState" id="TextBoxWatermarkExtender7_ClientState" />
-        <input name="txtPassword" type="password" id="txtEmailId" class="form-control medium" style="width:100%;" placeholder="Enter Password"/>
+        <input name="txtPassword" type="password" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
         </br>
 		</div>
 	</div>
@@ -343,7 +278,7 @@
 								
 <div class="col-lg-12">
 	<div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
-        <strong>Business Location<span style="color: red;">*</span>:</strong>
+        <strong>My Location<span style="color: red;">*</span>:</strong>
         <br />
         <!--label style="font-size: x-small; color:#19bc9c;">
             Help us to serve you better
@@ -351,11 +286,11 @@
     </div>
     <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-        <input name="txtFlat" placeholder="Flat No." type="text" id="txtState" class="form-control medium" style="width:100%;" />
+        <input name="txtFlat" required="required" placeholder="Flat No." type="text" id="txtState" class="form-control medium" style="width:100%;" />
         </div>
     <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-        <input name="txtBuild" placeholder="Building Name" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+        <input name="txtBuild" required="required" placeholder="Building Name" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
 	</div>
 </div>
 							
@@ -367,11 +302,11 @@
 		</div>
         <div class="col-lg-3 " style="padding: 5px;">
             <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-            <input name="txtArea" placeholder="Area" type="text" id="txtState" class="form-control medium" style="width:100%;" />
+            <input name="txtArea" required="required" placeholder="Area" type="text" id="txtState" class="form-control medium" style="width:100%;" />
 		</div>
         <div class="col-lg-3 " style="padding: 5px;">
             <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-            <input name="txtSubArea" placeholder="Sub Area" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+            <input name="txtSubArea" required="required" placeholder="Sub Area" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
 		</div>
 	</div>
                                
@@ -383,11 +318,11 @@
 	</div>
     <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender6_ClientState" id="TextBoxWatermarkExtender6_ClientState" />
-        <input name="txtCity" placeholder="City" type="text" id="txtState" class="form-control medium" style="width:100%;" />
+        <input name="txtCity" required="required" placeholder="City" type="text" id="txtState" class="form-control medium" style="width:100%;" />
    </div>
    <div class="col-lg-2 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender8_ClientState" id="TextBoxWatermarkExtender8_ClientState" />
-        <input name="txtPin" placeholder="Pin Code" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
+        <input name="txtPin" required="required" placeholder="Pin Code" type="text" id="txtCity" class="form-control medium" style="width:100%;" />
 	</div>
 </div>
 	
@@ -449,18 +384,7 @@
 <div class="login-extra">
 	Already have an account? <a href="login.html">Login to your account</a>
 </div> <!-- /login-extra -->
-
-
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
-
-<script src="js/signin.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-								$(function () {
-								$('#datetimepicker1').datetimepicker();
-								});
-								</script>
+<% include partials/scripts.html %>
+<script type="text/javascript" src="/js/user/events.js" />
 </body>
-
- </html>
+</html>
