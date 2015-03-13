@@ -2,6 +2,8 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 var user = require('cloud/user/user.js');
 
+var userlog = require('cloud/log/log.js');
+
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
 	ParametersEmpty: 'Please provide complete details',

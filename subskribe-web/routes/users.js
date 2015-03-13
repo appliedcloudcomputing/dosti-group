@@ -8,10 +8,8 @@ var router = express.Router();
 
 */
 
-/*router.get('/', function(req, res, next) {
-  console.log("Called Index");
-  res.render('index', {error: ""});
-});*/
+
+
 
 router.get('/Franch', function(req, res, next) {
   console.log("Called Index");
@@ -28,6 +26,7 @@ router.post('/save', function(req, res, next) {
   console.log("Called User Save");
   console.log(req.body.txtPassword);
 	console.log("name :"+ req.body.firstName +" " + req.body.middleName + " " + req.body.lastName);
+  
   var data = {
           'name':req.body.firstName +" " + req.body.middleName + " " + req.body.lastName,
           'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
@@ -59,6 +58,55 @@ router.post('/save', function(req, res, next) {
       }
     });
 });
+
+
+//****************Login Code************
+router.get('/login', function(req, res, next) {
+  res.render('login', {error: ""});
+});
+
+router.post('/login', function(req, res, next) {
+
+console.log("User name:"+req.body.username);
+     console.log("Password :"+req.body.password);
+
+
+
+ 
+
+ if(req.body.username && req.body.password) {
+  console.log("username: " + req.body.username);
+  console.log("username: " + req.body.password);
+    Parse.User.logIn(req.body.username, req.body.password, {
+      success: function(user) {
+        res.render('dashboard');
+        console.log('INSIDE SUCCESS');
+        console.log('INSIDE SUCCESS: 200');
+        //req.session.user = JSON.stringify(user);
+        var response = {
+          message: "Login successful!",
+          status: 200
+        }
+        res.end(JSON.stringify(response));
+      },
+      error: function(user, error) {
+        console.log('INSIDE ERROR: 500' + error.message);
+        var response = {
+          message: error.message,
+          status: 500
+        }
+        res.end(JSON.stringify(response));
+      }
+    });
+  } else {
+    var response = {
+      message: "Bad request!",
+      status: 400
+    }
+    res.end(JSON.stringify(response));
+  }
+});
+
 
 module.exports = router;
 
