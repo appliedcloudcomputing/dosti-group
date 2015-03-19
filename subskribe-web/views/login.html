@@ -1,85 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	    <meta charset="UTF-8" />
-		<title>Login</title>
-		<% include partials/links.html %>
-	</head>
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 
-	<body>
-		<!-- MAIN WRAPPER -->
-    	<div id="wrap">
-    	
-    		<% include partials/login-navbar.html %>
+<!-- BEGIN HEAD -->
+<head>
+     <meta charset="UTF-8" />
+    <title>BCORE Admin Dashboard Template | Login Page</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+     <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <!-- GLOBAL STYLES -->
+     <!-- PAGE LEVEL STYLES -->
+     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/plugins/magic/magic.css" />
+     <!-- END PAGE LEVEL STYLES -->
+   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+    <!-- END HEAD -->
+
+    <!-- BEGIN BODY -->
+<body >
+
+   <!-- PAGE CONTENT --> 
+    <div class="container">
+    <div class="text-center">
+        <img src="assets/img/logo.png" id="logoimg" alt=" Logo" />
+    </div>
+    <div class="tab-content">
+        <div id="login" class="tab-pane active">
+            <form action="login" class="form-signin" method="post">
+                <p class="text-muted text-center btn-block btn btn-primary btn-rect">
+                    Enter your username and password
+                </p>
+                <input type="text" name="username" placeholder="Username" class="form-control" />
+                <input type="password" name="password" placeholder="Password" class="form-control" />
+                <button class="btn text-muted text-center btn-danger" type="submit">Sign in</button>
+            </form>
+        </div>
+        <div id="forgot" class="tab-pane">
+            <!--form action="index.html" class="form-signin">
+                <p class="text-muted text-center btn-block btn btn-primary btn-rect">Enter your valid e-mail</p>
+                <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" />
+                <br />
+                <button class="btn text-muted text-center btn-success" type="submit">Recover Password</button>
+            </form>
+        </div>
+        <div id="signup" class="tab-pane">
+            <form action="index.html" class="form-signin">
+                <p class="text-muted text-center btn-block btn btn-primary btn-rect">Please Fill Details To Register</p>
+                 <input type="text" placeholder="First Name" class="form-control" />
+                 <input type="text" placeholder="Last Name" class="form-control" />
+                <input type="text" placeholder="Username" class="form-control" />
+                <input type="email" placeholder="Your E-mail" class="form-control" />
+                <input type="password" placeholder="password" class="form-control" />
+                <input type="password" placeholder="Re type password" class="form-control" />
+                <button class="btn text-muted text-center btn-success" type="submit">Register</button>
+            </form-->
+        </div>
+    </div>
+    <div class="text-center">
+        <ul class="list-inline">
+            <li><a class="text-muted" href="login.html" data-toggle="tab">Login</a></li>
+            <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
+            <li><a class="text-muted" href="index.html" data-toggle="tab">Signup</a></li>
+        </ul>
+    </div>
 
 
+</div>
 
-    	</div>
-    	<!-- MAIN WRAPPER -->
-
-		<% include partials/footer.html %>
-
-<<<<<<< HEAD
-		<% include partials/scripts.html %>
-	</body>
-=======
-
-<div class="account-container">
-	
-	<div class="content clearfix">
-		
-		<form action="/users/login" method="post">
-		
-			<h1>Member Login</h1>		
-			
-			<div class="login-fields">
-				
-				<p>Please provide your details</p>
-				
-				<div class="field">
-					<label for="username">Username</label>
-					<input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
-				</div> <!-- /field -->
-				
-				<div class="field">
-					<label for="password">Password:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field"/>
-				</div> <!-- /password -->
-				
-			</div> <!-- /login-fields -->
-			
-			<div class="login-actions">
-				
-				<span class="login-checkbox">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-					<label class="choice" for="Field">Keep me signed in</label>
-				</span>
-									
-				<button class="button btn btn-success btn-large">Sign In</button>
-				
-			</div> <!-- .actions -->
-			
-			
-			
-		</form>
-		
-	</div> <!-- /content -->
-	
-</div> <!-- /account-container -->
-
-
-
-<div class="login-extra">
-	<a href="#">Reset Password</a>
-</div> <!-- /login-extra -->
-
-
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
-
-<script src="js/signin.js"></script>
+	  <!--END PAGE CONTENT -->     
+	      
+      <!-- PAGE LEVEL SCRIPTS -->
+      <script src="/assets/plugins/jquery-2.0.3.min.js"></script>
+      <script src="/assets/plugins/bootstrap/js/bootstrap.js"></script>
+   <script src="/assets/js/login.js"></script>
+      <!--END PAGE LEVEL SCRIPTS -->
 
 </body>
-
->>>>>>> origin/master
+    <!-- END BODY -->
 </html>

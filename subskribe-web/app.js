@@ -1,3 +1,7 @@
+GLOBAL.Parse = require('parse').Parse;
+Parse.initialize("ivDEfuaBrK5EJFnenmqzrIKAiCeD7dH5hLGjLMRG", "6T4gqzOw8BiFkfA7o95sIPqnNWii0CreFCS10Lvk");
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,12 +11,12 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 
-GLOBAL.Parse = require('parse').Parse;
+/*GLOBAL.Parse = require('parse').Parse;
 if(process && process.env && process.env.APPLICATION_ID && process.env.JAVASCRIPT_KEY && process.env.MASTER_KEY) {
     Parse.initialize(process.env.APPLICATION_ID, process.env.JAVASCRIPT_KEY, process.env.MASTER_KEY);
 } else {
     Parse.initialize("ivDEfuaBrK5EJFnenmqzrIKAiCeD7dH5hLGjLMRG", "6T4gqzOw8BiFkfA7o95sIPqnNWii0CreFCS10Lvk", "01oxOl98OXgIinTAZvUfD6qHwGQ2wutFxB7O63IX");
-}
+}*/
 
 
 var routes = require('./routes/index');

@@ -21,14 +21,14 @@ exports.save = function(params) {
 		//SAVING USER
 		var user = new User();
 		user.set("name", params.name);
-		user.set("dob", params.dob);
+		//user.set("dob", params.dob);
 		user.set("mobile", params.mobile);
 		user.set("telephone", params.telephone);
 		user.set("email", params.email);
 		user.set("password",params.password);
 		user.set("enterprise", params.enterprise);
 		user.set("address", params.address);
-		user.set("contactTime", params.contactTime);
+		//user.set("contactTime", params.contactTime);
 		user.set("personalNote", params.personalNote);
 		user.set("username",params.email);
 		

@@ -6,6 +6,7 @@ var Response = {
 }
 
 router.get('/', function(req, res) {
+
 	console.log('Rendering Dashboard page...');
 	/*var currentUser = req.session.user ? JSON.parse(req.session.user) : null;	
 	if (currentUser) {*/

@@ -5,35 +5,45 @@ var Response = {
 	InvalidLogin: 'Invalid Login!'
 }
 
-router.get('/', function(req, res) {
-	var currentUser = req.session.user ? JSON.parse(req.session.user) : null;	
-	if (currentUser) {
-		res.render('users', { title: 'User'});
-	} else {
-		res.redirect('/');
-	}
-}); 
-
-router.post('/', function(req, res) {
-	
-	var username = req.body.username;
-	var password = req.body.password;
-
-	Parse.User.logIn(username, password, { 
-		success: function(user) {
-			if(user) {
-				console.log("USER FOUND");
-				req.session.user = JSON.stringify(user);
-				res.redirect('/user/');
-			} else {
-				console.log("USER NOT FOUND");
-				res.render('login', {title: 'Login', message: Response.InvalidLogin}); 
-			}						
-		},
-		error: function(user, error) {
-			res.render('login', {title: 'Login', message: Response.InvalidLogin});
-		}
-	});
+router.get('/', function(req, res, next) {
+  res.render('login', {error: ""});
 });
+
+router.post('/', function(req, res, next) {
+console.log("*********************** LOGIN POST EXCUTED **********************");
+console.log("User name:"+req.body.username);
+     console.log("Password :"+req.body.password);
+
+console.log("*********Do IT****************");
+
+ 
+
+ if(req.body.username && req.body.password) {
+  console.log("username: " + req.body.username);
+  console.log("username: " + req.body.password);
+    Parse.User.logIn(req.body.username, req.body.password, {
+      success: function(user) {
+        console.log("*************LOGIN SUCCESS*************");
+        res.render('dashboard'); 
+      },
+      error: function(user, error) {
+        console.log('INSIDE LOGIN ERROR: 500' + error.message);
+        var response = {
+          message: error.message,
+          status: 500
+        }
+        res.end(JSON.stringify(response));
+      }
+    });
+  } else {
+    var response = {
+      message: "Bad request!",
+      status: 400
+    }
+    res.end(JSON.stringify(response));
+  }
+});
+
+
 
 module.exports = router;

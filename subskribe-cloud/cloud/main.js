@@ -2,7 +2,6 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 var user = require('cloud/user/user.js');
 
-var userlog = require('cloud/log/log.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -22,14 +21,14 @@ Parse.Cloud.define('saveUser', function(req, res) {
 	if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
-			dob: req.params.dob,
+			//dob: req.params.dob,
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
 			password: req.params.password,
 			enterprise: req.params.enterprise,
 			address: req.params.address,
-			contactTime: req.params.contactTime,
+			//contactTime: req.params.contactTime,
 			personalNote: req.params.personalNote,		
 					
 			success: function(message) {
