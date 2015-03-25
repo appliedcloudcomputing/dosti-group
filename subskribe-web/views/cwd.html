@@ -13,17 +13,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
     <!-- GLOBAL STYLES -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-    <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
-    <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <link rel="stylesheet" href="/assets/css/MoneAdmin.css" />
+    <link rel="stylesheet" href="/assets/plugins/Font-Awesome/css/font-awesome.css" />
     <!--END GLOBAL STYLES -->
 
     <!-- PAGE LEVEL STYLES -->
-    <link href="assets/css/layout2.css" rel="stylesheet" />
-       <link href="assets/plugins/flot/examples/examples.css" rel="stylesheet" />
-       <link rel="stylesheet" href="assets/plugins/timeline/timeline.css" />
+    <link href="/assets/css/layout2.css" rel="stylesheet" />
+       <link href="/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
+       <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
     <!-- END PAGE LEVEL  STYLES -->
      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -51,8 +52,8 @@
                 <!-- LOGO SECTION -->
                 <header class="navbar-header">
 
-                    <a href="/users/index.html" class="navbar-brand">
-                    <img src="assets/img/logo.png" alt="" />
+                    <a href="index.html" class="navbar-brand">
+                    <img src="/assets/img/logo.png" alt="" />
                         
                         </a>
                 </header>
@@ -301,7 +302,7 @@
        <div id="left" >
             <div class="media user-media well-small">
                 <a class="user-link" href="#">
-                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif" />
+                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="/assets/img/user.gif" />
                 </a>
                 <br />
                 <div class="media-body">
@@ -343,7 +344,7 @@
                     
                 </li>
                 <li class="panel ">
-                    <a href="/users/cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
                         <i class="icon-pencil"></i> Change Password
 	   
                         <span class="pull-right">
@@ -377,47 +378,45 @@
                  
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
-                          <div class="row">
-                    <div class="col-lg-6">
-                        <div class="box">
-                            <header>
-                                <h5>User Profile</h5>
-                                <div class="toolbar">
-                                    <div class="btn-group">
-                                        <a href="#sortableTable" data-toggle="collapse" class="btn btn-default btn-sm accordion-toggle minimize-box">
-                                            <i class="icon-chevron-up"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </header>
-                            <div id="sortableTable" class="body collapse in">
-                                <table class="table table-bordered sortableTable responsive-table">
-                                    <thead>
-                                        <tr>
-                                            <th>#<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
-                                            <th>Name<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
-                                            <th>Email<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
-                                            <th>Contact<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+             <form action="cwd" method="post">          
+        <div class="row">
+    <div id="UpdatePanel1">
 
+    <div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
+       <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold;margin-left:-20%;">Change Password<br /> <br /></strong> <p>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-2 " style="padding: 5px;">
+        <strong> Old Password <span style="color: red;">*</span>:</strong>
+        <br />
+        </div>
+        <div class="col-lg-6 " style="padding: 5px;">
+        <input type="hidden" name="password" id="password" />
+        <input name="oldPassword" type="password" id="oldPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Old Password"/>
+        </br>
+        </div>
+    </div>
+                
+                <div class="col-lg-12">
+        <div class="col-lg-2 " style="padding: 5px;">
+        <strong> New Password <span style="color: red;">*</span>:</strong>
+        <br />
+        </div>
+        <div class="col-lg-6 " style="padding: 5px;">
+        <input type="hidden" name="password" id="password" />
+        <input name="newPassword" type="password" id="newPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter New Password"/>
+        </br>
+        </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
 
-                                        <tr>
-                                            <td>1</td>
-                                            <td><%= userList[0].username %></td>
-                                            <td><%= userList[0].email %></td>
-                                            <td><%= userList[0].contact %></td>
-                                        </tr>
-
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        
+      </div>
+                
+                       
                     </div>
-                            
+                         </form>    
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -508,17 +507,17 @@
 
 
     <!-- GLOBAL SCRIPTS -->
-    <script src="assets/plugins/jquery-2.0.3.min.js"></script>
-     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="/assets/plugins/jquery-2.0.3.min.js"></script>
+     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- END GLOBAL SCRIPTS -->
 
     <!-- PAGE LEVEL SCRIPTS -->
-    <script src="assets/plugins/flot/jquery.flot.js"></script>
-    <script src="assets/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="assets/plugins/flot/jquery.flot.time.js"></script>
-     <script  src="assets/plugins/flot/jquery.flot.stack.js"></script>
-    <script src="assets/js/for_index.js"></script>
+    <script src="/assets/plugins/flot/jquery.flot.js"></script>
+    <script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="/assets/plugins/flot/jquery.flot.time.js"></script>
+     <script  src="/assets/plugins/flot/jquery.flot.stack.js"></script>
+    <script src="/assets/js/for_index.js"></script>
    
     <!-- END PAGE LEVEL SCRIPTS -->
 

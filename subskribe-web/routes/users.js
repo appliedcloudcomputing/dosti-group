@@ -7,7 +7,10 @@ var router = express.Router();
 });
 
 */
-
+router.get('/cwd', function(req, res, next) {
+  console.log("Called Changed Password");
+  res.render('cwd', {error: ""});
+});
 
 
 
