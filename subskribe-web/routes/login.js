@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('login', {error: ""});
 });
 
-router.post('/', function(req, res, next) {
+/*router.post('/', function(req, res, next) {
 console.log("*********************** LOGIN POST EXCUTED **********************");
 console.log("User name:"+req.body.username);
 console.log("Password :"+req.body.password);
@@ -64,7 +64,7 @@ var _user;
     }
     res.end(JSON.stringify(response));
   }
-});
+});*/
 
 
 

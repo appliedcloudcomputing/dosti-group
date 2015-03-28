@@ -1,7 +1,7 @@
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 var user = require('cloud/user/user.js');
-
+var cwd = require('cloud/user/changepass.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -80,4 +80,56 @@ Parse.Cloud.beforeSave('User', function(req, res) {
 */
 /*-----------------------------------------------END USER-----------------------------------------------*/
 
+/*************************************** Changing Password ********************************/
+Parse.Cloud.define('chngPassword', function(req, res) {
+	 	Parse.Cloud.useMasterKey();
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
+		console.log("In main js change password");
+    cwd.save({    
+            newPassword : req.params.newPassword,
+            username : req.params.userName,
+			success: function(message){
+             res.success(message);
+        },
+                error: function(error){
+                    res.error(error);
+                }
+            });
+       
+        
+    });
+		
+	
 
+
+	/*Parse.Cloud.define("chngPassword", function(request, response){
+    Parse.Cloud.useMasterKey();
+
+    var query = new Parse.Query(Parse.User);
+    var newPassword = request.params.newPassword;
+     var user = new User();      
+    query.equalTo("email", request.params.email);
+
+    query.first({
+        success: function(user){
+            console.log("New Password: " + newPassword);
+
+            user.set("password", newPassword);
+             user.setPassword(newPassword);
+
+            user.save(null,{
+                success: function(user){
+                    // The user was saved correctly
+                    res.success(message);
+                },
+                error: function(user, error){
+                    res.error("No se pudo guardar la contraseña");
+                }
+            });
+        },
+        error: function(error){
+            res.error("No se encontró al usuario");
+        }
+    });
+});*/
+	
