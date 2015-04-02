@@ -98,7 +98,125 @@ Parse.Cloud.define('chngPassword', function(req, res) {
        
         
     });
+
+
+/*********************************FEEDBACK*********************************/
 		
+	Parse.Cloud.define('saveFeedback', function(req, res) {
+	 	//Parse.Cloud.useMasterKey();
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
+		console.log("In main js save feedback");
+    feed.save({    
+            username : req.params.userName,
+            subject : req.params.subject,
+            desc : req.params.desc,
+			success: function(message){
+             res.success(message);
+        },
+                error: function(error){
+                    res.error(error);
+                }
+            });
+       
+        
+    });
+
+
+	/***************************** Admin Registration ********************************/
+
+	Parse.Cloud.define('saveAdmin', function(req, res) {
+	console.log("save admin called main.js");
+	if(!req.params.id || req.params.id == 0) {
+		admin.save({
+
+		   'adname':req.params.name,
+         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'admobile': req.params.mobile, 
+          'adtelephone': req.params.telephone,
+          'ademail': req.params.email,
+           'adpassword': req.params.password,
+         //'enterprise': req.body.hideval,
+          'adlocation': req.params.location,
+          //'contactTime': "06/01/2015",
+          'adnominee': req.params.nominee,		
+					
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	} else {
+		user.update({
+			'name':req.params.firstName,
+         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'mobile': req.params.mobileNumber, 
+          'telephone':req.params.telephoneNumber,
+          'email': req.params.primaryEmailAddress,
+           'password': req.params.txtPassword,
+         //'enterprise': req.body.hideval,
+          'location': req.params.adminLocation,
+          //'contactTime': "06/01/2015",
+          'nominee':req.params.nominee,	
+
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
+
+	
+/********************************* admin package create **********************/
+
+Parse.Cloud.define('saveAdminpkg', function(req, res) {
+	console.log("save admin package called main.js");
+	if(!req.params.id || req.params.id == 0) {
+		pkg.save({
+
+		   'pkgName':req.params.pkgName,
+         
+          'pkgDesc': req.params.pkgDesc, 
+          
+          'pkgPrice': req.params.pkgPrice,
+          
+          'pkgValidity': req.params.pkgValidity,
+
+          'pkgType' : req.params.pkgType,
+           		
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+
+	} else {
+		pkg.update({
+			
+			'pkgName':req.params.pkgName,
+         
+          'pkgDesc': req.params.pkgDesc, 
+          
+          'pkgPrice': req.params.pkgPrice,
+          
+          'pkgValidity': req.params.pkgValidity,
+           
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
+
 	
 
 

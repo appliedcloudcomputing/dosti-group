@@ -16,23 +16,55 @@
         <![endif]-->
     <!-- GLOBAL STYLES -->
      <!-- PAGE LEVEL STYLES -->
-	 
+	
 	 <link href="assets/css/forms.css" rel="stylesheet" type="text/css">
 	 <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	 <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/css/login.css" />
+	 <link rel="stylesheet" href="assets/css/login.css" />
     <link rel="stylesheet" href="assets/plugins/magic/magic.css" />
-     <!-- END PAGE LEVEL STYLES -->
+	 
+	 
+	 <!-- END PAGE LEVEL STYLES -->
+	 
+	 <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
+    <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
+    <!--END GLOBAL STYLES -->
+	 
+	  <!-- PAGE LEVEL STYLES -->
+    
+ <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/plugins/uniform/themes/default/css/uniform.default.css" />
+<link rel="stylesheet" href="assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css" />
+<link rel="stylesheet" href="assets/plugins/chosen/chosen.min.css" />
+<link rel="stylesheet" href="assets/plugins/colorpicker/css/colorpicker.css" />
+<link rel="stylesheet" href="assets/plugins/tagsinput/jquery.tagsinput.css" />
+<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker-bs3.css" />
+<link rel="stylesheet" href="assets/plugins/datepicker/css/datepicker.css" />
+<link rel="stylesheet" href="assets/plugins/timepicker/css/bootstrap-timepicker.min.css" />
+<link rel="stylesheet" href="assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
+   
+    <!-- END PAGE LEVEL  STYLES -->
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+	<style>
+	.input-recaptcha{
+ width:172px;   
+ }
+	</style>
+	
+  
 </head>
     <!-- END HEAD -->
 
     <!-- BEGIN BODY -->
 <body >
+
 
    <!-- PAGE CONTENT --> 
     <div class="container">
@@ -69,7 +101,7 @@
         
 	<div class="col-lg-6 " style="padding: 5px;">
 	<input type="hidden" name="f_name" id="f_name"/>
-	<input name="firstName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
+	<input name="txtName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtName" class="form-control medium" style="width:100%;" />
 	   </div>
 		
 		</div>
@@ -85,11 +117,11 @@
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-        <input name="mobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
+        <input name="txtMobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtMobileNumber" class="form-control medium" style="width:100%;" />
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender1_ClientState" id="TextBoxWatermarkExtender1_ClientState" />
-        <input name="telephoneNumber" placeholder="Enter Teleplone Number" type="text" id="txtSecondaryMobile" class="form-control medium" style="width:100%;" />
+        <input name="txtTelephoneNumber" placeholder="Enter Teleplone Number" type="text" id="txtTelephoneNumber" class="form-control medium" style="width:100%;" />
       <br />
 	</div>
     <div class="col-lg-4 " style="padding: 5px;">
@@ -105,7 +137,7 @@
     <div class="col-lg-3 " style="padding: 5px;">
 	<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
                                  data-date-format="dd-mm-yyyy">
-                                <input class="form-control" type="text" value="12-02-2012" readonly="" />
+                                <input class="form-control" type="txtDOB" value="12-02-2012" readonly="" />
                                 <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                             </div>
 <br/>
@@ -120,7 +152,7 @@
    </div>
     <div class="col-lg-6 " style="padding: 5px;">
 <input type="hidden" name="email" id="email" />
-<input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
+<input name="txtPrimaryEmailAddress" type="text" id="txtPrimaryEmailAddress" class="form-control medium" style="width:100%;" required="required" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
 		<br/>
 	</div>
 </div>
@@ -133,7 +165,7 @@
 		</div>
 		<div class="col-lg-6 " style="padding: 5px;">
         <input type="hidden" name="password" id="password" />
-        <input name="txtPassword" type="password" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
+        <input name="txtPassword" type="password" id="txtPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
         </br>
 		</div>
 	</div>
@@ -149,36 +181,108 @@
     </div>
     <div class="col-lg-6 " style="padding: 5px;">
     
-    <textarea name="BusinessLocation" placeholder="Enter Business Location" rows="2" cols="20" id="txtComment" class="form-control medium" style="width:100%;">
+    <textarea name="txtBusinessLocation" placeholder="Enter Business Location" rows="2" cols="20" id="txtBusinessLocation" class="form-control medium" style="width:100%;">
 	</textarea><br>
 </div>
 </div>
 
 <div class="col-lg-12">
-<div class="icons">
-                    <i class="icon-calendar"></i></div>
-<div class="icons"><i class="icon-time"></i></div>
-    <div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
+  <div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
         <strong>Contact me on<span style="color: red;">*</span>:</strong>
       <br/>  
    </div>
     <div class="col-lg-3 " style="padding: 5px;">
 	<div class="input-group input-append date" id="dp4" data-date="12-02-2012"
                                  data-date-format="dd-mm-yyyy">
-                                <input class="form-control" type="text" value="12-02-2012" readonly="" />
+                                <input class="form-control" type="txtDate" value="12-02-2012" readonly="" />
                                 <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                             </div>
 	</div>
-
-	<div class="col-lg-3 " style="padding: 5px;">
-	<div class="input-group bootstrap-timepicker">
-                                <input class="form-control timepicker-default" type="text" />
+	<div class="col-lg-3" style="padding: 5px;">
+	<div class="input-group bootstrap-timepicker"><div class="bootstrap-timepicker-widget dropdown-menu"><table><tbody><tr><td><a href="#" data-action="incrementHour"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementMinute"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td class="meridian-column"><a href="#" data-action="toggleMeridian"><i class="icon-chevron-up"></i></a></td></tr><tr><td><input type="text" class="bootstrap-timepicker-hour" maxlength="2"></td> <td class="separator">:</td><td><input type="text" class="bootstrap-timepicker-minute" maxlength="2"></td> <td class="separator">&nbsp;</td><td><input type="text" class="bootstrap-timepicker-meridian" maxlength="2"></td></tr><tr><td><a href="#" data-action="decrementHour"><i class="icon-chevron-down"></i></a></td><td class="separator"></td><td><a href="#" data-action="decrementMinute"><i class="icon-chevron-down"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="toggleMeridian"><i class="icon-chevron-down"></i></a></td></tr></tbody></table></div>
+                                <input class="form-control timepicker-default" type="txtTime">
                                 <span class="input-group-addon add-on"><i class="icon-time"></i></span>
                             </div>
-        <br />
-	</div>
+                        </div>
 </div>
 
+
+<div class="col-lg-12">
+<br/>
+    <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
+        <strong> Captcha <span style="color: red;">*</span>:</strong>
+      
+	</div>
+    <div class="col-lg-3 " style="padding: 5px;">
+        
+		<script type="text/javascript">
+     var RecaptchaOptions = {
+        theme : 'custom',
+        custom_theme_widget: 'recaptcha_widget'
+     };
+</script>               
+
+<form method="post" action="<?php echo $base_url; ?>user/register/check" method="post" class="form-horizontal well" accept-charset="UTF-8">
+
+                    <script type="text/javascript">
+                         var RecaptchaOptions = {
+                            theme : 'custom',
+                            custom_theme_widget: 'recaptcha_widget'
+                         };
+                    </script>
+                    <div id="recaptcha_widget" style="display:none">
+
+                        <div class="control-group">
+                            <label class="control-label"></label>
+                            <div class="controls">
+                                <a id="recaptcha_image" href="#" class="thumbnail"></a>
+                                <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
+                            </div>
+                        </div>
+
+                           <div class="control-group">
+                               <label class="recaptcha_only_if_image control-label">Enter the words above:</label>
+                              <label class="recaptcha_only_if_audio control-label">Enter the numbers you hear:</label>
+
+                              <div class="controls">
+                                  <div class="input-append">
+                                      <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" class="input-recaptcha" /><br><br>
+                                      <a class="btn" href="javascript:Recaptcha.reload()"><i class="icon-refresh"></i></a>
+                                      <a class="btn recaptcha_only_if_image" href="javascript:Recaptcha.switch_type('audio')"><i title="Get an audio CAPTCHA" class="icon-headphones"></i></a>
+                                      <a class="btn recaptcha_only_if_audio" href="javascript:Recaptcha.switch_type('image')"><i title="Get an image CAPTCHA" class="icon-picture"></i></a>
+                                    <a class="btn" href="javascript:Recaptcha.showhelp()"><i class="icon-question-sign"></i></a>
+                                  </div>
+                              </div>
+                        </div>
+
+                    </div>
+
+                    <script type="text/javascript"
+                       src="<?php echo $recaptcha_url; ?>">
+                    </script>
+
+                    <noscript>
+                        <iframe src="<?php echo $recaptcha_noscript_url; ?>"
+                           height="300" width="500" frameborder="0"></iframe><br>
+                        <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                        </textarea>
+                        <input type="hidden" name="recaptcha_response_field"
+                           value="manual_challenge">
+                      </noscript>
+</form>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcrK9cSAAAAALEcjG9gTRPbeA0yAVsKd8sBpFpR"></script>
+
+<noscript>
+    <iframe src="<?php echo $recaptcha_noscript_url; ?>"
+       height="300" width="500" frameborder="0"></iframe><br>
+    <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+    </textarea>
+    <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+</noscript>
+		
+		</div>
+    
+</div>
 	
 
 <div class="col-lg-12">
@@ -192,13 +296,11 @@
 </div>
 <div class="col-lg-6 " style="padding: 5px;">
     
-    <textarea name="personalNote" placeholder="Post your quiry or suggestion" rows="2" cols="20" id="txtComment" class="form-control medium" style="width:100%;">
+    <textarea name="txtPersonalNote" placeholder="Post your queries or suggestion" rows="2" cols="20" id="txtPersonalNote" class="form-control medium" style="width:100%;">
 	</textarea><br><br>
 	
  <input type="hidden"  name="hideval" value="true"  /> 
- <input type="submit" class="styled-button-8" value="Submit Details" /> 
-
-<input type="reset" class="styled-button-10" value="Clear Details" /> 	
+ <input type="submit" class="styled-button-8" value="Submit Details" /> &nbsp; &nbsp; <input type="reset" class="styled-button-10" value="Clear Details" /> 	
 </div>					
 
                             
