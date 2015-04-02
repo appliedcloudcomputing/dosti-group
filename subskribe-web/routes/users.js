@@ -28,7 +28,7 @@ router.post('/save', function(req, res, next) {
 	console.log("name :"+ req.body.firstName);
   
   var data = {
-          'name':req.body.firstName,
+          'name':req.body.txtFirstName,
          // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
           'mobile': req.body.mobileNumber, 
           'telephone':req.body.telephoneNumber,

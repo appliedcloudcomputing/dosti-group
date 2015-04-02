@@ -44,7 +44,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/users/save" method="post">
+		<form action="adminreg" method="post">
 		
         <div>
             <header><!-- start of header -->
@@ -60,7 +60,7 @@
     <div id="UpdatePanel1">
 
     <div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
-       <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold; color:#19bc9c;margin-left:-20%;">Registration Form<br /> <br /></strong> <p>
+       <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold; color:#19bc9c;margin-left:-20%;">Admin Registration Form<br /> <br /></strong> <p>
     </div>
     <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
@@ -69,7 +69,7 @@
         
 	<div class="col-lg-6 " style="padding: 5px;">
 	<input type="hidden" name="f_name" id="f_name"/>
-	<input name="txtFirstName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
+	<input name="firstName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
 	   </div>
 		
 		</div>
@@ -85,11 +85,11 @@
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-        <input name="txtMobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
+        <input name="mobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
 	</div>
     <div class="col-lg-3 " style="padding: 5px;">
         <input type="hidden" name="TextBoxWatermarkExtender1_ClientState" id="TextBoxWatermarkExtender1_ClientState" />
-        <input name="txtTelephoneNumber" placeholder="Enter Teleplone Number" type="text" id="txtTelephoneNumber" class="form-control medium" style="width:100%;" />
+        <input name="telephoneNumber" placeholder="Enter Teleplone Number" type="text" id="txtSecondaryMobile" class="form-control medium" style="width:100%;" />
       <br />
 	</div>
     <div class="col-lg-4 " style="padding: 5px;">
@@ -100,12 +100,12 @@
 					
 <div class="col-lg-12">
     <div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
-        <strong>Email <span style="color: red;">*</span>:</strong>
+        <strong>Admin Email <span style="color: red;">*</span>:</strong>
       <br/>  
    </div>
     <div class="col-lg-6 " style="padding: 5px;">
 <input type="hidden" name="email" id="email" />
-<input name="txtPrimaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
+<input name="primaryEmailAddress" type="text" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" pattern="[^ @]*@[^ @]*" placeholder="Email@domain.com"/>
 		<br/>
 	</div>
 </div>
@@ -117,7 +117,7 @@
                                     
                                 </div>
                                 <div class="col-lg-4 " style="padding: 5px;">
-                                    <select name="connectionType" id="ddlConnectionfor" class="form-control medium" style="width:100%;">
+                                    <select name="ddlConnectionfor" id="ddlConnectionfor" class="form-control medium" style="width:100%;">
 		<option value="Personal use">Personal use</option>
 		<option value="Office use">Office use</option>
 		<option value="Small Medium Enterprises">Small Medium Enterprises</option>
@@ -140,7 +140,7 @@
 		</div>
 		<div class="col-lg-6 " style="padding: 5px;">
         <input type="hidden" name="password" id="password" />
-        <input name="txtPassword" type="password" id="txtPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
+        <input name="txtPassword" type="password" id="txtEmailId" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
         </br>
 		</div>
 	</div>
@@ -148,7 +148,7 @@
 																
 <div class="col-lg-12">
 	<div class="col-lg-2 " style="padding: 5px; color: #19bc9c;">
-        <strong>Business Location<span style="color: red;">*</span>:</strong>
+        <strong>Admin Location<span style="color: red;">*</span>:</strong>
         <br />
         <!--label style="font-size: x-small; color:#19bc9c;">
             Help us to serve you better
@@ -156,7 +156,7 @@
     </div>
     <div class="col-lg-6 " style="padding: 5px;">
     
-    <textarea name="txtBusinessAddress" placeholder="Enter Business Location" rows="2" cols="20" id="txtBusinessAddress" class="form-control medium" style="width:100%;">
+    <textarea name="adminLocation" placeholder="Enter Business Location" rows="2" cols="20" id="txtComment" class="form-control medium" style="width:100%;">
 	</textarea><br>
 </div>
 </div>
@@ -165,7 +165,7 @@
 <div class="col-lg-12">
 </br>
 <div class="col-lg-2" style="padding: 5px; color: #19bc9c;">
-    <strong>Personal Note <span style="color: red;">*</span>:</strong>
+    <strong>Nominee Admin <span style="color: red;">*</span>:</strong>
     <br />
     <!--label style="font-size: x-small; color: #19bc9c;">
         Post your enquiry or suggestion
@@ -173,7 +173,7 @@
 </div>
 <div class="col-lg-6 " style="padding: 5px;">
     
-    <textarea name="txtPersonalNote" placeholder="Post your quiry or suggestion" rows="2" cols="20" id="txtPersonalNote" class="form-control medium" style="width:100%;">
+    <textarea name="nominee" placeholder="Post your quiry or suggestion" rows="2" cols="20" id="txtComment" class="form-control medium" style="width:100%;">
 	</textarea><br><br>
 	
  <input type="hidden"  name="hideval" value="false"  /> 
