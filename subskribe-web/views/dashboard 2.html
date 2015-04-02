@@ -25,11 +25,6 @@
        <link href="/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
        <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
     <!-- END PAGE LEVEL  STYLES -->
-	
-	<!-- DataTables STYLES -->
-    <link href="/assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <!-- END DataTables  STYLES -->
-	
      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -382,89 +377,69 @@
                  
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
-                 
-				 <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="dataTables-example_length"><label><select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label></div></div><div class="col-sm-6"><div id="dataTables-example_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" aria-controls="dataTables-example"></label></div></div></div><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                          <div class="row">
+                    <div class="col-lg-6">
+                        <div class="box">
+                            <header>
+                                <h5>User Profile</h5>
+                                <div class="toolbar">
+                                    <div class="btn-group">
+                                        <a href="#sortableTable" data-toggle="collapse" class="btn btn-default btn-sm accordion-toggle minimize-box">
+                                            <i class="icon-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </header>
+                            <div id="sortableTable" class="body collapse in">
+                                <table class="table table-bordered sortableTable responsive-table">
                                     <thead>
-                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 193px;">Rendering engine</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 264px;">Browser</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 242px;">Platform(s)</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 166px;">Engine version</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 121px;">CSS grade</th></tr>
+                                        <tr>
+                                            <th>#<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Name<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Email<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Contact<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                     <tr class="gradeA odd">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Firefox 1.0</td>
-                                            <td class=" ">Win 98+ / OSX.2+</td>
-                                            <td class="center ">1.7</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA even">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Firefox 1.5</td>
-                                            <td class=" ">Win 98+ / OSX.2+</td>
-                                            <td class="center ">1.8</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA odd">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Firefox 2.0</td>
-                                            <td class=" ">Win 98+ / OSX.2+</td>
-                                            <td class="center ">1.8</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA even">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Firefox 3.0</td>
-                                            <td class=" ">Win 2k+ / OSX.3+</td>
-                                            <td class="center ">1.9</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA odd">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Camino 1.0</td>
-                                            <td class=" ">OSX.2+</td>
-                                            <td class="center ">1.8</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA even">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Camino 1.5</td>
-                                            <td class=" ">OSX.3+</td>
-                                            <td class="center ">1.8</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA odd">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Netscape 7.2</td>
-                                            <td class=" ">Win 95+ / Mac OS 8.6-9.2</td>
-                                            <td class="center ">1.7</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA even">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Netscape Browser 8</td>
-                                            <td class=" ">Win 98SE+</td>
-                                            <td class="center ">1.7</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA odd">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Netscape Navigator 9</td>
-                                            <td class=" ">Win 98+ / OSX.2+</td>
-                                            <td class="center ">1.8</td>
-                                            <td class="center ">A</td>
-                                        </tr><tr class="gradeA even">
-                                            <td class="sorting_1">Gecko</td>
-                                            <td class=" ">Mozilla 1.0</td>
-                                            <td class=" ">Win 95+ / OSX.1+</td>
-                                            <td class="center ">1</td>
-                                            <td class="center ">A</td>
-                                        </tr></tbody>
-                                </table><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">6</a></li><li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Next</a></li></ul></div></div></div></div>
+
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td><%= userList[0].username %></td>
+                                            <td><%= userList[0].email %></td>
+                                            <td><%= userList[0].contact %></td>
+                                        </tr>
+
+                                        
+                                    </tbody>
+                                </table>
                             </div>
-                           
+                        </div>
+                        
+                    </div>
+                            
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-				 
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
 
                 
@@ -474,7 +449,52 @@
         <!--END PAGE CONTENT -->
 
          <!-- RIGHT STRIP  SECTION -->
-        
+        <div id="right">
+
+            
+            <div class="well well-small">
+                <ul class="list-unstyled">
+                    <li>Visitor &nbsp; : <span>23,000</span></li>
+                    <li>Users &nbsp; : <span>53,000</span></li>
+                    <li>Registrations &nbsp; : <span>3,000</span></li>
+                </ul>
+            </div>
+            <div class="well well-small">
+                <button class="btn btn-block"> Help </button>
+                <button class="btn btn-primary btn-block"> Tickets</button>
+                <button class="btn btn-info btn-block"> New </button>
+                <button class="btn btn-success btn-block"> Users </button>
+                <button class="btn btn-danger btn-block"> Profit </button>
+                <button class="btn btn-warning btn-block"> Sales </button>
+                <button class="btn btn-inverse btn-block"> Stock </button>
+            </div>
+            <div class="well well-small">
+                <span>Profit</span><span class="pull-right"><small>20%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                </div>
+                <span>Sales</span><span class="pull-right"><small>40%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                </div>
+                <span>Pending</span><span class="pull-right"><small>60%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                </div>
+                <span>Summary</span><span class="pull-right"><small>80%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                </div>
+            </div>
+          
+            
+         
+
+        </div>
          <!-- END RIGHT STRIP  SECTION -->
     </div>
 
@@ -501,15 +521,6 @@
     <script src="assets/js/for_index.js"></script>
    
     <!-- END PAGE LEVEL SCRIPTS -->
-	
-	<!-- DataTables SCRIPTS -->
-    <script src="/assets/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="/assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-     <script>
-         $(document).ready(function () {
-             $('#dataTables-example').dataTable();
-         });
-    </script>
 
 
 </body>
