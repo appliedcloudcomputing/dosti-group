@@ -40,7 +40,9 @@ var _user;
                _user={ 
                 username : user.get('username'),
                 email : user.get('email'),
-                contact : user.get('telephone')
+                contact : user.get('telephone'),
+                dob : user.get('dob'),
+                address : user.get('address')
               }
               console.log(_user.username);
               userList.push(_user);

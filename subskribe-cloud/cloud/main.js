@@ -24,14 +24,15 @@ Parse.Cloud.define('saveUser', function(req, res) {
 	if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
-			//dob: req.params.dob,
+			dob: req.params.dob,
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
+			conntype : req.params.conntype,
 			password: req.params.password,
-			enterprise: req.params.enterprise,
+			//enterprise: req.params.enterprise,
 			address: req.params.address,
-			//contactTime: req.params.contactTime,
+			contactme: req.params.contactme,
 			personalNote: req.params.personalNote,		
 					
 			success: function(message) {
@@ -49,9 +50,10 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
-			enterprise: req.params.enterprise,
+			conntype : req.params.conntype,
+			//enterprise: req.params.enterprise,
 			address: req.params.address,
-			contactTime: req.params.contactTime,
+			contactTime: req.params.contactme,
 			personalNote: req.params.personalNote,
 
 			success: function(message) {
@@ -126,7 +128,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 
 	/***************************** Admin Registration ********************************/
 
-	Parse.Cloud.define('saveAdmin', function(req, res) {
+	Parse.Cloud.define('saveAdmincc', function(req, res) {
 	console.log("save admin called main.js");
 	if(!req.params.id || req.params.id == 0) {
 		admin.save({
@@ -175,7 +177,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	
 /********************************* admin package create **********************/
 
-Parse.Cloud.define('saveAdminpkg', function(req, res) {
+Parse.Cloud.define('saveAdminpkgcc', function(req, res) {
 	console.log("save admin package called main.js");
 	if(!req.params.id || req.params.id == 0) {
 		pkg.save({

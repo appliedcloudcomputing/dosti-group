@@ -76,7 +76,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="#" method="post">
+		<form action="/users/save" method="post">
 		
         <div>
             <header><!-- start of header -->
@@ -101,7 +101,7 @@
         
 	<div class="col-lg-6 " style="padding: 5px;">
 	<input type="hidden" name="f_name" id="f_name"/>
-	<input name="txtName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtName" class="form-control medium" style="width:100%;" />
+	<input name="txtFirstName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtName" class="form-control medium" style="width:100%;" />
 	   </div>
 		
 		</div>
@@ -137,7 +137,7 @@
     <div class="col-lg-3 " style="padding: 5px;">
 	<div class="input-group input-append date" id="dp3" data-date="12-02-2012"
                                  data-date-format="dd-mm-yyyy">
-                                <input class="form-control" type="txtDOB" value="12-02-2012" readonly="" />
+                                <input class="form-control"  type="text" name="txtDOB" value="12-02-2012" readonly="" />
                                 <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                             </div>
 <br/>
@@ -181,7 +181,7 @@
     </div>
     <div class="col-lg-6 " style="padding: 5px;">
     
-    <textarea name="txtBusinessLocation" placeholder="Enter Business Location" rows="2" cols="20" id="txtBusinessLocation" class="form-control medium" style="width:100%;">
+    <textarea name="txtBusinessAddress" placeholder="Enter Business Location" rows="2" cols="20" id="txtBusinessLocation" class="form-control medium" style="width:100%;">
 	</textarea><br>
 </div>
 </div>
@@ -194,13 +194,13 @@
     <div class="col-lg-3 " style="padding: 5px;">
 	<div class="input-group input-append date" id="dp4" data-date="12-02-2012"
                                  data-date-format="dd-mm-yyyy">
-                                <input class="form-control" type="txtDate" value="12-02-2012" readonly="" />
+                                <input class="form-control" type="text" name="txtDate" value="12-02-2012" readonly="" />
                                 <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
                             </div>
 	</div>
 	<div class="col-lg-3" style="padding: 5px;">
 	<div class="input-group bootstrap-timepicker"><div class="bootstrap-timepicker-widget dropdown-menu"><table><tbody><tr><td><a href="#" data-action="incrementHour"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementMinute"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td class="meridian-column"><a href="#" data-action="toggleMeridian"><i class="icon-chevron-up"></i></a></td></tr><tr><td><input type="text" class="bootstrap-timepicker-hour" maxlength="2"></td> <td class="separator">:</td><td><input type="text" class="bootstrap-timepicker-minute" maxlength="2"></td> <td class="separator">&nbsp;</td><td><input type="text" class="bootstrap-timepicker-meridian" maxlength="2"></td></tr><tr><td><a href="#" data-action="decrementHour"><i class="icon-chevron-down"></i></a></td><td class="separator"></td><td><a href="#" data-action="decrementMinute"><i class="icon-chevron-down"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="toggleMeridian"><i class="icon-chevron-down"></i></a></td></tr></tbody></table></div>
-                                <input class="form-control timepicker-default" type="txtTime">
+                                <input class="form-control timepicker-default" type="text" name="txtTime">
                                 <span class="input-group-addon add-on"><i class="icon-time"></i></span>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
     <textarea name="txtPersonalNote" placeholder="Post your queries or suggestion" rows="2" cols="20" id="txtPersonalNote" class="form-control medium" style="width:100%;">
 	</textarea><br><br>
 	
- <input type="hidden"  name="hideval" value="true"  /> 
+ <input type="hidden"  name="hideval" value="Franchisee"  /> 
  <input type="submit" class="styled-button-8" value="Submit Details" /> &nbsp; &nbsp; <input type="reset" class="styled-button-10" value="Clear Details" /> 	
 </div>					
 

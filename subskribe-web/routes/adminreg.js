@@ -26,7 +26,7 @@ router.post('/adminreg', function(req, res, next) {
           
         };
 
-         Parse.Cloud.run('saveAdmin', admindata, {
+         Parse.Cloud.run('saveAdmincc', admindata, {
       success: function(message) {
         console.log("Success.....Moving To Cloud Code Admin Register");
       },

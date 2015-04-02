@@ -24,20 +24,33 @@ router.get('/', function(req, res, next) {
 
 router.post('/save', function(req, res, next) {
   console.log("Called User Save");
-  console.log(req.body.txtPassword);
-	console.log("name :"+ req.body.firstName);
   
+  console.log(req.body.txtFirstName);
+  console.log(req.body.txtMobileNumber);
+  console.log(req.body.txtTelephoneNumber);
+  console.log(req.body.txtDOB);
+  console.log(req.body.txtPrimaryEmailAddress);
+  console.log(req.body.txtconnectionType);
+  console.log(req.body.txtPassword);
+  console.log(req.body.txtContactDate);
+  console.log(req.body.txtTime);
+  console.log(req.body.txtBusinessAddress);
+  console.log(req.body.txtPersonalNote);
+
   var data = {
           'name':req.body.txtFirstName,
          // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
-          'mobile': req.body.mobileNumber, 
-          'telephone':req.body.telephoneNumber,
-          'email': req.body.primaryEmailAddress,
+          'mobile': req.body.txtMobileNumber, 
+          'telephone':req.body.txtTelephoneNumber,
+          'dob' : req.body.txtDOB,
+          'email': req.body.txtPrimaryEmailAddress,
+          'conntype' : req.body.connectionType,
            'password': req.body.txtPassword,
-         'enterprise': req.body.hideval,
-          'address': req.body.businessAddress,
+         //'enterprise': req.body.hideval,
+         'contactme' : req.body.txtContactDate + req.body.txtTime,
+          'address':  req.body.txtBusinessAddress,
           //'contactTime': "06/01/2015",
-          'personalNote':req.body.personalNote,
+          'personalNote':req.body.txtPersonalNote,
           
         };
 

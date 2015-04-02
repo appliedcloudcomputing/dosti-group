@@ -25,7 +25,7 @@ router.post('/creatpkg', function(req, res, next) {
     'pkgType' : req.body.pkgType,
   }	;
 
-   Parse.Cloud.run('saveAdminpkg', pkgdata, {
+   Parse.Cloud.run('saveAdminpkgcc', pkgdata, {
       success: function(message) {
         console.log("Success.....Moving To Cloud Code");
       },
