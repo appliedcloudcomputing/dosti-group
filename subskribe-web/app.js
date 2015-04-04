@@ -25,6 +25,7 @@ var login = require('./routes/login');
 var users = require('./routes/users');
 var dashboard = require('./routes/dashboard');
 var cwd = require('./routes/cwd');
+var editform = require('./routes/editform');
 var app = express();
 
 // view engine setup
@@ -49,7 +50,7 @@ app.use('/login', login);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/cwd',cwd);
-
+//app.use('/editform',editform);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
    

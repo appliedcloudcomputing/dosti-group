@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
 	var currentUser = req.session.user ? JSON.parse(req.session.user) : null;
 
 	if (currentUser) {	
-		res.redirect('/users/');
+		//res.redirect('/users/');
 	} else {
 		res.render('login', { title: 'Login' });
 	}
