@@ -22,11 +22,11 @@ exports.save = function(params) {
 		//SAVING USER
 		var pkg = new Package();
 		
-		pkg.set("pkgname", params.pkgName);
+		pkg.set("pkname", params.pkgName);
 		pkg.set("pkgdesc", params.pkgDesc);
 		pkg.set("pkgprice", params.pkgPrice);
 		pkg.set("pkgvalidity", params.pkgValidity);
-		pkg.set("pkgtype", params.pkgType);
+		
 		
 		pkg.save(null, {
 			success: function(pkg) {

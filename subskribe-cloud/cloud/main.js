@@ -3,8 +3,8 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
- var admin= require('cloud/admin/adminreg.js');
- var pkg = require('cloud/admin/creatpkg.js');
+ var admin= require('cloud/Admin/adminreg.js');
+ var pkg = require('cloud/Admin/creatpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -177,49 +177,6 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	
 /********************************* admin package create **********************/
 
-Parse.Cloud.define('saveAdminpkgcc', function(req, res) {
-	console.log("save admin package called main.js");
-	if(!req.params.id || req.params.id == 0) {
-		pkg.save({
-
-		   'pkgName':req.params.pkgName,
-         
-          'pkgDesc': req.params.pkgDesc, 
-          
-          'pkgPrice': req.params.pkgPrice,
-          
-          'pkgValidity': req.params.pkgValidity,
-
-          'pkgType' : req.params.pkgType,
-           		
-			success: function(message) {
-				res.success(message);
-			},
-			error: function(error) {
-				res.error(error);
-			}
-		});
-
-	} else {
-		pkg.update({
-			
-			'pkgName':req.params.pkgName,
-         
-          'pkgDesc': req.params.pkgDesc, 
-          
-          'pkgPrice': req.params.pkgPrice,
-          
-          'pkgValidity': req.params.pkgValidity,
-           
-			success: function(message) {
-				res.success(message);
-			},
-			error: function(error) {
-				res.error(error);
-			}
-		});
-	}
-});
 
 	
 
@@ -274,10 +231,10 @@ Parse.Cloud.define('saveAdminpkgcc', function(req, res) {
 });
 
 	
-/********************************* admin package create **********************/
+/********************************* Admin Creating Package **********************/
 
-Parse.Cloud.define('saveAdminpkg', function(req, res) {
-	console.log("save admin package called main.js");
+Parse.Cloud.define('creatPackage', function(req, res) {
+	console.log("Creating Admin Package Main.js");
 	if(!req.params.id || req.params.id == 0) {
 		pkg.save({
 
@@ -289,7 +246,6 @@ Parse.Cloud.define('saveAdminpkg', function(req, res) {
           
           'pkgValidity': req.params.pkgValidity,
 
-          'pkgType' : req.params.pkgType,
            		
 			success: function(message) {
 				res.success(message);
@@ -319,3 +275,4 @@ Parse.Cloud.define('saveAdminpkg', function(req, res) {
 		});
 	}
 });
+
