@@ -36,6 +36,7 @@ router.post('/save', function(req, res, next) {
   console.log(req.body.txtTime);
   console.log(req.body.txtBusinessAddress);
   console.log(req.body.txtPersonalNote);
+  console.log(req.body.hideval);
 
   var data = {
           'name':req.body.txtFirstName,
@@ -44,14 +45,14 @@ router.post('/save', function(req, res, next) {
           'telephone':req.body.txtTelephoneNumber,
           'dob' : req.body.txtDOB,
           'email': req.body.txtPrimaryEmailAddress,
-          'conntype' : req.body.connectionType,
+          'conntype' : req.body.txtconnectionType,
            'password': req.body.txtPassword,
          //'enterprise': req.body.hideval,
          'contactme' : req.body.txtContactDate + req.body.txtTime,
           'address':  req.body.txtBusinessAddress,
           //'contactTime': "06/01/2015",
           'personalNote':req.body.txtPersonalNote,
-          
+          'usertype' : req.body.hideval,
         };
 
     Parse.Cloud.run('saveUser', data, {

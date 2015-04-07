@@ -26,7 +26,7 @@ var users = require('./routes/users');
 var dashboard = require('./routes/dashboard');
 var cwd = require('./routes/cwd');
 var feedback = require('./routes/feedback');
-var adminreg = require('./routes/adminreg');
+//var adminreg = require('./routes/adminreg');
 var chngpkg  = require('./routes/chngpkg');
 var creatpkg = require('./routes/creatpkg')
 var app = express();
@@ -54,7 +54,7 @@ app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/cwd',cwd);
 app.use('/feedback',feedback);
-app.use('/adminreg',adminreg);
+//app.use('/adminreg',adminreg);
 app.use('/chngpkg',chngpkg);
 app.use('/creatpkg',creatpkg);
 // catch 404 and forward to error handler

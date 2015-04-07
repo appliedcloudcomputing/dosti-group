@@ -10,7 +10,7 @@ router.post('/save', function(req, res, next) {
   console.log("Called Create package post method");
   //console.log(req.body.oldPassword);
 	//console.log("Pkg Name :"+ req.body.txtPkgName);
-	console.log("Pkg Name :"+ req.body.txtPkgNameame);
+	console.log("Pkg Name :"+ req.body.txtPkgName);
 	console.log("Pkg Desc :"+ req.body.txtPkgDesc);
 	console.log("Pkg Validity :"+ req.body.txtValidity);
   console.log("Pkg Price :"+ req.body.txtPrice);
