@@ -2,6 +2,9 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
+var feed = require('cloud/user/feedback.js');
+ var admin= require('cloud/admin/adminreg.js');
+ var pkg = require('cloud/admin/creatpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -21,14 +24,15 @@ Parse.Cloud.define('saveUser', function(req, res) {
 	if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
-			//dob: req.params.dob,
+			dob: req.params.dob,
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
+			conntype : req.params.conntype,
 			password: req.params.password,
-			enterprise: req.params.enterprise,
+			//enterprise: req.params.enterprise,
 			address: req.params.address,
-			//contactTime: req.params.contactTime,
+			contactme: req.params.contactme,
 			personalNote: req.params.personalNote,		
 					
 			success: function(message) {
@@ -46,9 +50,10 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
-			enterprise: req.params.enterprise,
+			conntype : req.params.conntype,
+			//enterprise: req.params.enterprise,
 			address: req.params.address,
-			contactTime: req.params.contactTime,
+			contactTime: req.params.contactme,
 			personalNote: req.params.personalNote,
 
 			success: function(message) {
@@ -98,38 +103,219 @@ Parse.Cloud.define('chngPassword', function(req, res) {
        
         
     });
+
+
+/*********************************FEEDBACK*********************************/
 		
-	
-
-
-	/*Parse.Cloud.define("chngPassword", function(request, response){
-    Parse.Cloud.useMasterKey();
-
-    var query = new Parse.Query(Parse.User);
-    var newPassword = request.params.newPassword;
-     var user = new User();      
-    query.equalTo("email", request.params.email);
-
-    query.first({
-        success: function(user){
-            console.log("New Password: " + newPassword);
-
-            user.set("password", newPassword);
-             user.setPassword(newPassword);
-
-            user.save(null,{
-                success: function(user){
-                    // The user was saved correctly
-                    res.success(message);
-                },
-                error: function(user, error){
-                    res.error("No se pudo guardar la contraseña");
+	Parse.Cloud.define('saveFeedback', function(req, res) {
+	 	//Parse.Cloud.useMasterKey();
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
+		console.log("In main js save feedback");
+    feed.save({    
+            username : req.params.userName,
+            subject : req.params.subject,
+            desc : req.params.desc,
+			success: function(message){
+             res.success(message);
+        },
+                error: function(error){
+                    res.error(error);
                 }
             });
-        },
-        error: function(error){
-            res.error("No se encontró al usuario");
-        }
+       
+        
     });
-});*/
+
+	/***************************** Admin Registration ********************************/
+
+	Parse.Cloud.define('saveAdmincc', function(req, res) {
+	console.log("save admin called main.js");
+	if(!req.params.id || req.params.id == 0) {
+		admin.save({
+
+		   'adname':req.params.name,
+         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'admobile': req.params.mobile, 
+          'adtelephone': req.params.telephone,
+          'ademail': req.params.email,
+           'adpassword': req.params.password,
+         //'enterprise': req.body.hideval,
+          'adlocation': req.params.location,
+          //'contactTime': "06/01/2015",
+          'adnominee': req.params.nominee,		
+					
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	} else {
+		user.update({
+			'name':req.params.firstName,
+         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'mobile': req.params.mobileNumber, 
+          'telephone':req.params.telephoneNumber,
+          'email': req.params.primaryEmailAddress,
+           'password': req.params.txtPassword,
+         //'enterprise': req.body.hideval,
+          'location': req.params.adminLocation,
+          //'contactTime': "06/01/2015",
+          'nominee':req.params.nominee,	
+
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
+
 	
+/********************************* admin package create **********************/
+
+Parse.Cloud.define('saveAdminpkgcc', function(req, res) {
+	console.log("save admin package called main.js");
+	if(!req.params.id || req.params.id == 0) {
+		pkg.save({
+
+		   'pkgName':req.params.pkgName,
+         
+          'pkgDesc': req.params.pkgDesc, 
+          
+          'pkgPrice': req.params.pkgPrice,
+          
+          'pkgValidity': req.params.pkgValidity,
+
+          'pkgType' : req.params.pkgType,
+           		
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+
+	} else {
+		pkg.update({
+			
+			'pkgName':req.params.pkgName,
+         
+          'pkgDesc': req.params.pkgDesc, 
+          
+          'pkgPrice': req.params.pkgPrice,
+          
+          'pkgValidity': req.params.pkgValidity,
+           
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
+
+	
+
+
+
+	/***************************** Admin Registration ********************************/
+
+	Parse.Cloud.define('saveAdmin', function(req, res) {
+	console.log("save admin called main.js");
+	if(!req.params.id || req.params.id == 0) {
+		admin.save({
+
+		   'adname':req.params.name,
+         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'admobile': req.params.mobile, 
+          'adtelephone': req.params.telephone,
+          'ademail': req.params.email,
+           'adpassword': req.params.password,
+         //'enterprise': req.body.hideval,
+          'adlocation': req.params.location,
+          //'contactTime': "06/01/2015",
+          'adnominee': req.params.nominee,		
+					
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	} else {
+		user.update({
+			'name':req.params.firstName,
+         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'mobile': req.params.mobileNumber, 
+          'telephone':req.params.telephoneNumber,
+          'email': req.params.primaryEmailAddress,
+           'password': req.params.txtPassword,
+         //'enterprise': req.body.hideval,
+          'location': req.params.adminLocation,
+          //'contactTime': "06/01/2015",
+          'nominee':req.params.nominee,	
+
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
+
+	
+/********************************* admin package create **********************/
+
+Parse.Cloud.define('saveAdminpkg', function(req, res) {
+	console.log("save admin package called main.js");
+	if(!req.params.id || req.params.id == 0) {
+		pkg.save({
+
+		   'pkgName':req.params.pkgName,
+         
+          'pkgDesc': req.params.pkgDesc, 
+          
+          'pkgPrice': req.params.pkgPrice,
+          
+          'pkgValidity': req.params.pkgValidity,
+
+          'pkgType' : req.params.pkgType,
+           		
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+
+	} else {
+		pkg.update({
+			
+			'pkgName':req.params.pkgName,
+         
+          'pkgDesc': req.params.pkgDesc, 
+          
+          'pkgPrice': req.params.pkgPrice,
+          
+          'pkgValidity': req.params.pkgValidity,
+           
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});

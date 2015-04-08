@@ -25,11 +25,6 @@
        <link href="/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
        <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
     <!-- END PAGE LEVEL  STYLES -->
-	
-	<!-- DataTables STYLES -->
-    <link href="/assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <!-- END DataTables  STYLES -->
-	
      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -382,37 +377,69 @@
                  
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
-                 <form action="saveedit" method="post">
-				 <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row">
-								<div class="col-sm-6"><div class="dataTables_length" id="dataTables-example_length"><label><input type="submit" name="edit" value="EDIT" onclick="location.href='./editform'"/></label></div></div></div><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                          <div class="row">
+                    <div class="col-lg-6">
+                        <div class="box">
+                            <header>
+                                <h5>User Profile</h5>
+                                <div class="toolbar">
+                                    <div class="btn-group">
+                                        <a href="#sortableTable" data-toggle="collapse" class="btn btn-default btn-sm accordion-toggle minimize-box">
+                                            <i class="icon-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </header>
+                            <div id="sortableTable" class="body collapse in">
+                                <table class="table table-bordered sortableTable responsive-table">
                                     <thead>
-                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 193px;">Name</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 264px;">UserName</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 242px;">Conatct Number</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 166px;">Date Of Birth</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 121px;">Address</th></tr>
+                                        <tr>
+                                            <th>#<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Name<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Email<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                            <th>Contact<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+                                        </tr>
                                     </thead>
-                                        
                                     <tbody>
-                                     <tr class="gradeA odd">
-                                            <td class="sorting_1"><%= userList[0].username %></td>
-                                            <td class=" "><%= userList[0].email %></td>
-                                            <td class=" "><%= userList[0].contact %></td>
-                                            <td class="center "><%= userList[0].dob %></td>
-                                            <td class="center "><%= userList[0].address %></td>
-                                        </tr></tbody>
-                                </table></div>
+
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td><%= userList[0].username %></td>
+                                            <td><%= userList[0].email %></td>
+                                            <td><%= userList[0].contact %></td>
+                                        </tr>
+
+                                        
+                                    </tbody>
+                                </table>
                             </div>
-                           
+                        </div>
+                        
+                    </div>
+                            
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-				</form> 
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
 
                 
@@ -422,7 +449,52 @@
         <!--END PAGE CONTENT -->
 
          <!-- RIGHT STRIP  SECTION -->
-        
+        <div id="right">
+
+            
+            <div class="well well-small">
+                <ul class="list-unstyled">
+                    <li>Visitor &nbsp; : <span>23,000</span></li>
+                    <li>Users &nbsp; : <span>53,000</span></li>
+                    <li>Registrations &nbsp; : <span>3,000</span></li>
+                </ul>
+            </div>
+            <div class="well well-small">
+                <button class="btn btn-block"> Help </button>
+                <button class="btn btn-primary btn-block"> Tickets</button>
+                <button class="btn btn-info btn-block"> New </button>
+                <button class="btn btn-success btn-block"> Users </button>
+                <button class="btn btn-danger btn-block"> Profit </button>
+                <button class="btn btn-warning btn-block"> Sales </button>
+                <button class="btn btn-inverse btn-block"> Stock </button>
+            </div>
+            <div class="well well-small">
+                <span>Profit</span><span class="pull-right"><small>20%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                </div>
+                <span>Sales</span><span class="pull-right"><small>40%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                </div>
+                <span>Pending</span><span class="pull-right"><small>60%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                </div>
+                <span>Summary</span><span class="pull-right"><small>80%</small></span>
+
+                <div class="progress mini">
+                    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                </div>
+            </div>
+          
+            
+         
+
+        </div>
          <!-- END RIGHT STRIP  SECTION -->
     </div>
 
@@ -449,15 +521,6 @@
     <script src="assets/js/for_index.js"></script>
    
     <!-- END PAGE LEVEL SCRIPTS -->
-	
-	<!-- DataTables SCRIPTS -->
-    <script src="/assets/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="/assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-     <script>
-         $(document).ready(function () {
-             $('#dataTables-example').dataTable();
-         });
-    </script>
 
 
 </body>

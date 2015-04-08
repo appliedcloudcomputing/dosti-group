@@ -25,7 +25,12 @@ var login = require('./routes/login');
 var users = require('./routes/users');
 var dashboard = require('./routes/dashboard');
 var cwd = require('./routes/cwd');
+
 var editform = require('./routes/editform');
+
+var feedback = require('./routes/feedback');
+var adminreg = require('./routes/adminreg');
+var creatpkg  = require('./routes/creatpkg');
 var app = express();
 
 // view engine setup
@@ -50,7 +55,13 @@ app.use('/login', login);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/cwd',cwd);
-//app.use('/editform',editform);
+
+app.use('/editform',editform);
+
+app.use('/feedback',feedback);
+app.use('/adminreg',adminreg);
+app.use('/creatpkg',creatpkg);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
    

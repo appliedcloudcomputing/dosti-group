@@ -40,7 +40,9 @@ var _user;
                _user={ 
                 username : user.get('username'),
                 email : user.get('email'),
-                contact : user.get('telephone')
+                contact : user.get('telephone'),
+                dob : user.get('dob'),
+                address : user.get('address')
               }
               console.log(_user.username);
               userList.push(_user);
@@ -73,6 +75,9 @@ var _user;
   }
 });
 
-
+router.post('/saveedit', function(req, res, next) {
+console.log("*********************** Edit Users Information **********************");
+res.render('editform', {error: ""});
+});
 
 module.exports = router;

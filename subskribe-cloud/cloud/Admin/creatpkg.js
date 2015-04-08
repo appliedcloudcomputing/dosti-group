@@ -1,4 +1,4 @@
-var User = Parse.Object.extend("User");
+var Package = Parse.Object.extend("Package");
 
 var Response = {
 	ParametersEmpty: "Please provide complete details",
@@ -10,6 +10,7 @@ var Response = {
 	DeleteSuccess: "Resource deleted successfully!"
 };
 
+
 exports.save = function(params) {
 	console.log("*******************************************************PARAMETERS :"+ JSON.stringify(params));
 	/*if(!params || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
@@ -19,26 +20,21 @@ exports.save = function(params) {
 
 		console.log("**********************SAVING CALLED ");
 		//SAVING USER
-		var user = new User();
-		user.set("name", params.name);
-		user.set("dob", params.dob);
-		user.set("mobile", params.mobile);
-		user.set("telephone", params.telephone);
-		user.set("email", params.email);
-		user.set("password",params.password);
-		user.set("connectiontype", params.conntype);
-		user.set("address", params.address);
-		user.set("contactTime", params.contactme);
-		user.set("personalNote", params.personalNote);
-		user.set("username",params.email);
+		var pkg = new Package();
 		
-		user.save(null, {
-			success: function(user) {
-				console.log("User Save successfully");
+		pkg.set("pkgname", params.pkgName);
+		pkg.set("pkgdesc", params.pkgDesc);
+		pkg.set("pkgprice", params.pkgPrice);
+		pkg.set("pkgvalidity", params.pkgValidity);
+		pkg.set("pkgtype", params.pkgType);
+		
+		pkg.save(null, {
+			success: function(pkg) {
+				console.log("Package created successfully");
 				params.success(Response.SaveSuccess);
 			},
-			error: function(user, error) {
-				console.log("ERROR IN SAVING USER : " + error.message);
+			error: function(pkg, error) {
+				console.log("ERROR IN SAVING package : " + error.message);
 				params.error(Response.InternalServerError);
 			}
  		});
@@ -58,19 +54,19 @@ exports.update = function(params) {
 		var userQuery = new Parse.Query(User);
 		userQuery.get(params.id, {
 			success: function(user) {
-				if(user) {
-					user.set("name", params.name);
-					user.set("dob", params.dob);
-					user.set("mobile", params.mobile);
-					user.set("telephone", params.telephone);
-					user.set("email", params.email);
-					user.set("connectiontype", params.conntype);
-					user.set("address", params.address);
-					user.set("contactTime", params.contactme);
-					user.set("personalNote", params.personalNote);
-					user.set("lastUpdatedBy", currentUser);
-					user.save(null, {
-						success: function(user) {
+				if(admin) {
+					admin.set("name", params.name);
+					admin.set("dob", params.dob);
+					admin.set("mobile", params.mobile);
+					admin.set("telephone", params.telephone);
+					admin.set("email", params.email);
+					admin.set("enterprise", params.enterprise);
+					admin.set("address", params.address);
+					admin.set("contactTime", params.contactTime);
+					admin.set("personalNote", params.personalNote);
+					admin.set("lastUpdatedBy", currentUser);
+					admin.save(null, {
+						success: function(admin) {
 							params.success(Response.UpdateSuccess);
 						},
 						error: function(user, error) {
@@ -89,4 +85,3 @@ exports.update = function(params) {
 		});
 	}
 };
-
