@@ -83,5 +83,9 @@ var _user;
 });
 
 
+router.get('/editform', function(req, res, next) {
+console.log("In edit details");
+res.render('editform', { title: 'Dashboard'});
+});
 
 module.exports = router;

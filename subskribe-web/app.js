@@ -28,7 +28,7 @@ var cwd = require('./routes/cwd');
 var feedback = require('./routes/feedback');
 //var adminreg = require('./routes/adminreg');
 var chngpkg  = require('./routes/chngpkg');
-var creatpkg = require('./routes/creatpkg')
+var creatpkg = require('./routes/creatpkg');
 var app = express();
 
 // view engine setup
