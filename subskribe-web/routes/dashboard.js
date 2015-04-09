@@ -26,7 +26,7 @@ console.log("*********Do IT****************");
  var query = new Parse.Query(Parse.User);
 var userList = [];
 var _user;
- if(req.body.username && req.body.password && ) {
+ if(req.body.username && req.body.password) {
 
   console.log("username: " + req.body.username);
   console.log("password: " + req.body.password);
