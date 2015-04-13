@@ -32,6 +32,7 @@ var feedback = require('./routes/feedback');
 //var adminreg = require('./routes/adminreg');
 var chngpkg  = require('./routes/chngpkg');
 var creatpkg = require('./routes/creatpkg');
+var userlist = require('./routes/userlist');
 var app = express();
 
 // view engine setup
@@ -63,6 +64,7 @@ app.use('/feedback',feedback);
 //app.use('/adminreg',adminreg);
 app.use('/chngpkg',chngpkg);
 app.use('/creatpkg',creatpkg);
+app.use('/userlist',userlist);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

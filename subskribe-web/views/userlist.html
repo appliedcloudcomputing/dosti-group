@@ -14,7 +14,6 @@
         <![endif]-->
     <!-- GLOBAL STYLES -->
     <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.css" />
-	<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/theme.css" />
     <link rel="stylesheet" href="/assets/css/MoneAdmin.css" />
@@ -329,14 +328,26 @@
                 
                 <li class="panel active">
                     <a href="index.html" >
-                        <i class="icon-table"></i> Dashboard
+                        <i class="icon-table"></i> Admin Dashboard
 	   
                        
                     </a>                   
                 </li>
 
-				
-				<li class="panel ">
+
+
+                <li class="panel ">
+                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
+                        <i class="icon-tasks"> </i> My Profile     
+	   
+                        <span class="pull-right">
+                          <i class="icon-angle-left"></i>
+                        </span>
+                       &nbsp; <span class="label label-default"></span>&nbsp;
+                    </a>
+                    
+                </li>
+                <li class="panel ">
                     <a href="/users/cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
                         <i class="icon-pencil"></i> Change Password
 	   
@@ -347,20 +358,11 @@
                     </a>
                     
                 </li>
-				
-				<li class="panel ">
-                    <a href="/users/cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
-                        <i class="icon-pencil"></i> Feedback
-	   
-                        <span class="pull-right">
-                            <i class="icon-angle-left"></i>
-                        </span>
-                          &nbsp; <span class="label label-success"></span>&nbsp;
-                    </a>
-                    
-                </li>
 
-				</ul>
+                
+                <li><a href="login.html"><i class="icon-signin"></i> Login Page </a></li>
+
+            </ul>
 
         </div>
         <!--END MENU SECTION -->
@@ -373,112 +375,65 @@
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1> User Dashboard </h1>
+                        <h1> Dashboard </h1>
                     </div>
                 </div>
                   <hr />
                  
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
-                 
-				<form action="/chngpkg/save" method="post">          
-        <div class="row">
-    <div id="UpdatePanel1">
+                 <form action="list" method="post">
+                  
+				 <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            DataTables Advanced Tables
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row">
 
-        
-    <div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
-       <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold;margin-left:-20%;">Change Package<br /> <br /></strong> <p>
-    </div>
+								<div class="col-sm-6"><div class="dataTables_length" id="dataTables-example_length"><label></label></div></div></div><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
 
-<div class="col-lg-12">
-	<div class="col-lg-2 " style="padding: 5px;">
-        <strong>Description<span style="color: red;"></span></strong>
-        <br />
-        </div>
-    <div class="col-lg-6 " style="padding: 5px;">
-    
-    <textarea name="txtDesc"  rows="2" cols="20" id="txtBusinessLocation" class="form-control medium" style="width:100%;">
-	</textarea><br>
-</div>
-</div>
+								<div class="col-sm-6"><div class="dataTables_length" id="dataTables-example_length"><label></div></div></div><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
 
-       <div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Current Package<span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-        <select class="form-control" name="txtCurrent">
-            <% for(var i = 0; i < userList.length; i++) { %>
-            <option value=1><%= userList[i].pkname %></option>
-             <% } %>
-            </select>
-        </br>
-        </div>
-    </div>
-
-	<div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Validity <span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-        <select class="form-control" name="txtValidity">
-            <% for(var i = 0; i < userList.length; i++) { %>
-            <option value=1><%= userList[i].pkgvalidity %></option>
-             <% } %>
-            </select>
-        </br>
-        </div>
-    </div>
-
-	 <div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Price  <span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
-		</br>
-	    </div>
-		</div>
-        
-	
-	
-	<div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Renew type <span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-        <select class="form-control">
-            <option>Immediate </option>
-            <option>Schedule to next renewal</option>
-			</select>
-        </br>
-        </div>
-    </div>
-<script>
-function myFunction() {
-    console.log("In console");
-    var x = document.getElementById("txtCurrent").value;
-    console.log(x);
-    var y = document.getElementById("txtValidity").value;
-    console.log(y);
-    var price= x * y;
-    document.getElementById("txtPrice").innerHTML= price;
-}
-</script>
-
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-	  <input type="submit" class="btn btn-primary"></a> 
-       <!--button type="submit" class="btn btn-default">Submit</button-->
-
-      </div>
-                
-                       
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 121px;">Sr. No</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 193px;">Name</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 264px;">Email</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 242px;">Address</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 166px;">Connection Type</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 121px;">Mobile</th>
+                                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 121px;">Telephone</th>
+                                              <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 121px;">Access type</th>
+                                               
+                                        </tr>
+                                    </thead>
+                                      <tbody>
+                                         <% for(var i = 1; i < userlist.length; i++) { %>
+                                     <tr class="gradeA odd">
+                                            <td class=" "><%= i %></td>
+                                            <td class="sorting_1"><%= userlist[i].username %></td>
+                                            <td class=" "><%= userlist[i].email %></td>
+                                            <td class=" "><%= userlist[i].address %></td>
+                                            <td class="center "><%= userlist[i].connectiontype %></td>
+                                            <td class="center "><%= userlist[i].mobile %></td>
+                                            <td class="sorting_1"><%= userlist[i].telephone %></td>
+                                            <td class=" "><%= userlist[i].usertype %></td>
+                                           
+                                            
+                                        </tr> <% } %></tbody>  
+                                   
+                                </table></div>
+                            </div>
+                           
+                        </div>
                     </div>
-                         </form>    
-             
-				 
+                </div>
+            </div>
+				</form> 
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
 
                 
@@ -491,7 +446,7 @@ function myFunction() {
         
          <!-- END RIGHT STRIP  SECTION -->
     </div>
-
+</form>
     <!--END MAIN WRAPPER -->
 
     <!-- FOOTER >
@@ -501,19 +456,18 @@ function myFunction() {
     <END FOOTER -->
 
 
-
     <!-- GLOBAL SCRIPTS -->
-    <script src="/assets/plugins/jquery-2.0.3.min.js"></script>
-     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="assets/plugins/jquery-2.0.3.min.js"></script>
+     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- END GLOBAL SCRIPTS -->
 
     <!-- PAGE LEVEL SCRIPTS -->
-    <script src="/assets/plugins/flot/jquery.flot.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.time.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.stack.js"></script>
-    <script src="/assets/js/for_index.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.time.js"></script>
+     <script  src="assets/plugins/flot/jquery.flot.stack.js"></script>
+    <script src="assets/js/for_index.js"></script>
    
     <!-- END PAGE LEVEL SCRIPTS -->
 	

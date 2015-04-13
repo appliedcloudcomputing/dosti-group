@@ -92,7 +92,7 @@ var _user;
 router.post('/saveedit', function(req, res, next) {
 console.log("*********************** Edit Users Information **********************");
 res.render('editform', {error: ""});
-
+});
 
 router.get('/editform', function(req, res, next) {
 console.log("In edit details");

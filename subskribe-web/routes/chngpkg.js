@@ -1,87 +1,45 @@
 var express = require('express');
 var router = express.Router();
-var pkgs = Parse.Object.extend("Package");
+
 router.get('/chngpkg', function(req, res, next) {
+console.log("Changing Package");
+var userList = [];
 
-  console.log("Called Create package page");
-  var currentUser = Parse.User.current();
-
-  if (currentUser) 
-  {
-    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
-    var _u = {
-       name : currentUser.get("name"),
-    }
-     var userList = [];
-      
-      var userQuery = new Parse.Query(Parse.User);
+     
+      var userQuery = new Parse.Query(Parse.Package);
+       console.log("*****");
       userQuery.find({
         success: function(users) 
         {
-          console.log('USER SUCCESS');
+          console.log('Package success');
           if(users) {
             users.forEach(function(user) 
             {
               var _user = {
 
-                email: user.get('email'),
-                username:user.get('username')
-               
+                pkname: user.get('pkname'),
+                pkgvalidity:user.get('pkgvalidity')
                           }
               userList.push(_user);
             });
-            res.render('userList', {userList: userList, user : _u});
-
-  console.log("Called Change package page");
-      var pkgList = [];
-      
-      var pkgQuery = new Parse.Query(Parse.Package);
-      pkgQuery.find({
-        success: function(pkgs) 
-        {
-          console.log('USER SUCCESS');
-          if(pkgs) {
-            pkgs.forEach(function(pkgs) 
-            {
-              var _user = {
-
-                pkname: pkgs.get('pkname'),
-                pkgvalidity: pkgs.get('pkgvalidity'),
-                
-                          }
-              pkgList.push(_user);
-            });
-            res.render('chngpkg', {pkgList: pkgList});
-
+            res.render('chngpkg', {userList: userList});
            } 
 
            else 
            {
-            console.log('NO USERS PRESENT');
+            console.log('NO List PRESENT');
            }
         },
         error: function(error) {
-          console.log('ERROR FINDING USERS: ' + error.message);
+          console.log('ERROR FINDING List: ' + error.message);
         }
       });
 
-
-  }else {
-      // show the signup or login page
-    res.render('login', {title: 'Login', message: Response.InvalidLogin});
-  }   
-
-  res.render('chngpkg', {error: ""});
 });
 
 
-  });  
-  
 
-
-
-
-router.post('/save', function(req, res, next) {
+  router.post('/save', function(req, res, next) {
   console.log("Called Change pkg package post method");
   //console.log(req.body.oldPassword);
 	//console.log("Pkg Name :"+ req.body.txtPkgName);
