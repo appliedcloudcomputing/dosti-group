@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-
+var pkgs = Parse.Object.extend("Package");
 router.get('/chngpkg', function(req, res, next) {
+
   console.log("Called Create package page");
   var currentUser = Parse.User.current();
 
@@ -30,6 +31,28 @@ router.get('/chngpkg', function(req, res, next) {
               userList.push(_user);
             });
             res.render('userList', {userList: userList, user : _u});
+
+  console.log("Called Change package page");
+      var pkgList = [];
+      
+      var pkgQuery = new Parse.Query(Parse.Package);
+      pkgQuery.find({
+        success: function(pkgs) 
+        {
+          console.log('USER SUCCESS');
+          if(pkgs) {
+            pkgs.forEach(function(pkgs) 
+            {
+              var _user = {
+
+                pkname: pkgs.get('pkname'),
+                pkgvalidity: pkgs.get('pkgvalidity'),
+                
+                          }
+              pkgList.push(_user);
+            });
+            res.render('chngpkg', {pkgList: pkgList});
+
            } 
 
            else 
@@ -42,6 +65,7 @@ router.get('/chngpkg', function(req, res, next) {
         }
       });
 
+
   }else {
       // show the signup or login page
     res.render('login', {title: 'Login', message: Response.InvalidLogin});
@@ -51,8 +75,14 @@ router.get('/chngpkg', function(req, res, next) {
 });
 
 
+  });  
+  
+
+
+
+
 router.post('/save', function(req, res, next) {
-  console.log("Called Create package post method");
+  console.log("Called Change pkg package post method");
   //console.log(req.body.oldPassword);
 	//console.log("Pkg Name :"+ req.body.txtPkgName);
   

@@ -29,7 +29,6 @@ console.log("*********Do IT****************");
 var userList = [];
 var _user;
 
-
  if(req.body.username && req.body.password) {
 
   console.log("username: " + req.body.username);
@@ -89,9 +88,16 @@ var _user;
   }
 });
 
+
 router.post('/saveedit', function(req, res, next) {
 console.log("*********************** Edit Users Information **********************");
 res.render('editform', {error: ""});
+
+
+router.get('/editform', function(req, res, next) {
+console.log("In edit details");
+res.render('editform', { title: 'Dashboard'});
+
 });
 
 module.exports = router;
