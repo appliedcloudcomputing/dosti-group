@@ -27,12 +27,16 @@ console.log("*********Do IT****************");
 var userList = [];
 var _user;
  if(req.body.username && req.body.password) {
+
   console.log("username: " + req.body.username);
-  console.log("username: " + req.body.password);
+  console.log("password: " + req.body.password);
     Parse.User.logIn(req.body.username, req.body.password, {
+
       success: function(user) {
         console.log("*************LOGIN SUCCESS*************");
 
+
+        
         query.equalTo("username",req.body.username);
         query.first({
             success: function(user) {
@@ -50,13 +54,13 @@ var _user;
             },
             error:function(error){
               console.log(error);
-
             }
+            });
            
-          });
+          },
 
          // res.render('dashboard',{userList: userList});
-      },
+      
       error: function(user, error) {
         console.log('INSIDE LOGIN ERROR: 500' + error.message);
         var response = {
@@ -66,7 +70,10 @@ var _user;
         res.end(JSON.stringify(response));
       }
     });
-  } else {
+  
+  }
+
+  else {
     var response = {
       message: "Bad request!",
       status: 400
@@ -76,5 +83,9 @@ var _user;
 });
 
 
+router.get('/editform', function(req, res, next) {
+console.log("In edit details");
+res.render('editform', { title: 'Dashboard'});
+});
 
 module.exports = router;

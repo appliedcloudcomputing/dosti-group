@@ -8,7 +8,7 @@ router.get('/feedback', function(req, res, next) {
 });
 
 
-router.post('/feedback', function(req, res, next) {
+router.post('/save', function(req, res, next) {
   	console.log("Called Post Of Feedback");
   	console.log(req.body.txtUsername);
 	console.log(req.body.txtSubject);
