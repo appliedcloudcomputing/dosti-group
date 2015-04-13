@@ -3,6 +3,50 @@ var router = express.Router();
 
 router.get('/chngpkg', function(req, res, next) {
   console.log("Called Create package page");
+  var currentUser = Parse.User.current();
+
+  if (currentUser) 
+  {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+    var _u = {
+       name : currentUser.get("name"),
+    }
+     var userList = [];
+      
+      var userQuery = new Parse.Query(Parse.User);
+      userQuery.find({
+        success: function(users) 
+        {
+          console.log('USER SUCCESS');
+          if(users) {
+            users.forEach(function(user) 
+            {
+              var _user = {
+
+                email: user.get('email'),
+                username:user.get('username')
+               
+                          }
+              userList.push(_user);
+            });
+            res.render('userList', {userList: userList, user : _u});
+           } 
+
+           else 
+           {
+            console.log('NO USERS PRESENT');
+           }
+        },
+        error: function(error) {
+          console.log('ERROR FINDING USERS: ' + error.message);
+        }
+      });
+
+  }else {
+      // show the signup or login page
+    res.render('login', {title: 'Login', message: Response.InvalidLogin});
+  }   
+
   res.render('chngpkg', {error: ""});
 });
 
@@ -29,14 +73,7 @@ router.post('/save', function(req, res, next) {
     'pkgType' : req.body.pkgType,
   }	;
 
-   Parse.Cloud.run('saveAdminpkgcc', pkgdata, {
-      success: function(message) {
-        console.log("Success.....Moving To Cloud Code");
-      },
-      error: function(error) {
-        console.log("Error..........");
-      }
-});
+   
 });
 
 module.exports = router;

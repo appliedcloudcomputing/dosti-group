@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+
+
 var Response = {
 	InvalidLogin: 'Invalid Login!'
 }
@@ -26,15 +28,18 @@ console.log("*********Do IT****************");
  var query = new Parse.Query(Parse.User);
 var userList = [];
 var _user;
- if(req.body.username && req.body.password && ) {
+
+
+ if(req.body.username && req.body.password) {
 
   console.log("username: " + req.body.username);
   console.log("password: " + req.body.password);
     Parse.User.logIn(req.body.username, req.body.password, {
 
+      
       success: function(user) {
         console.log("*************LOGIN SUCCESS*************");
-
+            
 
         
         query.equalTo("username",req.body.username);
@@ -47,8 +52,10 @@ var _user;
                 contact : user.get('telephone'),
                 dob : user.get('dob'),
                 address : user.get('address')
+               
               }
-              console.log(_user.username);
+              
+
               userList.push(_user);
                res.render('dashboard',{userList: userList});
             },
