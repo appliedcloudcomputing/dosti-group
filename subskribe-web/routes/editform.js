@@ -10,7 +10,6 @@ router.get('/editform', function(req, res, next) {
 
 router.get('/saveedit', function(req, res, next) {
   console.log("Post Of Edit Form");
-  //res.render('franch', {error: ""});
   res.render('editform', {error: ""});
 
 });
