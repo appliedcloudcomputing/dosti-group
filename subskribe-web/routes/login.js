@@ -6,10 +6,13 @@ var Response = {
 }
 
 router.get('/', function(req, res, next) {
-  console.log("Called Index");
-  res.render('login', {error: ""});
+  var currentUser = req.session.user ? JSON.parse(req.session.user) : null; 
+  if (currentUser) {
+    res.render('dashboard', { username:''});
+  } else {
+    res.redirect('login');
+  }
 }); 
-
 
 router.post('/', function(req, res) {
   
@@ -21,7 +24,7 @@ router.post('/', function(req, res) {
       if(user) {
         console.log("USER FOUND");
         //req.session.user = JSON.stringify(user);
-        res.render('dashboard');
+        res.redirect('/dashboard');
       } else {
         console.log("USER NOT FOUND");
         res.render('login', {title: 'Login', message: Response.InvalidLogin}); 

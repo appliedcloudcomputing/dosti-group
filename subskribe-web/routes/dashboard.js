@@ -1,36 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-
-
-var Response = {
-	InvalidLogin: 'Invalid Login!'
-}
-
+/* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log("Called DASHBOARD");
-  res.render('dashboard', {error: ""});
-});
+  console.log('Rendering dashboard page...');
+      
 
-
-/*router.post('/saveedit', function(req, res, next) {
-  console.log("*********************** Edit Users Information **********************");
-  
-});
-
-router.get('/editform', function(req, res, next) {
-console.log("In edit details");
-var currentUser = req.session.user ? JSON.parse(req.session.user) : null; 
+var currentUser = Parse.User.current();
   if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
     var _user = {
        name : currentUser.get("name"),
     }
-res.render('editform',{user : _user});
-}
-else {
-    res.redirect('/login');
-  }
+      res.render('dashboard', {user : _user});
 
-});*/
-
+  } else {
+      // show the signup or login page
+    res.render('login', {title: 'Login', message: Response.InvalidLogin});
+  }   
+  
+});
 module.exports = router;
