@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   console.log('Rendering dashboard page...');
       
 
+
 var currentUser = Parse.User.current();
   if (currentUser) {
     console.log("CURRENT USER : "+ JSON.stringify(currentUser));
@@ -13,6 +14,8 @@ var currentUser = Parse.User.current();
        name : currentUser.get("name"),
     }
       res.render('dashboard', {user : _user});
+
+
 
   } else {
       // show the signup or login page
