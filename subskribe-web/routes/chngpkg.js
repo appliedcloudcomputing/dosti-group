@@ -29,7 +29,7 @@ router.get('/chngpkg', function(req, res, next) {
             console.log('NO USERS PRESENT');
            }
         },
-        error: function(error) {
+        error:function(error) {
           console.log('ERROR FINDING USERS: ' + error.message);
         }
       });

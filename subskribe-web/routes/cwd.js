@@ -7,13 +7,13 @@ var router = express.Router();
 });
 
 */
-router.get('/cwd', function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log("Called Changed Password");
   res.render('cwd', {error: ""});
 });
 
 
-router.post('/', function(req, res, next) {
+router.post('/save', function(req, res, next) {
   console.log("Called CWD.JS");
   console.log(req.body.oldPassword);
 	console.log("Old PAssword :"+ req.body.oldPassword);

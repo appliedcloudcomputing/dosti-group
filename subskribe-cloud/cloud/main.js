@@ -3,7 +3,7 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/admin/creatpkg.js');
+var pkg = require('cloud/Admin/creatpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -126,53 +126,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
         
     });
 
-	/***************************** Admin Registration ********************************/
-
-	Parse.Cloud.define('saveAdmincc', function(req, res) {
-	console.log("save admin called main.js");
-	if(!req.params.id || req.params.id == 0) {
-		user.save({
-
-		   'adname':req.params.name,
-         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
-          'admobile': req.params.mobile, 
-          'adtelephone': req.params.telephone,
-          'ademail': req.params.email,
-           'adpassword': req.params.password,
-         //'enterprise': req.body.hideval,
-          'adlocation': req.params.location,
-          //'contactTime': "06/01/2015",
-          'adnominee': req.params.nominee,		
-					
-			success: function(message) {
-				res.success(message);
-			},
-			error: function(error) {
-				res.error(error);
-			}
-		});
-	} else {
-		user.update({
-			'name':req.params.firstName,
-         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
-          'mobile': req.params.mobileNumber, 
-          'telephone':req.params.telephoneNumber,
-          'email': req.params.primaryEmailAddress,
-           'password': req.params.txtPassword,
-         //'enterprise': req.body.hideval,
-          'location': req.params.adminLocation,
-          //'contactTime': "06/01/2015",
-          'nominee':req.params.nominee,	
-
-			success: function(message) {
-				res.success(message);
-			},
-			error: function(error) {
-				res.error(error);
-			}
-		});
-	}
-});
+	
 
 	
 /********************************* admin package create **********************/

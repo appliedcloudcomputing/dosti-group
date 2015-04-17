@@ -11,10 +11,6 @@ var router = express.Router();
 
 
 
-router.get('/franch', function(req, res, next) {
-  console.log("Called Index");
-  res.render('franch', {error: ""});
-});
 
 
 router.get('/', function(req, res, next) {
