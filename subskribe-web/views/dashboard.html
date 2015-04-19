@@ -354,7 +354,7 @@
                     
                 </li>
                 <li class="panel ">
-                    <a href="./cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                    <a href="/cwd/" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
                         <i class="icon-pencil"></i> Change Password
        
                         <span class="pull-right">
@@ -403,12 +403,16 @@
                 <div class="table-responsive">
 <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row">
 
-<lable> Name </lable>
-<lable name="lblName" id="lblName"  style="display: block;">  </lable>
-
-<button type="button" id="editbutton" onclick="display()">Edit</button>
- <button type="submit" id="updatebutton" style ="display: none;">Update</button>
-     
+<table>
+    <tr>
+        <td>Name</td><td><label name="lblName" id="lblName" value="Hell"></label>
+        <br/><input type="text" name="txtName" id="txtName" value="Is here" /></td>
+    </tr>
+    <tr>
+<td><button type="button" id="editbutton" onclick="display()">Edit</button></td>
+ </td><button type="submit" id="updatebutton" style ="display: none;">Update</button></td>
+    </tr>
+  </table>   
 </div>
 </div>
 </div>

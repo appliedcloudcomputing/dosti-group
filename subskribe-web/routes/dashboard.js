@@ -9,28 +9,25 @@ var Response = {
 
 router.get('/', function(req, res, next) {
   console.log("Called DASHBOARD");
-  res.render('dashboard', {error: ""});
-});
-
-
-/*router.post('/saveedit', function(req, res, next) {
-  console.log("*********************** Edit Users Information **********************");
-  
-});
-
-router.get('/editform', function(req, res, next) {
-console.log("In edit details");
-var currentUser = req.session.user ? JSON.parse(req.session.user) : null; 
+  var currentUser = Parse.User.current();
   if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
     var _user = {
-       name : currentUser.get("name"),
-    }
-res.render('editform',{user : _user});
-}
-else {
-    res.redirect('/login');
+       name : currentUser.get("name"), 
+      username : currentUser.get("username"),
+      address : currentUser.get("address"),
+      connectiontype : currentUser("connectiontype"),
+      dob : currentUser.get("dob"),
+      email : currentUser.get("email"),
+      mobile : currentUser.get("mobile"),
+      telephone : currentUser.get("telephone"),
+      personalnote : currentUser.get("personalNote"),
+      usertype : currentUser.get("usertype"),
   }
-
-});*/
+  res.render('dashboard', {user : _user});
+  } else {
+    res.render('login', {title: 'Login', message: Response.InvalidLogin});
+  }   
+});
 
 module.exports = router;
