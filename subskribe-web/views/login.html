@@ -15,9 +15,11 @@
         <![endif]-->
     <!-- GLOBAL STYLES -->
      <!-- PAGE LEVEL STYLES -->
-     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/css/login.css" />
-    <link rel="stylesheet" href="assets/plugins/magic/magic.css" />
+     <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.css" />
+	 <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/signin.css" />
+	<link rel="stylesheet" href="/assets/js/signin.js" />
+    <link rel="stylesheet" href="/assets/plugins/magic/magic.css" />
      <!-- END PAGE LEVEL STYLES -->
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,66 +29,61 @@
 </head>
     <!-- END HEAD -->
 
-    <!-- BEGIN BODY -->
-<body >
-
-   <!-- PAGE CONTENT --> 
-    <div class="container">
-    <div class="text-center">
-        <img src="assets/img/logo.png" id="logoimg" alt=" Logo" />
-    </div>
-    <div class="tab-content">
-        <div id="login" class="tab-pane active">
-            <form action="/login/" class="form-signin" method="post">
-                <p class="text-muted text-center btn-block btn btn-primary btn-rect">
-                    Enter your username and password
-                </p>
-                <input type="text" name="username" placeholder="Username" class="form-control" />
-                <input type="password" name="password" placeholder="Password" class="form-control" />
-                <button class="btn text-muted text-center btn-danger" type="submit">Sign in</button>
-				
-            </form>
-        </div>
-        <div id="forgot" class="tab-pane">
-            <!--form action="index.html" class="form-signin">
-                <p class="text-muted text-center btn-block btn btn-primary btn-rect">Enter your valid e-mail</p>
-                <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" />
-                <br />
-                <button class="btn text-muted text-center btn-success" type="submit">Recover Password</button>
-            </form>
-        </div>
-        <div id="signup" class="tab-pane">
-            <form action="index.html" class="form-signin">
-                <p class="text-muted text-center btn-block btn btn-primary btn-rect">Please Fill Details To Register</p>
-                 <input type="text" placeholder="First Name" class="form-control" />
-                 <input type="text" placeholder="Last Name" class="form-control" />
-                <input type="text" placeholder="Username" class="form-control" />
-                <input type="email" placeholder="Your E-mail" class="form-control" />
-                <input type="password" placeholder="password" class="form-control" />
-                <input type="password" placeholder="Re type password" class="form-control" />
-                <button class="btn text-muted text-center btn-success" type="submit">Register</button>
-            </form-->
-        </div>
-    </div>
-    <div class="text-center">
-        <ul class="list-inline">
-            <li><a class="text-muted" href="login.html" data-toggle="tab">Login</a></li>
-            <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
-            <li><a class="text-muted" href="index.html" data-toggle="tab">Signup</a></li>
-        </ul>
-    </div>
-
-
-</div>
-
-	  <!--END PAGE CONTENT -->     
-	      
-      <!-- PAGE LEVEL SCRIPTS -->
-      <script src="/assets/plugins/jquery-2.0.3.min.js"></script>
-      <script src="/assets/plugins/bootstrap/js/bootstrap.js"></script>
-   <script src="/assets/js/login.js"></script>
-      <!--END PAGE LEVEL SCRIPTS -->
-
-</body>
-    <!-- END BODY -->
-</html>
+<!-- 
+ * parallax_login.html
+ * @Author original @msurguy (tw) -> http://bootsnipp.com/snippets/featured/parallax-login-form
+ * @Tested on FF && CH
+ * @Reworked by @kaptenn_com (tw)
+ * @package PARALLAX LOGIN.
+-->
+        <script src="http://mymaplist.com/js/vendor/TweenLite.min.js">
+		</script>
+        <body>
+            <div class="container">
+                <div class="row vertical-offset-100">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">                                
+                                <div class="row-fluid user-row">
+                                    <img src="http://s11.postimg.org/7kzgji28v/logo_sm_2_mr_1.png" class="img-responsive" alt="Conxole Admin"/>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form accept-charset="UTF-8" role="form" class="form-signin">
+                                    <fieldset>
+                                        <label class="panel-login">
+                                            <div class="login_result"></div>
+                                        </label>
+                                        <input class="form-control" placeholder="Username" id="username" type="text">
+                                        <input class="form-control" placeholder="Password" id="password" type="password">
+                                        <br>
+                                        <input class="btn btn-lg btn-success btn-block" type="submit" id="login" value="Login »">
+										<input class="btn btn-lg btn-primary btn-block" type="submit" id="login" value="Signup »">
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+           <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+		   <script>
+					   
+			$(document).ready(function() {
+				$(document).mousemove(function(event) {
+					TweenLite.to($("body"), 
+					.5, {
+						css: {
+							backgroundPosition: "" + parseInt(event.pageX / 8) + "px " + parseInt(event.pageY / '12') + "px, " + parseInt(event.pageX / '15') + "px " + parseInt(event.pageY / '15') + "px, " + parseInt(event.pageX / '30') + "px " + parseInt(event.pageY / '30') + "px",
+							"background-position": parseInt(event.pageX / 8) + "px " + parseInt(event.pageY / 12) + "px, " + parseInt(event.pageX / 15) + "px " + parseInt(event.pageY / 15) + "px, " + parseInt(event.pageX / 30) + "px " + parseInt(event.pageY / 30) + "px"
+						}
+					})
+				})
+			});
+		   </script>
+		   
+		   
+		   
+			</html>

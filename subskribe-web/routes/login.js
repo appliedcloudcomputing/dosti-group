@@ -6,6 +6,7 @@ var Response = {
 }
 
 router.get('/', function(req, res, next) {
+
   console.log("Called Login");
   var currentUser = Parse.User.current();
    if (currentUser) {
@@ -18,6 +19,14 @@ router.get('/', function(req, res, next) {
     res.render('login', {title: 'Login', message: Response.InvalidLogin});
   }   
 });
+
+  var currentUser = req.session.user ? JSON.parse(req.session.user) : null; 
+  if (currentUser) {
+    res.render('dashboard', { username:''});
+  } else {
+    res.redirect('login');
+  }
+}); 
 
 
 router.post('/', function(req, res) {
@@ -44,8 +53,13 @@ var _user = {
     success: function(user) {
       if(user) {
         console.log("USER FOUND");
+
         req.session.user = JSON.stringify(user);
         res.render('dashboard',{user : _user});
+
+        //req.session.user = JSON.stringify(user);
+        res.redirect('/dashboard');
+
       } else {
         console.log("USER NOT FOUND");
         res.render('login', {title: 'Login', message: Response.InvalidLogin}); 

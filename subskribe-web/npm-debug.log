@@ -1,6 +1,6 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'd:\\node.exe',
-1 verbose cli   'd:\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'start' ]
 2 info using npm@2.5.1
 3 info using node@v0.12.0
@@ -11,16 +11,22 @@
 8 info dosti-web@0.0.0 Failed to exec start script
 9 verbose stack Error: dosti-web@0.0.0 start: `node ./bin/www`
 9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (d:\node_modules\npm\lib\utils\lifecycle.js:213:16)
+9 verbose stack     at EventEmitter.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
 9 verbose stack     at EventEmitter.emit (events.js:110:17)
-9 verbose stack     at ChildProcess.<anonymous> (d:\node_modules\npm\lib\utils\spawn.js:14:12)
+9 verbose stack     at ChildProcess.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:14:12)
 9 verbose stack     at ChildProcess.emit (events.js:110:17)
 9 verbose stack     at maybeClose (child_process.js:1008:16)
 9 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
 10 verbose pkgid dosti-web@0.0.0
+<<<<<<< HEAD
 11 verbose cwd c:\Users\Intel\Documents\GitHub\subskribe\subskribe-web
 12 error Windows_NT 6.1.7601
 13 error argv "d:\\node.exe" "d:\\node_modules\\npm\\bin\\npm-cli.js" "start"
+=======
+11 verbose cwd c:\Users\draghu007\Documents\GitHub\subskribe\subskribe-web
+12 error Windows_NT 6.1.7600
+13 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+>>>>>>> acd15b7487035ec91ee118a40d3f14bafe7e4384
 14 error node v0.12.0
 15 error npm  v2.5.1
 16 error code ELIFECYCLE
