@@ -5,7 +5,9 @@ router.get('/', function(req, res, next) {
  var currentUser = Parse.User.current();
   if (currentUser) {
     console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+    
     var _user = {
+        id : currentUser.get("objectId"),
        name : currentUser.get("name"),
        username : currentUser.get("username"),
        address : currentUser.get("address"),

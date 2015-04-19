@@ -481,6 +481,8 @@
 <lable>User Type</lable> <lable name="lblUsertype" id="lblUsertype"><%= user.usertype %></lable>
 <br/><input type="text" name="txtUsertype" id="txtUsertype" value="<%= user.usertype %>" style ="display: none;" />
 
+<input type="text" name="txtUserid" id="txtUserid" value="<%= user.id %>" />
+<lable name="lblP" id="lblP"><%= user.id %></lable>
     <button type="button" onclick="display()" style= "float: right;" class="btn btn-lg btn-primary"><i class="fa fa-pencil"></i> Edit</button>
 <button type="button" id="button" style ="float:right; display: none;"class="btn btn-lg btn-success"><i class="fa fa-check"></i>Update</button>
 </div>
