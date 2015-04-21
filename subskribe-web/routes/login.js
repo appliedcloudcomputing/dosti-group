@@ -6,13 +6,17 @@ var Response = {
 }
 
 router.get('/', function(req, res, next) {
-  console.log("Called Index");
-  res.render('login', {error: ""});
+
+  var currentUser = req.session.user ? JSON.parse(req.session.user) : null; 
+  if (currentUser) {
+    res.render('dashboard', { username:''});
+  } else {
+    res.redirect('login');
+  }
 }); 
 
 
 router.post('/', function(req, res) {
-  
   var username = req.body.username;
   var password = req.body.password;
 
@@ -21,7 +25,7 @@ router.post('/', function(req, res) {
       if(user) {
         console.log("USER FOUND");
         //req.session.user = JSON.stringify(user);
-        res.render('dashboard');
+        res.redirect('/dashboard');
       } else {
         console.log("USER NOT FOUND");
         res.render('login', {title: 'Login', message: Response.InvalidLogin}); 
@@ -33,5 +37,46 @@ router.post('/', function(req, res) {
     }
   });
 });
+  
+ /* var username = req.body.username;
+  var password = req.body.password;
+var _user = {
+       name : user.get("name"), 
+      username : user.get("username"),
+      address : user.get("address"),
+      connectiontype : user.get("connectiontype"),
+      dob : user.get("dob"),
+      email : user.get("email"),
+      mobile : user.get("mobile"),
+      telephone : user.get("telephone"),
+      personalnote : user.get("personalNote"),
+      usertype : user.get("usertype"),
+  }
+
+
+
+  Parse.User.logIn(username,password, { 
+    
+    success: function(user) {
+      if(user) {
+        console.log("USER FOUND");
+
+        req.session.user = JSON.stringify(user);
+        res.render('dashboard',{user : _user});
+
+        //req.session.user = JSON.stringify(user);
+        res.redirect('/dashboard');
+
+      } else {
+        console.log("USER NOT FOUND");
+        res.render('login', {title: 'Login', message: Response.InvalidLogin}); 
+      }           
+    },
+    error: function(user, error) {
+      console.log("ERROR :"+ error.code + " message:"+ error.message);
+      res.render('login', {title: 'Login', message: Response.InvalidLogin});
+    }
+  });
+});*/
 
 module.exports = router;
