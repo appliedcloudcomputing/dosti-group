@@ -16,7 +16,7 @@ exports.save = function(params) {
 		|| !params.enterprise || !params.address || !params.contactTime || !params.personalNote) {
 		params.error(Response.ParametersEmpty);
 	} else {*/
-
+		console.log("In Save");
 		console.log("**********************SAVING CALLED ");
 		//SAVING USER
 		var user = new User();
@@ -47,6 +47,7 @@ exports.save = function(params) {
 
 exports.update = function(params) {
 	console.log("User updated successfully");
+<<<<<<< HEAD
 	//if(params || params.id || params.name || params.dob || params.mobile || params.telephone || params.email 
 	//	|| params.address || params.contactTime) 
 
@@ -63,9 +64,21 @@ exports.update = function(params) {
 		//var query = new Parse.Query(Parse.User);
 		//query.equalTo("objectId", request.params.objectId);
 
+=======
+	if(!params || !params.id || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
+		 || !params.address) {
+		params.error(Response.ParametersEmpty);
+	} else {
+		var currentUser = Parse.User.current();
+		if(!currentUser){
+			params.error(Response.LoginError);
+		}
+			
+		console.log("In Update");
+>>>>>>> ad09e83117ec75f9d21bc72139aa9f80a799b6cd
 		var userQuery = new Parse.Query(User);
-		userQuery.get(params.id, {
-			success: function(user) {
+		userQuery.get(params.id, {  
+				success: function(user) {
 				if(user) {
 					user.set("name", params.name);
 					user.set("dob", params.dob);
@@ -74,9 +87,17 @@ exports.update = function(params) {
 					user.set("email", params.email);
 					user.set("connectiontype", params.conntype);
 					user.set("address", params.address);
+<<<<<<< HEAD
 					user.set("contactTime", params.contactme);
+=======
+					//user.set("contactTime", params.contactme);
+>>>>>>> ad09e83117ec75f9d21bc72139aa9f80a799b6cd
 					//user.set("personalNote", params.personalNote);
 					user.set("lastUpdatedBy", currentUser);
+					//user.set("username", username);
+					//user.set("password", password);
+					//	user.set("usertype", usertype);
+
 					user.save(null, {
 						success: function(user) {
 							params.success(Response.UpdateSuccess);
