@@ -68,19 +68,19 @@
    
      document.getElementById( 'txtTelephone' ).style.display = 'block';
    
-   document.getElementById( 'lblPersonalnote' ).style.display = 'none'; //hides field and shows only on submit button click
+   //document.getElementById( 'lblPersonalnote' ).style.display = 'none'; //hides field and shows only on submit button click
    
-     document.getElementById( 'txtPersonalnote' ).style.display = 'block';
+     //document.getElementById( 'txtPersonalnote' ).style.display = 'block';
    
-   document.getElementById( 'lblUsertype' ).style.display = 'none'; //hides field and shows only on submit button click
+   //document.getElementById( 'lblUsertype' ).style.display = 'none'; //hides field and shows only on submit button click
    
-     document.getElementById( 'txtUsertype' ).style.display = 'block';
+     //document.getElementById( 'txtUsertype' ).style.display = 'block';
    
         //<!-- email -->
        //Submit Button
 
-       document.getElementById( 'button' ).style.display = 'none';
-       document.getElementById( 'button' ).style.display = 'block';
+       document.getElementById( 'button1' ).style.display = 'none';
+       document.getElementById( 'button2' ).style.display = 'block';
 
         }
         </script>
@@ -434,7 +434,7 @@
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
                  
-                 <form action="#" method="post"> 
+                 <form action="/myprofile/update" method="post"> 
 
 
 
@@ -475,23 +475,23 @@
 <lable>Telephone</lable> <lable name="lblTelephone" id="lblTelephone"><%= user.telephone %></lable>
 <br/><input type="text" name="txtTelephone" id="txtTelephone" value="<%= user.telephone %>" style ="display: none;" />
 
-<lable>Personal Note</lable> <lable name="lblPersonalnote" id="lblPersnalnote"><%= user.personalnote %></lable>
+<!--<lable>Personal Note</lable> <lable name="lblPersonalnote" id="lblPersnalnote"><%= user.personalnote %></lable>
 <br/><input type="text" name="txtPersonalnote" id="txtPersonalnote" value="<%= user.personalnote %>" style ="display: none;" />
 
 <lable>User Type</lable> <lable name="lblUsertype" id="lblUsertype"><%= user.usertype %></lable>
 <br/><input type="text" name="txtUsertype" id="txtUsertype" value="<%= user.usertype %>" style ="display: none;" />
 
 <input type="text" name="txtUserid" id="txtUserid" value="<%= user.id %>" />
-<lable name="lblP" id="lblP"><%= user.id %></lable>
-    <button type="button" onclick="display()" style= "float: right;" class="btn btn-lg btn-primary"><i class="fa fa-pencil"></i> Edit</button>
-<button type="button" id="button" style ="float:right; display: none;"class="btn btn-lg btn-success"><i class="fa fa-check"></i>Update</button>
+<lable name="lblP" id="lblP"><%= user.id %></lable>-->
+    <button type="button" id="button1" onclick="display()" class="btn btn-lg btn-primary"><i class="fa fa-pencil"></i> Edit</button>
+<input type="submit" id="button2" style ="display: none;" class="btn btn-lg btn-success"><i class="fa fa-check"></i></button>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</form> 
+
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
 
                 

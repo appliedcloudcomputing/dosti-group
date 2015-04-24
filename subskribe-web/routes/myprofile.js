@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
        username : currentUser.get("username"),
        address : currentUser.get("address"),
        connectiontype : currentUser.get("connectiontype"),
-       contacttime : currentUser.get("contacttime"),
+       contacttime : currentUser.get("contactTime"),
        dob : currentUser.get("dob"),
        email : currentUser.get("email"),
        mobile : currentUser.get("mobile"),
@@ -28,7 +28,42 @@ router.get('/', function(req, res, next) {
   }   
   
 });
-module.exports = router;     
+
+
+
+router.post('/update', function(req, res, next) {
+console.log("In Update Post");
+
+var currentUser = Parse.User.current();
+ if (currentUser) 
+  {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+ var updatedata = {
+    name:req.body.txtName,
+    username:req.body.txtuserName,
+    address:req.body.txtAddress,
+    conntype:req.body.txtConnectiontype,
+    contacttime:req.body.txtContacttime,
+    dob:req.body.txtDob,
+    email:req.body.txtEmail,
+    mobile:req.body.txtMobile,
+    telephone:req.body.txtTelephone,
+  };
+
+Parse.Cloud.run('saveUser', updatedata, {
+      success: function(message) {
+        console.log("Success.....Moving To Cloud Code");
+      },
+      error: function(error) {
+        console.log("Error..........");
+      }
+});
+
+}
+else{
+  console.log("Error");
+}
+});  
 
 /*var currentUser = Parse.User.current();
   if (currentUser) {

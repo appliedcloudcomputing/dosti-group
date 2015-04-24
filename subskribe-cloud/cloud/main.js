@@ -20,7 +20,8 @@ var Response = {
 
 Parse.Cloud.define('saveUser', function(req, res) {
 	console.log("save user called main.js");
-	if(!req.params.id || req.params.id == 0) {
+	Parse.Cloud.useMasterKey();
+	if(req.params.id){																//if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
 			dob: req.params.dob,
@@ -43,6 +44,9 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			}
 		});
 	} else {
+		var user = new Parse.User();
+   var query = new Parse.Query(Parse.User);
+   user.equalTo("objectId", req.params.objectId);
 		user.update({
 			id: req.params.id,
 			name: req.params.name,
@@ -54,8 +58,8 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			//enterprise: req.params.enterprise,
 			address: req.params.address,
 			contactTime: req.params.contactme,
-			personalNote: req.params.personalNote,
-			hideval : req.params.hideval,
+			//personalNote: req.params.personalNote,
+			//hideval : req.params.hideval,
 			success: function(message) {
 				res.success(message);
 			},
