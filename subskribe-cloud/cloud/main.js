@@ -3,7 +3,7 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/admin/creatpkg.js');
+var pkg = require('cloud/Admin/creatpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -45,10 +45,7 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			}
 		});
 
-	} else {
-		var user = new Parse.User();
-   var query = new Parse.Query(Parse.User);
-   user.equalTo("objectId", req.params.objectId);
+
 
 	} else { console.log("Save User Update");
 		console.log(req.params.id);
@@ -116,7 +113,7 @@ Parse.Cloud.beforeSave('User', function(req, res) {
 /*************************************** Changing Password ********************************/
 Parse.Cloud.define('chngPassword', function(req, res) {
 	 	Parse.Cloud.useMasterKey();
-	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.params));
 		console.log("In main js change password");
     cwd.save({    
             newPassword : req.params.newPassword,

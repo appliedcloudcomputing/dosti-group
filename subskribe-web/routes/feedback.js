@@ -4,7 +4,17 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   console.log("Called FeedBack JS");
-  res.render('feedback', {error: ""});
+  var currentUser = Parse.User.current();
+  if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+    var _user = {
+       name : currentUser.get("name"),
+    }
+    res.render('feedback', {user : _user});
+    }else {
+     
+    res.render('login', {title: 'Login', message: Response.InvalidLogin});
+  }   
 });
 
 
