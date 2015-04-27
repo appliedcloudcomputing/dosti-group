@@ -68,19 +68,27 @@
    
      document.getElementById( 'txtTelephone' ).style.display = 'block';
    
-   document.getElementById( 'lblPersonalnote' ).style.display = 'none'; //hides field and shows only on submit button click
+
+   //document.getElementById( 'lblPersonalnote' ).style.display = 'none'; //hides field and shows only on submit button click
+
+   /*document.getElementById( 'lblPersonalnote' ).style.display = 'none'; //hides field and shows only on submit button click
+
    
-     document.getElementById( 'txtPersonalnote' ).style.display = 'block';
+     //document.getElementById( 'txtPersonalnote' ).style.display = 'block';
    
-   document.getElementById( 'lblUsertype' ).style.display = 'none'; //hides field and shows only on submit button click
+   //document.getElementById( 'lblUsertype' ).style.display = 'none'; //hides field and shows only on submit button click
    
-     document.getElementById( 'txtUsertype' ).style.display = 'block';
+
+     //document.getElementById( 'txtUsertype' ).style.display = 'block';
+
+     document.getElementById( 'txtUsertype' ).style.display = 'block';*/
+
    
         //<!-- email -->
        //Submit Button
 
-       document.getElementById( 'button' ).style.display = 'none';
-       document.getElementById( 'button' ).style.display = 'block';
+       document.getElementById( 'button1' ).style.display = 'none';
+       document.getElementById( 'button2' ).style.display = 'block';
 
         }
         </script>
@@ -365,7 +373,7 @@
                         
                         <li>
                              <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> 
-                             <%= user.name %>
+                             <strong><%= user.name %></strong>
                            
                         </li>
                        
@@ -434,7 +442,9 @@
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
                  
-                 <form action="#" method="post"> 
+
+        <form action="/myprofile/save" method="post"> 
+
 
 
 
@@ -444,54 +454,100 @@
                         <div class="panel-heading">
                             DataTables Advanced Tables
                         </div>
-                        <div class="panel-body">
+                       <!-- <div class="panel-body">
                 <div class="table-responsive">
-<div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row">
+<div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row">-->
+<table align="center" width="500" height="400" cellpadding="10">
+<tr>
+   <td><i class="icon-large icon-parents"></i>    <lable>Name</lable></td>  <td><lable name="lblName" id="lblName"><%= user.name %></lable></td>
+</tr>
 
-<lable>Name</lable> <lable name="lblName" id="lblName"><%= user.name %></lable>
-<br/><input type="text" name="txtName" id="txtName" value="<%= user.name %>" style ="display: none;" />
+<tr>
+    <td><input type="text" name="txtName" id="txtName" value="<%= user.name %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+    <td><i class="icon-large icon-user"></i>     <lable>User Name</lable></td> <td><lable name="lbluserName" id="lbluserName"><%= user.username %></lable></td>
+</tr>
 
-<lable>User Name</lable> <lable name="lbluserName" id="lbluserName"><%= user.username %></lable>
-<br/><input type="text" name="txtuserName" id="txtuserName" value="<%= user.username %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtuserName" id="txtuserName" value="<%= user.username %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+    <td><i class="icon-large icon-home"></i>     <lable>Address</lable></td>  <td><lable name="lblAddress" id="lblAddress"><%= user.address %></lable></td>
+</tr>
 
-<lable>Address</lable> <lable name="lblAddress" id="lblAddress"><%= user.address %></lable>
-<br/><input type="text" name="txtAddress" id="txtAddress" value="<%= user.address %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtAddress" id="txtAddress" value="<%= user.address %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+    <td><i class="icon-large icon-adjust"></i>    <lable>Connection Type</lable></td> <td><lable name="lblConnectiontype" id="lblConnectiontype"><%= user.connectiontype %></lable></td>
+</tr>
 
-<lable>Connection Type</lable> <lable name="lblConnectiontype" id="lblConnectiontype"><%= user.connectiontype %></lable>
-<br/><input type="text" name="txtConnectiontype" id="txtConnectiontype" value="<%= user.connectiontype %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtConnectiontype" id="txtConnectiontype" value="<%= user.connectiontype %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+<td><i class="icon-large icon-time"></i>     <lable>Contact Time</lable></td> <td><lable name="lblContacttime" id="lblContacttime"><%= user.contacttime %></lable></td>
+</tr>
 
-<lable>Contact Time</lable> <lable name="lblContacttime" id="lblContacttime"><%= user.contacttime %></lable>
-<br/><input type="text" name="txtContacttime" id="txtContacttime" value="<%= user.contacttime %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtContacttime" id="txtContacttime" value="<%= user.contacttime %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+<td><i class="icon-large icon-calendar"></i>     <lable>Date Of Birth</lable></td> <td><lable name="lblDob" id="lblDob"><%= user.dob %></lable></td>
+</tr>
 
-<lable>Date Of Birth</lable> <lable name="lblDob" id="lblDob"><%= user.dob %></lable>
-<br/><input type="text" name="txtDob" id="txtDob" value="<%= user.dob %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtDob" id="txtDob" value="<%= user.dob %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+<td><i class="icon-large icon-envelope"></i>     <lable>Email</lable></td> <td><lable name="lblEmail" id="lblEmail"><%= user.email %></lable></td>
+</tr>
 
-<lable>Email</lable> <lable name="lblEmail" id="lblEmail"><%= user.email %></lable>
-<br/><input type="text" name="txtEmail" id="txtEmail" value="<%= user.email %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtEmail" id="txtEmail" value="<%= user.email %>" style ="display: none;" /></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+<td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>     <lable>Mobile</lable></td> <td><lable name="lblMobile" id="lblMobile"><%= user.mobile %></lable></td>
 
-<lable>Mobile</lable> <lable name="lblMobile" id="lblMobile"><%= user.mobile %></lable>
-<br/><input type="text" name="txtMobile" id="txtMobile" value="<%= user.mobile %>" style ="display: none;" />
+<tr>
+<br/><td><input type="text" name="txtMobile" id="txtMobile" value="<%= user.mobile %>" style ="display: none;" /></td>
+</tr>
 
-<lable>Telephone</lable> <lable name="lblTelephone" id="lblTelephone"><%= user.telephone %></lable>
-<br/><input type="text" name="txtTelephone" id="txtTelephone" value="<%= user.telephone %>" style ="display: none;" />
+<tr>
+<td><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>     <lable>Telephone</lable></td> <td><lable name="lblTelephone" id="lblTelephone"><%= user.telephone %></lable></td>
+</tr>
+<tr><td><td><td></td></tr>
+<tr>
+<br/><td><input type="text" name="txtTelephone" id="txtTelephone" value="<%= user.telephone %>" style ="display: none;" />
+</tr>
 
-<lable>Personal Note</lable> <lable name="lblPersonalnote" id="lblPersnalnote"><%= user.personalnote %></lable>
-<br/><input type="text" name="txtPersonalnote" id="txtPersonalnote" value="<%= user.personalnote %>" style ="display: none;" />
 
-<lable>User Type</lable> <lable name="lblUsertype" id="lblUsertype"><%= user.usertype %></lable>
-<br/><input type="text" name="txtUsertype" id="txtUsertype" value="<%= user.usertype %>" style ="display: none;" />
+<tr><td><td><td></td></tr>
 
-<input type="text" name="txtUserid" id="txtUserid" value="<%= user.id %>" />
-<lable name="lblP" id="lblP"><%= user.id %></lable>
-    <button type="button" onclick="display()" style= "float: right;" class="btn btn-lg btn-primary"><i class="fa fa-pencil"></i> Edit</button>
-<button type="button" id="button" style ="float:right; display: none;"class="btn btn-lg btn-success"><i class="fa fa-check"></i>Update</button>
+<tr>
+<td><input type="text" name="txtId" id="txtId" value="<%= user.id %>" hidden /></td> <td> </td>
+</tr>
+
+<tr>
+<td align="center" colspan=2><button type="button" id="button1" onclick="display()" class="btn btn-primary btn-lg">Edit</button><input type="submit" name="submit" id="button2" value="submit" style ="display: none;" class="btn btn-success btn-lg" class="glyphicon glyphicon-wrench" aria-hidden="true" /></td>
+</tr>
+</table>
+
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</form> 
+
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
 
                 
@@ -504,7 +560,7 @@
         
          <!-- END RIGHT STRIP  SECTION -->
     </div>
-</form>
+
     <!--END MAIN WRAPPER -->
 
     <!-- FOOTER >
@@ -521,22 +577,22 @@
     <!-- END GLOBAL SCRIPTS -->
 
     <!-- PAGE LEVEL SCRIPTS -->
-    <script src="/assets/plugins/flot/jquery.flot.js"></script>
+    <!--script src="/assets/plugins/flot/jquery.flot.js"></script>
     <script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
     <script src="/assets/plugins/flot/jquery.flot.time.js"></script>
      <script  src="/assets/plugins/flot/jquery.flot.stack.js"></script>
-    <script src="/assets/js/for_index.js"></script>
+    <script src="/assets/js/for_index.js"></script-->
    
     <!-- END PAGE LEVEL SCRIPTS -->
     
     <!-- DataTables SCRIPTS -->
     <script src="/assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="/assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-     <script>
+     <!--<script>
          $(document).ready(function () {
              $('#dataTables-example').dataTable();
          });
-    </script>
+    </script>-->
 
 
 </body>

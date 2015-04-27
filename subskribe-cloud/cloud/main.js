@@ -20,7 +20,9 @@ var Response = {
 
 Parse.Cloud.define('saveUser', function(req, res) {
 	console.log("save user called main.js");
-	if(!req.params.id || req.params.id == 0) {
+	Parse.Cloud.useMasterKey();
+
+	if(req.params.id){																//if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
 			dob: req.params.dob,
@@ -42,20 +44,43 @@ Parse.Cloud.define('saveUser', function(req, res) {
 				res.error(error);
 			}
 		});
-	} else {
+
+
+
+	} else { console.log("Save User Update");
+		console.log(req.params.id);
+			console.log(req.params.name);
+			console.log(req.params.username);
+			console.log(req.params.dob);
+			console.log(req.params.mobile);
+			console.log(req.params.telephone);
+			console.log(req.params.conntype);
+			console.log(req.params.address);
+			//console.log(req.params.conatctme);
+			console.log(req.params.email);
+
 		user.update({
+			
 			id: req.params.id,
 			name: req.params.name,
+			username : req.params.username,
 			dob: req.params.dob,
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			email: req.params.email,
 			conntype : req.params.conntype,
-			//enterprise: req.params.enterprise,
+			//password : req.params.password,
 			address: req.params.address,
-			contactTime: req.params.contactme,
-			personalNote: req.params.personalNote,
-			hideval : req.params.hideval,
+
+			//contactTime: req.params.contactme,
+			//personalNote: req.params.personalNote,
+			//hideval : req.params.hideval,
+
+			//contactTime: req.params.contactme,
+			//personalNote: req.params.personalNote,
+			//usertype: req.params.usertype,
+			
+
 			success: function(message) {
 				res.success(message);
 			},
@@ -88,7 +113,7 @@ Parse.Cloud.beforeSave('User', function(req, res) {
 /*************************************** Changing Password ********************************/
 Parse.Cloud.define('chngPassword', function(req, res) {
 	 	Parse.Cloud.useMasterKey();
-	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.params));
 		console.log("In main js change password");
     cwd.save({    
             newPassword : req.params.newPassword,
@@ -182,4 +207,7 @@ Parse.Cloud.define('creatPackage', function(req, res) {
 		});
 	}
 });
+
+   
+
 

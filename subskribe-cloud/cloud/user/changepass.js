@@ -12,10 +12,10 @@ var Response = {
 
 exports.save = function(params) {
 	console.log("*******************************************************PARAMETERS :"+ JSON.stringify(params));
-	/*if(!params || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
+	if(!params || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
 		|| !params.enterprise || !params.address || !params.contactTime || !params.personalNote) {
 		params.error(Response.ParametersEmpty);
-	} else {*/
+	} else {
 
 		console.log("**********************Changing password ");
 		var query = new Parse.Query(Parse.User);
