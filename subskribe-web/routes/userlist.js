@@ -14,7 +14,7 @@ router.get('/userlist', function(req, res, next) {
             users.forEach(function(user) 
             {
               var _user = {
-
+                name : user.get('name'),
                 email: user.get('email'),
                 username:user.get('username'),
                 telephone :user.get('telephone'),
