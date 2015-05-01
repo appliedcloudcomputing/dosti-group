@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 	}
 });
 
-/*router.get('/userenquiry', function(req, res, next) {
+router.get('/userenquiry', function(req, res, next) {
   console.log("Called Registration");
   res.render('userenquiry', {error: ""});
 });
@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 router.get('/franchiseenquiry', function(req, res, next) {
   console.log("Called franchiseenquiry");
   res.render('franchiseenquiry', {error: ""});
-});*/
+});
 
 
 module.exports = router;
