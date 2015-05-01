@@ -4,38 +4,7 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    <meta charset="UTF-8" />
-    <title>BCORE Admin Dashboard Template | Dashboard </title>
-     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
-     <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <!-- GLOBAL STYLES -->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.css" />
-	<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/theme.css" />
-    <link rel="stylesheet" href="/assets/css/MoneAdmin.css" />
-    <link rel="stylesheet" href="/assets/plugins/Font-Awesome/css/font-awesome.css" />
-    <!--END GLOBAL STYLES -->
-
-    <!-- PAGE LEVEL STYLES -->
-    <link href="/assets/css/layout2.css" rel="stylesheet" />
-       <link href="/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
-       <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
-    <!-- END PAGE LEVEL  STYLES -->
-	
-	<!-- DataTables STYLES -->
-    <link href="/assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <!-- END DataTables  STYLES -->
-	
-     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+<% include partials/head.html %>
 </head>
 
     <!-- END HEAD -->
@@ -48,321 +17,13 @@
         
 
         <!-- HEADER SECTION -->
-        <div id="top">
-
-            <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
-                <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip" class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu" id="menu-toggle">
-                    <i class="icon-align-justify"></i>
-                </a>
-                <!-- LOGO SECTION -->
-                <header class="navbar-header">
-
-                    <a href="/users/index.html" class="navbar-brand">
-                    <img src="/assets/img/logo.png" alt="" />
-                        
-                        </a>
-                </header>
-                <!-- END LOGO SECTION -->
-                <ul class="nav navbar-top-links navbar-right">
-
-                    <!-- MESSAGES SECTION -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="label label-success">2</span>    <i class="icon-envelope-alt"></i>&nbsp; <i class="icon-chevron-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-messages">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                       <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Today</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
-                                        <br />
-                                        <span class="label label-primary">Important</span> 
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>Raphel Jonson</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
-                                         <br />
-                                        <span class="label label-success"> Moderate </span> 
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>Chi Ley Suk</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>26 Jan 2014</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
-                                         <br />
-                                        <span class="label label-danger"> Low </span> 
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>Read All Messages</strong>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!--END MESSAGES SECTION -->
-
-                    <!--TASK SECTION -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="label label-danger">5</span>   <i class="icon-tasks"></i>&nbsp; <i class="icon-chevron-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-tasks">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Profile </strong>
-                                            <span class="pull-right text-muted">40% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span class="sr-only">40% Complete (success)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Pending Tasks </strong>
-                                            <span class="pull-right text-muted">20% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                <span class="sr-only">20% Complete</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Work Completed </strong>
-                                            <span class="pull-right text-muted">60% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                <span class="sr-only">60% Complete (warning)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Summary </strong>
-                                            <span class="pull-right text-muted">80% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                <span class="sr-only">80% Complete (danger)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Tasks</strong>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!--END TASK SECTION -->
-
-                    <!--ALERTS SECTION -->
-                    <li class="chat-panel dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="label label-info">8</span>   <i class="icon-comments"></i>&nbsp; <i class="icon-chevron-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-alerts">
-
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-comment" ></i> New Comment
-                                    <span class="pull-right text-muted small"> 4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-twitter info"></i> 3 New Follower
-                                    <span class="pull-right text-muted small"> 9 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-envelope"></i> Message Sent
-                                    <span class="pull-right text-muted small" > 20 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-tasks"></i> New Task
-                                    <span class="pull-right text-muted small"> 1 Hour ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-upload"></i> Server Rebooted
-                                    <span class="pull-right text-muted small"> 2 Hour ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!-- END ALERTS SECTION -->
-
-                    <!--ADMIN SETTINGS SECTIONS -->
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="icon-user"></i> User Profile </a>
-                            </li>
-                            <li><a href="#"><i class="icon-gear"></i> Settings </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="icon-signout"></i> Logout </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!--END ADMIN SETTINGS -->
-                </ul>
-
-            </nav>
-
-        </div>
+<% include partials/navbar.html %>
         <!-- END HEADER SECTION -->
 
 
 
         <!-- MENU SECTION -->
-       <div id="left" >
-            <div class="media user-media well-small">
-                <a class="user-link" href="#">
-                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="/assets/img/user.gif" />
-                </a>
-                <br />
-                <div class="media-body">
-                    <h5 class="media-heading"> Joe Romlin</h5>
-                    <ul class="list-unstyled user-info">
-                        
-                        <li>
-                             <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online
-                           
-                        </li>
-                       
-                    </ul>
-                </div>
-                <br />
-            </div>
-
-            <ul id="menu" class="collapse">
-
-                
-                <li class="panel active">
-                    <a href="index.html" >
-                        <i class="icon-table"></i> Dashboard
-	   
-                       
-                    </a>                   
-                </li>
-
-				
-				<li class="panel ">
-                    <a href="/users/cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
-                        <i class="icon-pencil"></i> Change Password
-	   
-                        <span class="pull-right">
-                            <i class="icon-angle-left"></i>
-                        </span>
-                          &nbsp; <span class="label label-success"></span>&nbsp;
-                    </a>
-                    
-                </li>
-				
-				<li class="panel ">
-                    <a href="/users/cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
-                        <i class="icon-pencil"></i> Feedback
-	   
-                        <span class="pull-right">
-                            <i class="icon-angle-left"></i>
-                        </span>
-                          &nbsp; <span class="label label-success"></span>&nbsp;
-                    </a>
-                    
-                </li>
-
-				</ul>
-
-        </div>
+<% include partials/user_menubar.html %>
         <!--END MENU SECTION -->
 
 
@@ -373,7 +34,7 @@
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1> User Dashboard </h1>
+                        <center><h3><strong><font color="blue">Change Package</font></strong></h3></center>
                     </div>
                 </div>
                   <hr />
@@ -385,76 +46,78 @@
         <div class="row">
     <div id="UpdatePanel1">
 
-        
-    <div class="col-lg-12"  style="text-align: center; vertical-align: top; ">
-       <p> <strong style="font-family: Verdana; font-size: large; font-weight: bold;margin-left:-20%;">Change Package<br /> <br /></strong> <p>
+
+<div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Current Package</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-hand-right"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="oldPassword" type="password" id="oldPassword" class="form-control medium" style="width:100%;" required="required" placeholder=""/>
+        </div>
+        </div>
+    </br>
+    </br>
+    </br>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Validity</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="newPassword" type="password" id="newPassword" class="form-control medium" style="width:100%;" required="required" placeholder=""/>
+        </div>
+        </div>
+    </br>
+    </br>
+    </br>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Price</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-inr"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="confirmPassword" type="password" id="confirmPassword" class="form-control medium" style="width:100%;" required="required"/>
+        </div>
+        </div>
+    </br>
+    </br>
+    </br>
     </div>
 
 <div class="col-lg-12">
-	<div class="col-lg-2 " style="padding: 5px;">
-        <strong>Description<span style="color: red;"></span></strong>
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Renew Type</strong><span style="color: red;"></span>
         <br />
         </div>
-    <div class="col-lg-6 " style="padding: 5px;">
-    
-    <textarea name="txtDesc"  rows="2" cols="20" id="txtBusinessLocation" class="form-control medium" style="width:100%;">
-	</textarea><br>
-</div>
-</div>
-
-       <div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Current Package<span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-        <select class="form-control" name="txtCurrent">
-            <% for(var i = 0; i < pkgList.length; i++) { %>
-            <option value=1><%= pkgList[i].pkname %></option>
-             <% } %>
-            </select>
-        </br>
-        </div>
-    </div>
-
-	<div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Validity <span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-        <select class="form-control" name="txtValidity">
-            <% for(var i = 0; i < userList.length; i++) { %>
-            <option value=1><%= userList[i].pkgvalidity %></option>
-             <% } %>
-            </select>
-        </br>
-        </div>
-    </div>
-
-	 <div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Price  <span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
-		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
-		</br>
-	    </div>
-		</div>
-        
-	
-	
-	<div class="col-lg-12">
-        <div class="col-lg-2" style="padding: 5px;">
-        <strong> Renew type <span style="color: red;"></strong>
-        </div>
-        <div class="col-lg-6 " style="padding: 5px;">
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-refresh"></i></span>
         <select class="form-control">
             <option>Immediate </option>
             <option>Schedule to next renewal</option>
-			</select>
-        </br>
+            </select>
         </div>
+        </div>
+    </br>
+    </br>
+    </br>
     </div>
+    
+   
 <script>
 function myFunction() {
     console.log("In console");
@@ -494,38 +157,19 @@ function myFunction() {
 
     <!--END MAIN WRAPPER -->
 
-    <!-- FOOTER >
-    <div id="footer">
-        <p>&copy;  binarytheme &nbsp;2014 &nbsp;</p>
-    </div>
-    <END FOOTER -->
+    <!--FOOTER-->
+    <% include partials/footer.html %>
+    <!--END FOOTER -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+      <script>
+$( "#liChangepackage" ).addClass( "active" );
+</script>
 
 
 
     <!-- GLOBAL SCRIPTS -->
-    <script src="/assets/plugins/jquery-2.0.3.min.js"></script>
-     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <!-- END GLOBAL SCRIPTS -->
-
-    <!-- PAGE LEVEL SCRIPTS -->
-    <script src="/assets/plugins/flot/jquery.flot.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.time.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.stack.js"></script>
-    <script src="/assets/js/for_index.js"></script>
-   
-    <!-- END PAGE LEVEL SCRIPTS -->
-	
-	<!-- DataTables SCRIPTS -->
-    <script src="/assets/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="/assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-     <script>
-         $(document).ready(function () {
-             $('#dataTables-example').dataTable();
-         });
-    </script>
-
+    <% include partials/scripts.html %>
+    <!-- End GLOBAL SCRIPTS -->
 
 </body>
 
