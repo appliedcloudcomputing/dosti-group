@@ -18,10 +18,10 @@ router.get('/userlist', function(req, res, next) {
                 name : user.get('name'),
                 email: user.get('email'),
                 username:user.get('username'),
-                telephone :user.get('telephone'),
+                //telephone :user.get('telephone'),
                 mobile:user.get('mobile'),
                 address: user.get('address'),
-                //dob:user.get('dob'),
+                dob:user.get('dob'),
                 connectiontype :user.get('connectiontype'),
                 usertype:user.get('usertype')
                           }
