@@ -1,33 +1,14 @@
-<html>
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<!-- BEGIN HEAD -->
-<head>
-    <meta charset="UTF-8" />
-    <title>My Profile </title>
-     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-     <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <!-- GLOBAL STYLES -->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/theme.css" />
-    <link rel="stylesheet" href="/assets/css/MoneAdmin.css" />
-    <link rel="stylesheet" href="/assets/plugins/Font-Awesome/css/font-awesome.css" />
-    <!--END GLOBAL STYLES -->
 
-    <!-- PAGE LEVEL STYLES -->
-    <link href="/assets/css/layout2.css" rel="stylesheet" />
-       <link href="/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
-       <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
-    <!-- END PAGE LEVEL  STYLES -->
-    
-    <!-- DataTables STYLES -->
-    <link href="/assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+<!-- BEGIN HEAD-->
+<head>
+    <title>My Profile</title>
+<% include partials/head.html %>
+<!-- DataTables STYLES -->
+    <!--link href="/assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" /-->
     <script type="text/javascript">
     function display() {       
         
@@ -92,510 +73,145 @@
 
         }
         </script>
-    
-   </head>
-
-    <!-- END HEAD -->
-
-    <!-- BEGIN BODY -->
+</head>
+    <!-- END  HEAD-->
+    <!-- BEGIN BODY-->
 <body class="padTop53 " >
 
-    <!-- MAIN WRAPPER -->
-    <div id="wrap" >
-        
+     <!-- MAIN WRAPPER -->
+    <div id="wrap">
 
-        <!-- HEADER SECTION -->
-        <div id="top">
 
-            <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
-                <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip" class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu" id="menu-toggle">
-                    <i class="icon-align-justify"></i>
-                </a>
-                <!-- LOGO SECTION -->
-                
-
-                    <a href="/users/index.html" class="navbar-brand">
-                    <img src="/assets/img/logo.png" alt="" />
-                        
-                        </a>
-                
-                <!-- END LOGO SECTION -->
-                <ul class="nav navbar-top-links navbar-right">
-
-                    <!-- MESSAGES SECTION -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="label label-success">2</span>    <i class="icon-envelope-alt"></i>&nbsp; <i class="icon-chevron-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-messages">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                       <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Today</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
-                                        <br />
-                                        <span class="label label-primary">Important</span> 
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>Raphel Jonson</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
-                                         <br />
-                                        <span class="label label-success"> Moderate </span> 
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>Chi Ley Suk</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>26 Jan 2014</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing.
-                                         <br />
-                                        <span class="label label-danger"> Low </span> 
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>Read All Messages</strong>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!--END MESSAGES SECTION -->
-
-                    <!--TASK SECTION -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="label label-danger">5</span>   <i class="icon-tasks"></i>&nbsp; <i class="icon-chevron-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-tasks">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Profile </strong>
-                                            <span class="pull-right text-muted">40% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span class="sr-only">40% Complete (success)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Pending Tasks </strong>
-                                            <span class="pull-right text-muted">20% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                <span class="sr-only">20% Complete</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Work Completed </strong>
-                                            <span class="pull-right text-muted">60% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                <span class="sr-only">60% Complete (warning)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong> Summary </strong>
-                                            <span class="pull-right text-muted">80% Complete</span>
-                                        </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                <span class="sr-only">80% Complete (danger)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Tasks</strong>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!--END TASK SECTION -->
-
-                    <!--ALERTS SECTION -->
-                    <li class="chat-panel dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="label label-info">8</span>   <i class="icon-comments"></i>&nbsp; <i class="icon-chevron-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-alerts">
-
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-comment" ></i> New Comment
-                                    <span class="pull-right text-muted small"> 4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-twitter info"></i> 3 New Follower
-                                    <span class="pull-right text-muted small"> 9 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-envelope"></i> Message Sent
-                                    <span class="pull-right text-muted small" > 20 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-tasks"></i> New Task
-                                    <span class="pull-right text-muted small"> 1 Hour ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="icon-upload"></i> Server Rebooted
-                                    <span class="pull-right text-muted small"> 2 Hour ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!-- END ALERTS SECTION -->
-
-                    <!--ADMIN SETTINGS SECTIONS -->
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="icon-user"></i> User Profile </a>
-                            </li>
-                            <li><a href="#"><i class="icon-gear"></i> Settings </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="icon-signout"></i> Logout </a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <!--END ADMIN SETTINGS -->
-                </ul>
-
-            </nav>
-
-        </div>
+         <!-- HEADER SECTION -->
+        <% include partials/navbar.html %>
         <!-- END HEADER SECTION -->
 
 
 
         <!-- MENU SECTION -->
-       <div id="left" >
-            <div class="media user-media well-small">
-                <a class="user-link" href="#">
-                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="/assets/img/user.gif" />
-                </a>
-                <br />
-                <div class="media-body">
-                    <h5 class="media-heading"></h5>
-                    <ul class="list-unstyled user-info">
-                        
-                        <li>
-                             <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> 
-                             <strong><%= user.name %></strong>
-                           
-                        </li>
-                       
-                    </ul>
-                </div>
-                <br />
-            </div>
-
-            <ul id="menu" class="collapse">
-
-                
-                <li class="panel active">
-                    <a href="index.html" >
-                        <i class="icon-table"></i> Dashboard
-       
-                       
-                    </a>                   
-                </li>
-
-
-
-                <li class="panel ">
-                    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
-                        <i class="icon-tasks"> </i> My Profile     
-       
-                        <span class="pull-right">
-                          <i class="icon-angle-left"></i>
-                        </span>
-                       &nbsp; <span class="label label-default"></span>&nbsp;
-                    </a>
-                    
-                </li>
-                <li class="panel ">
-                    <a href="./cwd" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
-                        <i class="icon-pencil"></i> Change Password
-       
-                        <span class="pull-right">
-                            <i class="icon-angle-left"></i>
-                        </span>
-                          &nbsp; <span class="label label-success"></span>&nbsp;
-                    </a>
-                    
-                </li>
-
-                
-                <li><a href="/feedback/"><i class="icon-signin"></i> Feedback </a></li>
-
-            </ul>
-
-        </div>
+      <% include partials/menubar.html %>
         <!--END MENU SECTION -->
-
 
 
         <!--PAGE CONTENT -->
         <div id="content">
-             
-            <div class="inner" style="min-height: 700px;">
+
+            <div class="inner" style="min-height:1200px;">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1> Dashboard </h1>
-                    </div>
-                </div>
-                  <hr />
-                 
-                 
-                 <!--TABLE, PANEL, ACCORDION AND MODAL  -->
-                 
+ <center><h3><strong><font color="blue">My Profile</font></strong></h3></center>
+</div>
+</div>
+<hr />
 
-        <form action="/myprofile/save" method="post"> 
-
-
-
-
-                 <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                       <!-- <div class="panel-body">
-                <div class="table-responsive">
-<div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row">-->
-<table align="center" width="500" height="400" cellpadding="10">
+<form action="/myprofile/save" method="post">            
+   <table align="center" width="500" height="400" cellpadding="10">
 <tr>
-   <td><i class="icon-large icon-parents"></i>    <lable>Name</lable></td>  <td><lable name="lblName" id="lblName"><%= user.name %></lable></td>
+   <td><lable class="glyphicon glyphicon-user"> Name</lable></td>  <td><lable name="lblName" id="lblName"><%= user.name %></lable></td>
+<td><input type="text" name="txtName" id="txtName" value="<%= user.name %>" style ="display: none;" /></td>
 </tr>
 
-<tr>
-    <td><input type="text" name="txtName" id="txtName" value="<%= user.name %>" style ="display: none;" /></td>
-</tr>
 <tr><td><td><td></td></tr>
+
 <tr>
     <td><i class="icon-large icon-user"></i>     <lable>User Name</lable></td> <td><lable name="lbluserName" id="lbluserName"><%= user.username %></lable></td>
-</tr>
-
-<tr>
 <br/><td><input type="text" name="txtuserName" id="txtuserName" value="<%= user.username %>" style ="display: none;" /></td>
 </tr>
+
 <tr><td><td><td></td></tr>
+
 <tr>
     <td><i class="icon-large icon-home"></i>     <lable>Address</lable></td>  <td><lable name="lblAddress" id="lblAddress"><%= user.address %></lable></td>
-</tr>
-
-<tr>
 <br/><td><input type="text" name="txtAddress" id="txtAddress" value="<%= user.address %>" style ="display: none;" /></td>
 </tr>
+
 <tr><td><td><td></td></tr>
+
 <tr>
     <td><i class="icon-large icon-adjust"></i>    <lable>Connection Type</lable></td> <td><lable name="lblConnectiontype" id="lblConnectiontype"><%= user.connectiontype %></lable></td>
-</tr>
-
-<tr>
 <br/><td><input type="text" name="txtConnectiontype" id="txtConnectiontype" value="<%= user.connectiontype %>" style ="display: none;" /></td>
 </tr>
+
 <tr><td><td><td></td></tr>
+
 <tr>
 <td><i class="icon-large icon-time"></i>     <lable>Contact Time</lable></td> <td><lable name="lblContacttime" id="lblContacttime"><%= user.contacttime %></lable></td>
-</tr>
-
-<tr>
 <br/><td><input type="text" name="txtContacttime" id="txtContacttime" value="<%= user.contacttime %>" style ="display: none;" /></td>
 </tr>
+
 <tr><td><td><td></td></tr>
+
 <tr>
 <td><i class="icon-large icon-calendar"></i>     <lable>Date Of Birth</lable></td> <td><lable name="lblDob" id="lblDob"><%= user.dob %></lable></td>
-</tr>
-
-<tr>
 <br/><td><input type="text" name="txtDob" id="txtDob" value="<%= user.dob %>" style ="display: none;" /></td>
 </tr>
+
 <tr><td><td><td></td></tr>
+
 <tr>
 <td><i class="icon-large icon-envelope"></i>     <lable>Email</lable></td> <td><lable name="lblEmail" id="lblEmail"><%= user.email %></lable></td>
-</tr>
-
-<tr>
 <br/><td><input type="text" name="txtEmail" id="txtEmail" value="<%= user.email %>" style ="display: none;" /></td>
 </tr>
+
 <tr><td><td><td></td></tr>
-<tr>
-<td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>     <lable>Mobile</lable></td> <td><lable name="lblMobile" id="lblMobile"><%= user.mobile %></lable></td>
 
 <tr>
+<td><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>     <lable>Mobile</lable></td> <td><lable name="lblMobile" id="lblMobile"><%= user.mobile %></lable></td>
 <br/><td><input type="text" name="txtMobile" id="txtMobile" value="<%= user.mobile %>" style ="display: none;" /></td>
 </tr>
 
+<tr><td><td><td></td></tr>
+
 <tr>
 <td><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>     <lable>Telephone</lable></td> <td><lable name="lblTelephone" id="lblTelephone"><%= user.telephone %></lable></td>
-</tr>
-<tr><td><td><td></td></tr>
-<tr>
 <br/><td><input type="text" name="txtTelephone" id="txtTelephone" value="<%= user.telephone %>" style ="display: none;" />
 </tr>
-
-
-<tr><td><td><td></td></tr>
+<!--<tr><td><td><td></td></tr> -->
 
 <tr>
 <td><input type="text" name="txtId" id="txtId" value="<%= user.id %>" hidden /></td> <td> </td>
 </tr>
-
 <tr>
-<td align="center" colspan=2><button type="button" id="button1" onclick="display()" class="btn btn-primary btn-lg">Edit</button><input type="submit" name="submit" id="button2" value="submit" style ="display: none;" class="btn btn-success btn-lg" class="glyphicon glyphicon-wrench" aria-hidden="true" /></td>
+<td align="center" colspan=1><button type="button" id="button1" onclick="display()" class="btn btn-primary btn-lg">Edit</button>
+  <input type="submit" name="submit" id="button2" value="submit" style ="display: none;" class="btn btn-success btn-lg" class="glyphicon glyphicon-wrench" aria-hidden="true" /></td>
 </tr>
+
 </table>
-
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
 
-                 <!--TABLE, PANEL, ACCORDION AND MODAL  -->
+</div>
+</div>
 
-                
-            </div>
 
-        </div>
-        <!--END PAGE CONTENT -->
-
-         <!-- RIGHT STRIP  SECTION -->
-        
-         <!-- END RIGHT STRIP  SECTION -->
-    </div>
-
-    <!--END MAIN WRAPPER -->
-
-    <!-- FOOTER >
-    <div id="footer">
-        <p>&copy;  binarytheme &nbsp;2014 &nbsp;</p>
-    </div>
-    <END FOOTER -->
-<!-- edit btn-->
-
-    <!-- GLOBAL SCRIPTS -->
-    <script src="/assets/plugins/jquery-2.0.3.min.js"></script>
-     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <!-- END GLOBAL SCRIPTS -->
-
-    <!-- PAGE LEVEL SCRIPTS -->
-    <!--script src="/assets/plugins/flot/jquery.flot.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="/assets/plugins/flot/jquery.flot.time.js"></script>
-     <script  src="/assets/plugins/flot/jquery.flot.stack.js"></script>
-    <script src="/assets/js/for_index.js"></script-->
-   
-    <!-- END PAGE LEVEL SCRIPTS -->
+                 </form>   
+                        
+                    </div>
+                </div>
     
-    <!-- DataTables SCRIPTS -->
-    <script src="/assets/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="/assets/plugins/dataTables/dataTables.bootstrap.js"></script>
-     <!--<script>
-         $(document).ready(function () {
-             $('#dataTables-example').dataTable();
-         });
-    </script>-->
 
 
+            
+
+
+
+
+      
+       <!--END PAGE CONTENT -->
+
+
+    </div>
+
+     <!--END MAIN WRAPPER -->
+
+   <!-- FOOTER -->
+    <% include partials/footer.html %>
+    <!--END FOOTER -->
+     <!-- GLOBAL SCRIPTS -->
+    <% include partials/scripts.html %>
+    <!-- END GLOBAL SCRIPTS -->
 </body>
-
-    <!-- END BODY -->
+    <!-- END BODY-->
+    
 </html>
