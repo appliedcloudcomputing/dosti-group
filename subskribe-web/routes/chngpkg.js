@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pkgs = Parse.Object.extend("Package");
-router.get('/chngpkg', function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log("Called Change package page");
   res.render('chngpkg', {error: ""});    
  });  
