@@ -1,40 +1,71 @@
 var express = require('express');
 var router = express.Router();
-var pkgs = Parse.Object.extend("Package");
+
+
 router.get('/', function(req, res, next) {
-  console.log("Called Change package page");
-  var currentUser = Parse.User.current();
-  if (currentUser) {
+   console.log("Change Package");
+    var currentUser = Parse.User.current();
+   if (currentUser) 
+  {
     console.log("CURRENT USER : "+ JSON.stringify(currentUser));
-    var _user = {
+    var _u = {
        name : currentUser.get("name"),
     }
-      res.render('chngpkg', {user : _user});
+     var userList = [];
+      var Package = Parse.Object.extend("Package");
+      var userQuery = new Parse.Query(Package);
+      userQuery.find({
+        success: function(users) 
+        {
+          console.log('USER SUCCESS');
+          if(users) {
+            users.forEach(function(user) 
+            {
+              var _user = {
 
-  } else {
+                pkname: user.get('pkname'),
+                pkgvalidity:user.get('pkgvalidity'),
+                pkgprice:user.get('pkgprice')
+                }
+              userList.push(_user);
+            });
+            res.render('chngpkg', {userList: userList, user : _u});
+           } 
+
+           else 
+           {
+            console.log('NO USERS PRESENT');
+           }
+        },
+        error: function(error) {
+          console.log('ERROR FINDING USERS: ' + error.message);
+        }
+      });
+
+  }else {
       // show the signup or login page
     res.render('login', {title: 'Login', message: Response.InvalidLogin});
   }   
+});
+
+ 
   
-}); 
-  
+
 
 
 
 router.post('/save', function(req, res, next) {
-  console.log("Called Change pkg package post method");
-  //console.log(req.body.oldPassword);
-	//console.log("Pkg Name :"+ req.body.txtPkgName);
+  console.log("Change Package called");
   
-	console.log("Pkg Decription :"+ req.body.txtDesc);
-	console.log("Pkg Price :"+ req.body.txtPrice);
-	console.log("Pkg Validity :"+ req.body.txtValidity);
-  console.log("Current Pkg :"+ req.body.txtCurrent);
+  
+	console.log("Pkg Decription :"+ req.body.newPkgName);
+	console.log("Pkg Price :"+ req.body.newPkgPrice);
+	console.log("Pkg Validity :"+ req.body.newPkgValidity);
+  
 
-  var price=req.body.txtValidity * req.body.txtCurrent;
-  console.log ("Price is="+ price);
+  
 
-	var pkgdata ={
+/*var pkgdata ={
    // 'pkgName' : req.body.txtPkgName,
     'pkgDesc' : req.body.txtDesc,
     'pkgPrice' : price,
@@ -50,7 +81,7 @@ router.post('/save', function(req, res, next) {
       error: function(error) {
         console.log("Error..........");
       }
-});
+});*/
 });
 
 module.exports = router;
