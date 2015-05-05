@@ -34,6 +34,7 @@ var myprofile = require('./routes/myprofile')
 var chngpkg  = require('./routes/chngpkg');
 var creatpkg = require('./routes/creatpkg');
 var userlist = require('./routes/userlist');
+var admindashboard = require('./routes/admindashboard');
 //var userenquiry = require('./routes/userenquiry');
 var app = express();
 
@@ -68,6 +69,7 @@ app.use('/chngpkg',chngpkg);
 app.use('/creatpkg',creatpkg);
 app.use('/userlist',userlist);
 app.use('/myprofile',myprofile);
+app.use('/admindashboard',admindashboard);
 //app.use('/userenquiry',userenquiry);
 
 // catch 404 and forward to error handler

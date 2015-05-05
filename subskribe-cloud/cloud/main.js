@@ -22,7 +22,7 @@ Parse.Cloud.define('saveUser', function(req, res) {
 	console.log("save user called main.js");
 	Parse.Cloud.useMasterKey();
 
-	if(req.params.id){																//if(!req.params.id || req.params.id == 0) {
+	if(!req.params.id || req.params.id == 0){																//if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
 			dob: req.params.dob,
@@ -31,7 +31,6 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			email: req.params.email,
 			conntype : req.params.conntype,
 			password: req.params.password,
-			//enterprise: req.params.enterprise,
 			address: req.params.address,
 			contactme: req.params.contactme,
 			personalNote: req.params.personalNote,	

@@ -96,8 +96,8 @@
 <div class="col-lg-6 " style="padding: 5px;">
 <div class="form-group input-group">
  <span class="input-group-addon"><i class="icon-user"></i></span>   
-<input type="hidden" name="f_name" id="f_name"/>
-<input name="txtFirstName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtName" class="form-control medium" style="width:100%;" />
+<!--input type="hidden" name="f_name" id="f_name"/-->
+<input name="txtFirstName" type ="text"  id="txtName" pattern="[A-Za-z]{1,50}"  title="Enter Character Only" placeholder="Enter Full Name" required="required" class="form-control medium" style="width:100%;" />
 </div>
 </br>
 </br>
@@ -114,7 +114,7 @@
 <div class="form-group input-group">
 <span class="input-group-addon"><i class="icon-tablet"></i></span>
 <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-<input name="txtMobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtMobileNumber" class="form-control medium" style="width:100%;" />
+<input name="txtMobileNumber" pattern="[0-9]{10,10}" placeholder="Enter 10 Digit Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtMobileNumber" class="form-control medium" style="width:100%;" />
 </div>
 </div>
 <div class="col-lg-3 " style="padding: 5px;">
@@ -172,7 +172,7 @@
 <div class="form-group input-group">
 <span class="input-group-addon"><i class=" icon-lock"></i></span>   
 <input type="hidden" name="password" id="password" />
-<input name="txtPassword" type="password" id="txtPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
+<input name="txtPassword" type="password" id="txtPassword" class="form-control medium" style="width:100%;" pattern=".{6,}" title="Six or more characters" required="required" placeholder="Enter Password"/>
 </div>
 </br>
 </br>

@@ -100,9 +100,9 @@
 <div class="col-lg-6 " style="padding: 5px;">
 <div class="form-group input-group">
  <span class="input-group-addon"><i class="icon-user"></i></span>
-<input type="hidden" name="f_name" id="f_name"/>
+<!--input type="hidden" name="f_name" id="f_name"/-->
 
-<input name="txtFirstName" placeholder="Enter Full Name" required="required" title="First Name is compulsory" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
+<input name="txtFirstName" pattern="[A-Za-z]{1,50}" placeholder="Enter Full Name" required="required" title="Enter Character Only" type="text" id="txtFname" class="form-control medium" style="width:100%;" />
 </div>
 </br>
 </div>
@@ -122,7 +122,7 @@
 <div class="form-group input-group">
  <span class="input-group-addon"><i class="icon-tablet"></i></span>
 <input type="hidden" name="TextBoxWatermarkExtender2_ClientState" id="TextBoxWatermarkExtender2_ClientState" />
-<input name="txtMobileNumber" pattern="[0-9]{1,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtPrimaryMobile" class="form-control medium" style="width:100%;" />
+<input name="txtMobileNumber" pattern="[0-9]{10,10}" placeholder="Enter Mobile Number" required="required" title="Mobile No. is is compulsory" type="text" id="txtMobileNumber" class="form-control medium" style="width:100%;" />
 </div>
 </div>
 <div class="col-lg-3 " style="padding: 5px;">
@@ -179,7 +179,7 @@
 <div class="form-group input-group">
 <span class="input-group-addon"><i class=" icon-lock"></i></span>
 <input type="hidden" name="password" id="password" />
-<input name="txtPassword" type="password" id="txtPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Password"/>
+<input name="txtPassword" type="password" id="txtPassword" class="form-control medium" style="width:100%;" pattern=".{6,}" title="Six or more characters" required="required" placeholder="Enter Password"/>
 </div>
 </br>
 </br>
@@ -194,7 +194,7 @@
 <div class="col-lg-4 " style="padding: 5px;">
 <div class="form-group input-group">
 <span class="input-group-addon"><i class="icon-search"></i></span>
-<select name="txtconnectionType" id="ddlConnectionfor" class="form-control medium" style="width:100%;">
+<select name="txtconnectionType" id="txtconnectionType" class="form-control medium" style="width:100%;">
 <option value="Personal use">Personal use</option>
 <option value="Office use">Office use</option>
 <option value="Small Medium Enterprises">Small Medium Enterprises</option>
@@ -344,7 +344,7 @@
 	<!-- User is FALSE for hideval-->
  <input type="hidden"  name="hideval" value="false"  /> 
  <input type="submit" class="btn btn-primary"></a> &nbsp; &nbsp; <input type="reset" class="btn btn-danger"></a>
- <!--input type="submit" class="btn btn-primary btn-lg btn-round"></a> &nbsp; &nbsp; <input type="reset" class="btn btn-danger btn-lg btn-round"></a-->	
+ <!--input type="submit" class="btn btn-primary btn-lg   btn-round"></a> &nbsp; &nbsp; <input type="reset" class="btn btn-danger btn-lg btn-round"></a-->	
 </div>					
 </script>
 </form>
