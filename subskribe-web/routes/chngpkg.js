@@ -3,8 +3,20 @@ var router = express.Router();
 var pkgs = Parse.Object.extend("Package");
 router.get('/', function(req, res, next) {
   console.log("Called Change package page");
-  res.render('chngpkg', {error: ""});    
- });  
+  var currentUser = Parse.User.current();
+  if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+    var _user = {
+       name : currentUser.get("name"),
+    }
+      res.render('chngpkg', {user : _user});
+
+  } else {
+      // show the signup or login page
+    res.render('login', {title: 'Login', message: Response.InvalidLogin});
+  }   
+  
+}); 
   
 
 
