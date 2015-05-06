@@ -4,6 +4,7 @@ var router = express.Router();
 router.get('/userlist', function(req, res, next) {
   console.log("User Listing Called");
   var userlist = [];
+
       
       var userQuery = new Parse.Query(Parse.User);
       userQuery.find({
@@ -17,7 +18,7 @@ router.get('/userlist', function(req, res, next) {
                 name : user.get('name'),
                 email: user.get('email'),
                 username:user.get('username'),
-                telephone :user.get('telephone'),
+                //telephone :user.get('telephone'),
                 mobile:user.get('mobile'),
                 address: user.get('address'),
                 dob:user.get('dob'),

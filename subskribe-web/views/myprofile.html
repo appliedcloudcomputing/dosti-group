@@ -107,9 +107,18 @@
 <form action="/myprofile/save" method="post">            
    <table align="center" width="500" height="400" cellpadding="10">
 <tr>
+
+   <td><i class="icon-large icon-parents"></i>    <lable class="glyphicon glyphicon-user">Name</lable></td>  <td><lable name="lblName" id="lblName"><%= user.name %></lable></td>
+</tr>
+
+<tr  class="success">
+    <td><input type="text" name="txtName" id="txtName" value="<%= user.name %>" style ="display: none;" /></td>
+</tr>
+
    <td><lable class="glyphicon glyphicon-user"> Name</lable></td>  <td><lable name="lblName" id="lblName"><%= user.name %></lable></td>
 <td><input type="text" name="txtName" id="txtName" value="<%= user.name %>" style ="display: none;" /></td>
 </tr>
+
 
 <tr><td><td><td></td></tr>
 
