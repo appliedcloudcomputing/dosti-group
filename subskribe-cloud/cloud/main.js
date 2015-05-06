@@ -171,7 +171,7 @@ Parse.Cloud.define('creatPackage', function(req, res) {
 
 		   'pkgName':req.params.pkgName,
          
-          'pkgDesc': req.params.pkgDesc, 
+          //'pkgDesc': req.params.pkgDesc, 
           
           'pkgPrice': req.params.pkgPrice,
           

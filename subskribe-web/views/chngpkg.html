@@ -9,6 +9,11 @@
 function verify() {
     
    alert("Function");
+   var pname = document.getElementById('newPkgName').value;
+   //alert(pname);
+
+   var pvalidity= document.getElementById('newpkgValidity').value;
+   //alert(pvalidity);
   
 }  
 </script>    
@@ -54,72 +59,131 @@ function verify() {
         <div class="row">
     <div id="UpdatePanel1">
 
-
-<div class="col-lg-12">
-
+  <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
-        <strong>New Package</strong><span style="color: red;"></span>
+        <strong>Current Package :<span style="color: red;"></strong>
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+		<div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-hand-right"></i></span>
+		<input type="hidden" name="f_name" id="f_name"/>
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		</div>
+	    </div>
+		</br>
+    </br>
+    </br>
+		</div>
+		
+		 <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Validity :<span style="color: red;"></strong>
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+		<div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+		<input type="hidden" name="f_name" id="f_name"/>
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		</div>
+	    </div>
+		</br>
+    </br>
+    </br>
+		</div>
+		
+		 <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong> Price :<span style="color: red;"></strong>
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+		<div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-inr"></i></span>
+		<input type="hidden" name="f_name" id="f_name"/>
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		</div>
+	    </div>
+		</br>
+    </br>
+    </br>
+	</br>
+	</br>
+	</br>
+	</br>
+		</div>
+		
+
+		
+<div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Select Package :</strong><span style="color: red;"></span>
         <br />
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
-        <input type="hidden" name="password" id="password" />
-      <select id="newPkgName" name="newPkgName" onchange="verify()">
- <% for(var i = 0; i < userList.length; i++)
-                     { %>
- <option value = "<%= userList[i].pkname %>"><%= userList[i].pkname %>
- </option>
+        <select class="form-control" name="newPkgName" id="newPkgName">
+            <% for(var i = 0; i < userList.length; i++)
+                     { %>                     
+                  <option value="<%= userList[i].pkname %>">
+                    <%= userList[i].pkname %>
+                  </option>
                      <% } %>
-  </select>
- 
+                  </select>
+            </select>
         </div>
         </div>
     </br>
     </br>
     </br>
     </div>
-
-    <div class="col-lg-12">
+	
+	
+	<div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
-        <strong>Price Per Month</strong><span style="color: red;"></span>
+        <strong>Validity :</strong><span style="color: red;"></span>
         <br />
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
-        <input type="hidden" name="password" id="password" />
-         <input type="text" name="newPkgPrice" id="newPkgPrice" readonly value=""/>
-      
+        <select class="form-control" name="newPkgValidity" id="newpkgValidity">
+            <% for(var i = 0; i < userList.length; i++)
+                     { %>                     
+           <option value="<%= userList[i].pkgvalidity %>">
+                    <%= userList[i].pkgvalidity %>
+                  </option></a>
+                     <% } %>
+                  </select>
+            </select>
         </div>
         </div>
     </br>
     </br>
     </br>
     </div>
+	
 
     <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
-        <strong>Validity</strong><span style="color: red;"></span>
-        <br />
+        <strong> Price :<span style="color: red;"></strong>
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
-        <div class="form-group input-group">
+		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
-        <input type="hidden" name="password" id="password" />
-         <input type="number" name="newPkgvalidity" id="newPkgvalidity" value="1" />
-       <!-- <select id="newPkgPrice" name="newPkgPrice">-->
-       
-        </div>
-        </div>
+		<input type="hidden" name="f_name" id="f_name"/>
+<a href="/chngpkg/pkgprice?pkname=<%=userList[i].pkname%>"> <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"/> </a>
+		</div>
+	    </div>
+		</br>
     </br>
     </br>
-    </br>
-    </div>
+		</div>
+
+    
 
 <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
-        <strong>Renew Type</strong><span style="color: red;"></span>
+        <strong>Renew Type :</strong><span style="color: red;"></span>
         <br />
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
@@ -137,7 +201,7 @@ function verify() {
     </div>
     
    
-<script>
+<!--<script>
 function myFunction() {
     console.log("In console");
     var x = document.getElementById("txtCurrent").value;
@@ -147,7 +211,7 @@ function myFunction() {
     var price= x * y;
     document.getElementById("txtPrice").innerHTML= price;
 }
-</script>
+</script>-->
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
@@ -158,9 +222,7 @@ function myFunction() {
                 
                        
                     </div>
-                    <strong> Current Package </strong> <input type="text" name="txtCurrPkg" value="Nil" readonly /> <br/>
-                    <strong> Validity </strong> <input type="text" name="txtCurrValidity" value="Nil" readonly /> <br/>
-                    <strong> Price </strong> <input type="text" name="txtCurrPrice" value="Nil" readonly /> <br/>
+                    
                          </form>    
              
 				 

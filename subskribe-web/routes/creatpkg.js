@@ -17,7 +17,7 @@ router.post('/save', function(req, res, next) {
 
 var pkgdata = {
           'pkgName':req.body.txtPkgName, 
-          'pkgDesc': req.body.txtPkgDesc, 
+         // 'pkgDesc': req.body.txtPkgDesc, 
           'pkgValidity':req.body.txtValidity,
           'pkgPrice': req.body.txtPrice,
            };

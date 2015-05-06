@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
-var pkgs = Parse.Object.extend("Package");
+
 
 
 
@@ -25,7 +24,6 @@ router.get('/', function(req, res, next) {
             users.forEach(function(user) 
             {
               var _user = {
-
                 pkname: user.get('pkname'),
                 pkgvalidity:user.get('pkgvalidity'),
                 pkgprice:user.get('pkgprice')
@@ -52,40 +50,20 @@ router.get('/', function(req, res, next) {
 });
 
  
-  
-
-
-
-
-
 router.post('/save', function(req, res, next) {
-  console.log("Change Package called");
+console.log("Change Package called");
   
   
-	console.log("Pkg Decription :"+ req.body.newPkgName);
-	console.log("Pkg Price :"+ req.body.newPkgPrice);
-	console.log("Pkg Validity :"+ req.body.newPkgValidity);
+console.log("Pkg Decription :"+ req.body.newPkgName);
+	//console.log("Pkg Price :"+ req.body.newPkgPrice);
+console.log("Pkg Validity :"+ req.body.newPkgValidity);
   
+});
 
-  
 
-/*var pkgdata ={
-   // 'pkgName' : req.body.txtPkgName,
-    'pkgDesc' : req.body.txtDesc,
-    'pkgPrice' : price,
-    pkgCurrent : req.body.txtCurrent,
-    'pkgValidity' : req.body.txtValidity,
-    'pkgType' : req.body.pkgType,
-  }	;
-
-   Parse.Cloud.run('saveAdminpkgcc', pkgdata, {
-      success: function(message) {
-        console.log("Success.....Moving To Cloud Code");
-      },
-      error: function(error) {
-        console.log("Error..........");
-      }
-});*/
+router.get('/pkgprice', function(req, res, next) {
+console.log("Pricing Method called");
+console.log("Package Name:"+req.query.id);  
 });
 
 module.exports = router;

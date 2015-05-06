@@ -23,7 +23,7 @@ exports.save = function(params) {
 		var pkg = new Package();
 		
 		pkg.set("pkname", params.pkgName);
-		pkg.set("pkgdesc", params.pkgDesc);
+		//pkg.set("pkgdesc", params.pkgDesc);
 		pkg.set("pkgprice", params.pkgPrice);
 		pkg.set("pkgvalidity", params.pkgValidity);
 		
