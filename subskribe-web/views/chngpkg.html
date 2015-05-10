@@ -4,19 +4,36 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
+<script type="text/javascript">
 
- <script type="text/javascript">
-function verify() {
-    
-   alert("Function");
-   var pname = document.getElementById('newPkgName').value;
-   //alert(pname);
+function loadXMLDoc()
+{
+    alert("In function");
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+   var pkgname=document.getElementById("newPkgName").value;
+        alert(pkgname);
 
-   var pvalidity= document.getElementById('newpkgValidity').value;
-   //alert(pvalidity);
-  
-}  
-</script>    
+        var pkgvalidity=document.getElementById("newpkgValidity").value;
+        alert(pkgvalidity);
+  }
+  xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtPrice").innerHTML=xmlhttp.responseText;
+    }
+  }
+
+
+xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
+xmlhttp.send();
+//document.getElementById('txtPrice').innerHTML = <%= user.pkgprice %>;
+}
+</script>
+ 
 <% include partials/head.html %>
 </head>
 
@@ -67,7 +84,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
 		</div>
 	    </div>
 		</br>
@@ -83,7 +100,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
 		</div>
 	    </div>
 		</br>
@@ -99,7 +116,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"  />
 		</div>
 	    </div>
 		</br>
@@ -171,7 +188,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-<a href="/chngpkg/pkgprice?pkname=<%=userList[i].pkname%>"> <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"/> </a>
+ <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="loadXMLDoc()"/> 
 		</div>
 	    </div>
 		</br>
@@ -199,7 +216,7 @@ function verify() {
     </br>
     </br>
     </div>
-    
+ 
    
 <!--<script>
 function myFunction() {
@@ -212,7 +229,7 @@ function myFunction() {
     document.getElementById("txtPrice").innerHTML= price;
 }
 </script>-->
-
+ <!--<input type="text" name="pkgid" value="<%= userList[1].pkgid %>" />-->
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
 	  <input type="submit" class="btn btn-primary"></a> 

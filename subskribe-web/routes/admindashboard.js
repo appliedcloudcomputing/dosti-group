@@ -8,8 +8,8 @@ router.get('/admindashboard', function(req, res, next) {
       
 
 //var currentUser = Parse.User.current();
- // if (currentUser) {
-   // console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+  //if (currentUser) {
+    //console.log("CURRENT USER : "+ JSON.stringify(currentUser));
    // var _user = {
       // name : currentUser.get("name"),
    // }

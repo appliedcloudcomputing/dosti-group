@@ -19,6 +19,7 @@ exports.save = function(params) {
 		console.log("****** Saving Feedback ************ ");
 
 		var feed = new Feedback();
+		feed.set("name", params.name);
 		feed.set("username", params.username);
 		feed.set("subject", params.subject);
 		feed.set("description", params.desc);

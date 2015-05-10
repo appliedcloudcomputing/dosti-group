@@ -392,7 +392,7 @@
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1> Dashboard </h1>
+                        <h1> Feedback List </h1>
                     </div>
                 </div>
                   <hr />
@@ -419,35 +419,27 @@
                     <tr role="row" class="success">
 
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending" style="width: 195px;">Name</th>
-                    <th class="sorting_desc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 260px;" aria-sort="descending">User Name</th>
+                    
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 239px;">Email Id</th>
-                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 168px;">Connection Type</th>
-                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 124px;">Address</th>
-                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending" style="width: 195px;">Mobile</th>
-                   <!-- <th class="sorting_desc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 260px;" aria-sort="descending">Telephone</th>-->
-                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 239px;">Accesss Type</th>
-                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 239px;">Date Of Birth</th>
+                   
+                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 124px;">Subject</th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending" style="width: 195px;">Description</th>
+                  
                     
                     </tr>
             </thead>
             <tbody>
                   
                                       <% for(var i = 0; i < userlist.length; i++) { %>   
-                                    <tr class="success"> <!--class="gradeA odd"> -->
+                                 <a href="/adminfeedbacklist/feedbackdetails"><tr class="success"> <!--class="gradeA odd"> -->
                                             <td class=""><%= userlist[i].name %></td>
                                             <td class="sorting_1"><%= userlist[i].username %></td>
-                                            <td class=" "><%= userlist[i].email %></td>
-                                            <td class="center "><%= userlist[i].connectiontype %></td>
-                                            <td class="center "><%= userlist[i].address %></td>
+                                            <td class=" "><%= userlist[i].subject %></td>
+                                            <td class="center "><%= userlist[i].desc %></td>
+                                            
 
-                                            <td class=" "><%= userlist[i].mobile %></td>
-                                           <!-- <td class="center "><%= userlist[i].telephone %></td> -->
-                                            <td class="center "><%= userlist[i].usertype %></td>
 
-                                             
-                                            <td class=" "><%= userlist[i].dob %></td>
-
-                                        </tr>
+                                        </tr></a>
                                         <% } %>
                                     </tbody>
                                 </table></div>
