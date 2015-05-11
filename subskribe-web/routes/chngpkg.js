@@ -13,29 +13,30 @@ router.get('/', function(req, res, next) {
     var _u = {
        name : currentUser.get("name"),
     }
-     var userList = [];
+     var pkgList = [];
       var Package = Parse.Object.extend("Package");
       var userQuery = new Parse.Query(Package);
       userQuery.find({
         success: function(users) 
         {
-          console.log('USER SUCCESS');
+          console.log('In Change Package SUCCESS');
           if(users) {
             users.forEach(function(user) 
             {
               var _user = {
+                pkid: user.id,
                 pkname: user.get('pkname'),
                 pkgvalidity:user.get('pkgvalidity'),
                 pkgprice:user.get('pkgprice')
                 }
-              userList.push(_user);
+              pkgList.push(_user);
             });
-            res.render('chngpkg', {userList: userList, user : _u});
+            res.render('chngpkg', {pkgList: pkgList, user : _u});
            } 
 
            else 
            {
-            console.log('NO USERS PRESENT');
+            console.log('NO Package PRESENT');
            }
         },
         error: function(error) {
@@ -50,15 +51,15 @@ router.get('/', function(req, res, next) {
 });
 
  
-router.post('/save', function(req, res, next) {
-console.log("Change Package called");
+/*router.post('/save', function(req, res, next) {
+console.log("Change Package called");*/
   
   
-console.log("Pkg Decription :"+ req.body.newPkgName);
+/*console.log("Pkg Decription :"+ req.body.newPkgName);
 	//console.log("Pkg Price :"+ req.body.newPkgPrice);
 console.log("Pkg Validity :"+ req.body.newPkgValidity);
   
-});
+});*/
 
 
 router.get('/pkgprice', function(req, res, next) {

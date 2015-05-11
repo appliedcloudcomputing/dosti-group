@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
@@ -6,16 +6,32 @@
 <head>
 
  <script type="text/javascript">
-function verify() {
-    
-   alert("Function");
-   var pname = document.getElementById('newPkgName').value;
-   //alert(pname);
+fucntion loadXMLDoc()
+{
+    alert("In Function");
+    var xmlhttp;
 
-   var pvalidity= document.getElementById('newpkgValidity').value;
-   //alert(pvalidity);
-  
-}  
+    if(window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest();
+
+        var pkgname=document.getElementById("newPkgName").value;
+        alert(pkgname);
+
+        var pkgvalidity=document.getElementById("newPkgValidity").value;
+        alert(pkgvalidity);
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if(xmlhttp.readystate==4 && xmlhttp.status==200)
+        {
+            document.getElementById("txtPrice").innerHTML=xmlhttp.responseText;
+
+        }
+    }
+    xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
+    xmlhttp.send();
+}
 </script>    
 <% include partials/head.html %>
 </head>
@@ -67,7 +83,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		<input name="txtCurrPkgName" type="text" id="txtCurrPkgName" class="form-control medium" style="width:100%;" />
 		</div>
 	    </div>
 		</br>
@@ -83,7 +99,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		<input name="txtCurrPkgValidity" type="text" id="txtCurrPkgValidity" class="form-control medium" style="width:100%;" />
 		</div>
 	    </div>
 		</br>
@@ -99,7 +115,7 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="myFunction();"/>
+		<input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
 		</div>
 	    </div>
 		</br>
@@ -122,10 +138,10 @@ function verify() {
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
         <select class="form-control" name="newPkgName" id="newPkgName">
-            <% for(var i = 0; i < userList.length; i++)
+            <% for(var i = 0; i < pkgList.length; i++)
                      { %>                     
-                  <option value="<%= userList[i].pkname %>">
-                    <%= userList[i].pkname %>
+                  <option value="<%= pkgList[i].pkname %>">
+                    <%= pkgList[i].pkname %>
                   </option>
                      <% } %>
                   </select>
@@ -147,10 +163,10 @@ function verify() {
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
         <select class="form-control" name="newPkgValidity" id="newpkgValidity">
-            <% for(var i = 0; i < userList.length; i++)
+            <% for(var i = 0; i < pkgList.length; i++)
                      { %>                     
-           <option value="<%= userList[i].pkgvalidity %>">
-                    <%= userList[i].pkgvalidity %>
+           <option value="<%= pkgList[i].pkgvalidity %>">
+                    <%= pkgList[i].pkgvalidity %>
                   </option></a>
                      <% } %>
                   </select>
@@ -171,7 +187,8 @@ function verify() {
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-<a href="/chngpkg/pkgprice?pkname=<%=userList[i].pkname%>"> <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"/> </a>
+        <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
+        onfocus="loadXMLDoc()" />
 		</div>
 	    </div>
 		</br>
