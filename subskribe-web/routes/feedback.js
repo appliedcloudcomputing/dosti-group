@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
     console.log("CURRENT USER : "+ JSON.stringify(currentUser));
     var _user = {
        name : currentUser.get("name"),
+       email : currentUser.get("email"),
     }
     res.render('feedback', {user : _user});
     }else {
@@ -20,12 +21,14 @@ router.get('/', function(req, res, next) {
 
 router.post('/save', function(req, res, next) {
   	console.log("Called Post Of Feedback");
+    console.log(req.body.txtName);
   	console.log(req.body.txtUsername);
 	console.log(req.body.txtSubject);
 	console.log(req.body.txtDesc);
 
 
 	var feeddata ={
+    'name' : req.body.txtName,
     'userName' : req.body.txtUsername,
     'subject' : req.body.txtSubject,
     'desc' : req.body.txtDesc,

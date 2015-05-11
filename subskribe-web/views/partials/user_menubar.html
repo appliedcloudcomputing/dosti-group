@@ -1,0 +1,89 @@
+<div id="left">
+            <div class="media user-media well-small">
+                <a class="user-link" href="#">
+                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="/assets/img/user.gif" />
+                </a>
+                <br />
+                <div class="media-body">
+                    <h6 class="media-heading"><b><%= user.name %></b></h6>
+                    <ul class="list-unstyled user-info">
+                        
+                        <li>
+                             <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online
+                           
+                        </li>
+                       
+                    </ul>
+                </div>
+                <br />
+            </div>
+
+            <ul id="menu" class="collapse" id="liDashboard">
+<li class="panel">
+                    <a href="/dashboard/" >
+                        <i class="icon-home"></i> Dashboard
+       
+                       
+                    </a>                   
+                </li>
+
+
+
+                <li class="panel " id="liMyprofile">
+                    <a href="/myprofile/" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#component-nav">
+                        <i class="icon-user"> </i> My Profile     
+       
+                        <span class="pull-right">
+                          <i class="icon-angle-left"></i>
+                        </span>
+                       &nbsp; <span class="label label-default"></span>&nbsp;
+                    </a>
+                    
+                </li>
+				
+                <li class="panel " id="liChangepassword">
+                    <a href="/cwd/" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                        <i class="icon-lock"></i> Change Password
+       
+                        <span class="pull-right">
+                            <i class="icon-angle-left"></i>
+                        </span>
+                          &nbsp; <span class="label label-success"></span>&nbsp;
+                    </a>
+                    
+                </li>
+
+				<li class="panel " id="liChangepackage">
+                    <a href="/chngpkg/" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                        <i class="icon-pencil"></i> Change Package
+       
+                        <span class="pull-right">
+                            <i class="icon-angle-left"></i>
+                        </span>
+                          &nbsp; <span class="label label-success"></span>&nbsp;
+                    </a>
+                    
+                </li>
+                
+
+                <li class="panel" id="liFeedback">
+                    <a href="/feedback/" data-parent="#menu" data-toggle="collapse" class="accordion-toggle collapsed" data-target="#form-nav">
+                        <i class="icon-envelope-alt"></i> Feedback
+       
+                        <span class="pull-right">
+                            <i class="icon-angle-left"></i>
+                        </span>
+                          &nbsp; <span class="label label-success"></span>&nbsp;
+                    </a>
+                    
+                </li>
+
+
+                <!--li id="liFeedback"><a href="/feedback/"><i class="icon-envelope-alt"></i> Feedback </a></li-->
+
+            </ul>
+
+        </div>
+        <!--END MENU SECTION -->
+                
+                

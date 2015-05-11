@@ -1,77 +1,70 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/chngpkg', function(req, res, next) {
 
-  console.log("Called Change package page");
-      var pkgList = [];
-      
+
+
+router.get('/', function(req, res, next) {
+   console.log("Change Package");
+    var currentUser = Parse.User.current();
+   if (currentUser) 
+  {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+    var _u = {
+       name : currentUser.get("name"),
+    }
+     var pkgList = [];
       var Package = Parse.Object.extend("Package");
       var userQuery = new Parse.Query(Package);
       userQuery.find({
-        success: function(pkgs) 
+        success: function(users) 
         {
-          console.log('package SUCCESS');
-          if(pkgs) {
-            pkgs.forEach(function(pkgs) 
+          console.log('In Change Package SUCCESS');
+          if(users) {
+            users.forEach(function(user) 
             {
               var _user = {
-
-                pkname: pkgs.get('pkname'),
-                pkgvalidity: pkgs.get('pkgvalidity'),
-                
-                          }
+                pkid: user.id,
+                pkname: user.get('pkname'),
+                pkgvalidity:user.get('pkgvalidity'),
+                pkgprice:user.get('pkgprice')
+                }
               pkgList.push(_user);
             });
-            res.render('chngpkg', {pkgList: pkgList});
+            res.render('chngpkg', {pkgList: pkgList, user : _u});
            } 
 
            else 
            {
-            console.log('NO USERS PRESENT');
+            console.log('NO Package PRESENT');
            }
         },
-        error:function(error) {
+        error: function(error) {
           console.log('ERROR FINDING USERS: ' + error.message);
         }
       });
 
-
-  });  
-  
-
-
-
-router.post('/save', function(req, res, next) {
-  console.log("Called Change pkg package post method");
-  //console.log(req.body.oldPassword);
-	//console.log("Pkg Name :"+ req.body.txtPkgName);
-  
-	console.log("Pkg Decription :"+ req.body.txtDesc);
-	console.log("Pkg Price :"+ req.body.txtPrice);
-	console.log("Pkg Validity :"+ req.body.txtValidity);
-  console.log("Current Pkg :"+ req.body.txtCurrent);
-
-  var price=req.body.txtValidity * req.body.txtCurrent;
-  console.log ("Price is="+ price);
-
-	var pkgdata ={
-   // 'pkgName' : req.body.txtPkgName,
-    'pkgDesc' : req.body.txtDesc,
-    'pkgPrice' : price,
-    pkgCurrent : req.body.txtCurrent,
-    'pkgValidity' : req.body.txtValidity,
-    'pkgType' : req.body.pkgType,
-  }	;
-
-   Parse.Cloud.run('saveAdminpkgcc', pkgdata, {
-      success: function(message) {
-        console.log("Success.....Moving To Cloud Code");
-      },
-      error: function(error) {
-        console.log("Error..........");
-      }
+  }else {
+      // show the signup or login page
+    res.render('login', {title: 'Login', message: Response.InvalidLogin});
+  }   
 });
+
+ 
+/*router.post('/save', function(req, res, next) {
+console.log("Change Package called");*/
+  
+  
+/*console.log("Pkg Decription :"+ req.body.newPkgName);
+  //console.log("Pkg Price :"+ req.body.newPkgPrice);
+console.log("Pkg Validity :"+ req.body.newPkgValidity);
+  
+});*/
+
+
+router.get('/pkgprice', function(req, res, next) {
+console.log("Pricing Method called");
+console.log("Package Name:"+req.query.id);  
 });
 
 module.exports = router;

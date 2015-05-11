@@ -3,8 +3,8 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/Admin/creatpkg.js');
-
+var pkg = require('cloud/admin/creatpkg.js');
+var faq = require('cloud/admin/adminfaq.js');
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
 	ParametersEmpty: 'Please provide complete details',
@@ -22,7 +22,7 @@ Parse.Cloud.define('saveUser', function(req, res) {
 	console.log("save user called main.js");
 	Parse.Cloud.useMasterKey();
 
-	if(req.params.id){																//if(!req.params.id || req.params.id == 0) {
+	if(!req.params.id || req.params.id == 0){																//if(!req.params.id || req.params.id == 0) {
 		user.save({
 			name: req.params.name,
 			dob: req.params.dob,
@@ -31,7 +31,6 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			email: req.params.email,
 			conntype : req.params.conntype,
 			password: req.params.password,
-			//enterprise: req.params.enterprise,
 			address: req.params.address,
 			contactme: req.params.contactme,
 			personalNote: req.params.personalNote,	
@@ -136,7 +135,8 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	 	//Parse.Cloud.useMasterKey();
 	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
 		console.log("In main js save feedback");
-    feed.save({    
+    feed.save({  
+    		name : req.params.name,
             username : req.params.userName,
             subject : req.params.subject,
             desc : req.params.desc,
@@ -154,7 +154,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	
 
 	
-/********************************* admin package create **********************/
+/********************************* admin faq create **********************/
 
 
 	
@@ -172,7 +172,7 @@ Parse.Cloud.define('creatPackage', function(req, res) {
 
 		   'pkgName':req.params.pkgName,
          
-          'pkgDesc': req.params.pkgDesc, 
+          //'pkgDesc': req.params.pkgDesc, 
           
           'pkgPrice': req.params.pkgPrice,
           
@@ -209,5 +209,27 @@ Parse.Cloud.define('creatPackage', function(req, res) {
 });
 
    
+/********************************* Admin Creating FAQ **********************/
 
+Parse.Cloud.define('addfaq', function(req, res) {
+	console.log("adding frequently asked questions main.js");
+	if(!req.params.id || req.params.id == 0) {
+		faq.save({
 
+		   'question': req.params.question,
+         
+          
+          'answer': req.params.answer,
+          
+           		
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+	});
+
+	

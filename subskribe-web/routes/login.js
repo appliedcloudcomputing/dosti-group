@@ -26,13 +26,15 @@ router.post('/', function(req, res) {
         console.log("USER FOUND");
         //req.session.user = JSON.stringify(user);
         res.redirect('/dashboard');
-      } else {
+      }
+      
+       else {
         console.log("USER NOT FOUND");
         res.render('login', {title: 'Login', message: Response.InvalidLogin}); 
       }           
     },
     error: function(user, error) {
-      console.log("ERROR :"+ error.code + " message:"+ error.message);
+      console.log("ERROR ****:"+ error.code + " message:"+ error.message);
       res.render('login', {title: 'Login', message: Response.InvalidLogin});
     }
   });

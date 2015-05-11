@@ -35,18 +35,15 @@ router.post('/save', function(req, res, next) {
   console.log(req.body.hideval);
 
   var data = {
-          'name':req.body.txtFirstName,
-         // 'dob': req.body.dobMonth +" " + req.body.dobDate + " " + req.body.dobYear, 
+          'name':req.body.txtFirstName, 
           'mobile': req.body.txtMobileNumber, 
           'telephone':req.body.txtTelephoneNumber,
           'dob' : req.body.txtDOB,
           'email': req.body.txtPrimaryEmailAddress,
           'conntype' : req.body.txtconnectionType,
            'password': req.body.txtPassword,
-         //'enterprise': req.body.hideval,
          'contactme' : req.body.txtContactDate + req.body.txtTime,
           'address':  req.body.txtBusinessAddress,
-          //'contactTime': "06/01/2015",
           'personalNote':req.body.txtPersonalNote,
           'usertype' : req.body.hideval,
         };
