@@ -408,10 +408,7 @@
         </div>
         <div class="col-lg-6 " style="padding: 5px;">
         <select class="form-control" name="txtCurrent">
-            <% for(var i = 0; i < pkgList.length; i++) { %>
-            <option value=1><%= pkgList[i].pkname %></option>
-             <% } %>
-            </select>
+                      </select>
         </br>
         </div>
     </div>
@@ -422,8 +419,8 @@
         </div>
         <div class="col-lg-6 " style="padding: 5px;">
         <select class="form-control" name="txtValidity">
-            <% for(var i = 0; i < userList.length; i++) { %>
-            <option value=1><%= userList[i].pkgvalidity %></option>
+            <% for(var i = 0; i < pkgList.length; i++) { %>
+            <option value=1><%= pkgList[i].pkgvalidity %></option>
              <% } %>
             </select>
         </br>

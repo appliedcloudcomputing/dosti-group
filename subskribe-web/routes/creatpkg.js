@@ -3,7 +3,9 @@ var router = express.Router();
 
 router.get('/creatpkg', function(req, res, next) {
   console.log("Called Create package page");
-  res.render('creatpkg', {error: ""});
+    res.render('creatpkg');
+    
+        
 });
 
 router.post('/save', function(req, res, next) {

@@ -1,15 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var pkgs = Parse.Object.extend("Package");
+
 router.get('/chngpkg', function(req, res, next) {
+
   console.log("Called Change package page");
       var pkgList = [];
       
-      var pkgQuery = new Parse.Query(Parse.Package);
-      pkgQuery.find({
+      var Package = Parse.Object.extend("Package");
+      var userQuery = new Parse.Query(Package);
+      userQuery.find({
         success: function(pkgs) 
         {
-          console.log('USER SUCCESS');
+          console.log('package SUCCESS');
           if(pkgs) {
             pkgs.forEach(function(pkgs) 
             {
