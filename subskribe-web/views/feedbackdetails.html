@@ -6,7 +6,7 @@
 <!-- BEGIN HEAD-->
 <head>
     <title>Change Password Form</title>
-<!--% include partials/head.html %-->
+<% include partials/head.html %>
 
 </head>
     <!-- END  HEAD-->
@@ -24,7 +24,7 @@
 
 
         <!-- MENU SECTION -->
-    <!--% include partials/user_menubar.html %>-->
+    <% include partials/user_menubar.html %>
         <!--END MENU SECTION -->
 
 
@@ -58,7 +58,7 @@
         <div class="form-group input-group">
         <span class="input-group-addon"><i class=" icon-user"></i></span>
         <input type="hidden" name="password" id="password" />
-        <input name="userName" type="text" id="userName" class="form-control medium" style="width:100%;" required="required" value="<%= user.name %>" />
+        <input name="userName" type="text" id="userName" class="form-control medium" style="width:100%;" required="required" value="<%= user.name %>" readonly />
         <!--input name="txtUsername" type="text" id="txtEmail" class="form-control medium" style="width:100%;" required="required"-->
     </div>
         </div>
@@ -76,7 +76,7 @@
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-lock"></i></span>
         <input type="hidden" name="password" id="password" />
-        <input name="txtUserName" type="text" id="txtUserName" class="form-control medium" style="width:100%;" required="required" value="<%= user.email %>" />
+        <input name="txtUserName" type="text" id="txtUserName" class="form-control medium" style="width:100%;" required="required" value="<%= user.username %>" readonly />
         </div>
         </div>
     </br>
@@ -93,7 +93,7 @@
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-unlock-alt"></i></span>
         <input type="hidden" name="password" id="password" />
-        <input name="txtSubject" type="text" id="txtSubject" class="form-control medium" style="width:100%;" required="required" value="<%= user.subject %>" />
+        <input name="txtSubject" type="text" id="txtSubject" class="form-control medium" style="width:100%;" required="required" value="<%= user.subject %>" readonly />
         </div>
         </div>
     </br>
@@ -110,7 +110,8 @@
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-unlock-alt"></i></span>
         <input type="hidden" name="password" id="password" />
-  <input name="txtDesc" type="textarea" id="txtDesc" class="form-control medium" style="width:100%;" required="required" value="<%= user.description %>"/>
+        <textarea name="txtDesc" id="txtDesc" cols="80" rows="10" disabled ><%= user.description %></textarea>
+  <!--<input name="txtDesc" type="textarea" id="txtDesc" class="form-control medium" style="width:100%;" required="required" value="<%= user.description %>"/>-->
         </div>
         </div>
     </br>

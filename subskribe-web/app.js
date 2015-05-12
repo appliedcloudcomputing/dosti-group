@@ -36,6 +36,7 @@ var creatpkg = require('./routes/creatpkg');
 var userlist = require('./routes/userlist');
 var admindashboard = require('./routes/admindashboard');
 var adminfeedbacklist = require('./routes/adminfeedbacklist');
+var adminfaq = require('./routes/adminfaq');
 //var userenquiry = require('./routes/userenquiry');
 var app = express();
 
@@ -72,6 +73,7 @@ app.use('/userlist',userlist);
 app.use('/myprofile',myprofile);
 app.use('/admindashboard',admindashboard);
 app.use('/adminfeedbacklist',adminfeedbacklist);
+app.use('/adminfaq',adminfaq);
 //app.use('/userenquiry',userenquiry);
 
 // catch 404 and forward to error handler

@@ -431,15 +431,15 @@
             <tbody>
                   
                                       <% for(var i = 0; i < userlist.length; i++) { %>   
-                                 <a href="/adminfeedbacklist/feedbackdetails"><tr class="success"> <!--class="gradeA odd"> -->
-                                            <td class=""><%= userlist[i].name %></td>
-                                            <td class="sorting_1"><%= userlist[i].username %></td>
-                                            <td class=" "><%= userlist[i].subject %></td>
-                                            <td class="center "><%= userlist[i].desc %></td>
+                                 <tr class="success"> <!--class="gradeA odd"> -->
+                                           <td class=""><a href="/adminfeedbacklist/feedbackdetails?id=<%=userlist[i].id%>"><%= userlist[i].name %></a></td>
+                                            <td class="sorting_1"><a href="/adminfeedbacklist/feedbackdetails?id=<%=userlist[i].id%>"><%= userlist[i].username %></a></td>
+                                            <td class=" "><a href="/adminfeedbacklist/feedbackdetails?id=<%=userlist[i].id%>"><%= userlist[i].subject %></a></td>
+                                            <td class="center "> <a href="/adminfeedbacklist/feedbackdetails?id=<%=userlist[i].id%>"><%= userlist[i].desc %></a></td>
                                             
 
 
-                                        </tr></a>
+                                        </tr>
                                         <% } %>
                                     </tbody>
                                 </table></div>

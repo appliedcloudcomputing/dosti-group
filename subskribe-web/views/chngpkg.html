@@ -4,11 +4,12 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-<script type="text/javascript">
 
-<<<<<<< HEAD
+
  <script type="text/javascript">
+
 fucntion loadXMLDoc()
+
 {
     alert("In Function");
     var xmlhttp;
@@ -34,37 +35,9 @@ fucntion loadXMLDoc()
     xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
     xmlhttp.send();
 }
+
 </script>    
-=======
-function loadXMLDoc()
-{
-    alert("In function");
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {
-  xmlhttp=new XMLHttpRequest();
-   var pkgname=document.getElementById("newPkgName").value;
-        alert(pkgname);
 
-        var pkgvalidity=document.getElementById("newpkgValidity").value;
-        alert(pkgvalidity);
-  }
-  xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("txtPrice").innerHTML=xmlhttp.responseText;
-    }
-  }
-
-
-xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
-xmlhttp.send();
-//document.getElementById('txtPrice').innerHTML = <%= user.pkgprice %>;
-}
-</script>
- 
->>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
 <% include partials/head.html %>
 </head>
 
@@ -103,7 +76,7 @@ xmlhttp.send();
                  
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
                  
-				<form action="/chngpkg/save" method="post">          
+                <form action="/chngpkg/save" method="post">          
         <div class="row">
     <div id="UpdatePanel1">
 
@@ -112,67 +85,85 @@ xmlhttp.send();
         <strong>Current Package :<span style="color: red;"></strong>
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
-		<div class="form-group input-group">
+        <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
-		<input type="hidden" name="f_name" id="f_name"/>
-<<<<<<< HEAD
+
 		<input name="txtCurrPkgName" type="text" id="txtCurrPkgName" class="form-control medium" style="width:100%;" />
-=======
+
 		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
->>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
+
 		</div>
 	    </div>
 		</br>
+
+        <input type="hidden" name="f_name" id="f_name"/>
+        <input name="txtCurrPkgName" type="text" id="txtCurrPkgName" class="form-control medium" style="width:100%;" />
+        </div>
+        </div>
+        </br>
+
     </br>
     </br>
-		</div>
-		
-		 <div class="col-lg-12">
+        </div>
+        
+         <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
         <strong>Validity :<span style="color: red;"></strong>
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
-		<div class="form-group input-group">
+        <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
-		<input type="hidden" name="f_name" id="f_name"/>
-<<<<<<< HEAD
+
 		<input name="txtCurrPkgValidity" type="text" id="txtCurrPkgValidity" class="form-control medium" style="width:100%;" />
-=======
+
 		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
->>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
+
 		</div>
 	    </div>
 		</br>
+
+        <input type="hidden" name="f_name" id="f_name"/>
+        <input name="txtCurrPkgValidity" type="text" id="txtCurrPkgValidity" class="form-control medium" style="width:100%;" />
+        </div>
+        </div>
+        </br>
+
     </br>
     </br>
-		</div>
-		
-		 <div class="col-lg-12">
+        </div>
+        
+         <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
         <strong> Price :<span style="color: red;"></strong>
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
-		<div class="form-group input-group">
+        <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
-		<input type="hidden" name="f_name" id="f_name"/>
-<<<<<<< HEAD
+
 		<input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
-=======
+
 		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"  />
->>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
+
 		</div>
 	    </div>
 		</br>
-    </br>
-    </br>
-	</br>
-	</br>
-	</br>
-	</br>
-		</div>
-		
 
-		
+        <input type="hidden" name="f_name" id="f_name"/>
+        <input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
+        </div>
+        </div>
+        </br>
+    </br>
+    </br>
+
+    </br>
+    </br>
+    </br>
+    </br>
+        </div>
+        
+
+        
 <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
         <strong>Select Package :</strong><span style="color: red;"></span>
@@ -196,9 +187,9 @@ xmlhttp.send();
     </br>
     </br>
     </div>
-	
-	
-	<div class="col-lg-12">
+    
+    
+    <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
         <strong>Validity :</strong><span style="color: red;"></span>
         <br />
@@ -221,28 +212,30 @@ xmlhttp.send();
     </br>
     </br>
     </div>
-	
+    
 
     <div class="col-lg-12">
         <div class="col-lg-2" style="padding: 5px;">
         <strong> Price :<span style="color: red;"></strong>
         </div>
         <div class="col-lg-4 " style="padding: 5px;">
-		<div class="form-group input-group">
+        <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
-		<input type="hidden" name="f_name" id="f_name"/>
-<<<<<<< HEAD
-        <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
-        onfocus="loadXMLDoc()" />
-=======
- <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="loadXMLDoc()"/> 
->>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
+
 		</div>
 	    </div>
 		</br>
+
+        <input type="hidden" name="f_name" id="f_name"/>
+        <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
+        onfocus="loadXMLDoc()" />
+        </div>
+        </div>
+        </br>
+
     </br>
     </br>
-		</div>
+        </div>
 
     
 
@@ -264,23 +257,12 @@ xmlhttp.send();
     </br>
     </br>
     </div>
- 
+    
    
-<!--<script>
-function myFunction() {
-    console.log("In console");
-    var x = document.getElementById("txtCurrent").value;
-    console.log(x);
-    var y = document.getElementById("txtValidity").value;
-    console.log(y);
-    var price= x * y;
-    document.getElementById("txtPrice").innerHTML= price;
-}
-</script>-->
- <!--<input type="text" name="pkgid" value="<%= userList[1].pkgid %>" />-->
+
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-	  <input type="submit" class="btn btn-primary"></a> 
+      <input type="submit" class="btn btn-primary"></a> 
        <!--button type="submit" class="btn btn-default">Submit</button-->
 
       </div>
@@ -290,7 +272,7 @@ function myFunction() {
                     
                          </form>    
              
-				 
+                 
                  <!--TABLE, PANEL, ACCORDION AND MODAL  -->
 
                 

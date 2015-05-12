@@ -51,15 +51,15 @@ var Feedback = Parse.Object.extend("Feedback");
       var userQuery = new Parse.Query(Feedback);
       userQuery.equalTo("objectId",req.query.id);
       userQuery.first({
-        success: function(feed) 
+        success: function(users) 
         {
           console.log('Feedback View SUCCESS');       
               var _user = {
-                username: feed.get('username'),
-                name:feed.get('name'),
-                subject :ufeed.get('subject'),
-                description: feed.get('description'),
-                datetime: feed.get('createdAt')
+                username: users.get('username'),
+                name:users.get('name'),
+                subject :users.get('subject'),
+                description: users.get('description'),
+                datetime: users.get('createdAt')
                           }           
             res.render('feedbackdetails', {user: _user});                    
         },

@@ -3,8 +3,8 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/Admin/creatpkg.js');
-
+var pkg = require('cloud/admin/creatpkg.js');
+var faq = require('cloud/admin/adminfaq.js');
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
 	ParametersEmpty: 'Please provide complete details',
@@ -154,7 +154,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	
 
 	
-/********************************* admin package create **********************/
+/********************************* admin faq create **********************/
 
 
 	
@@ -209,5 +209,27 @@ Parse.Cloud.define('creatPackage', function(req, res) {
 });
 
    
+/********************************* Admin Creating FAQ **********************/
 
+Parse.Cloud.define('addfaq', function(req, res) {
+	console.log("adding frequently asked questions main.js");
+	if(!req.params.id || req.params.id == 0) {
+		faq.save({
 
+		   'question': req.params.question,
+         
+          
+          'answer': req.params.answer,
+          
+           		
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+	});
+
+	
