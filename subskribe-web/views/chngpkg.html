@@ -4,7 +4,9 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
+<script type="text/javascript">
 
+<<<<<<< HEAD
  <script type="text/javascript">
 fucntion loadXMLDoc()
 {
@@ -33,6 +35,36 @@ fucntion loadXMLDoc()
     xmlhttp.send();
 }
 </script>    
+=======
+function loadXMLDoc()
+{
+    alert("In function");
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+   var pkgname=document.getElementById("newPkgName").value;
+        alert(pkgname);
+
+        var pkgvalidity=document.getElementById("newpkgValidity").value;
+        alert(pkgvalidity);
+  }
+  xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtPrice").innerHTML=xmlhttp.responseText;
+    }
+  }
+
+
+xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
+xmlhttp.send();
+//document.getElementById('txtPrice').innerHTML = <%= user.pkgprice %>;
+}
+</script>
+ 
+>>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
 <% include partials/head.html %>
 </head>
 
@@ -83,7 +115,11 @@ fucntion loadXMLDoc()
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
+<<<<<<< HEAD
 		<input name="txtCurrPkgName" type="text" id="txtCurrPkgName" class="form-control medium" style="width:100%;" />
+=======
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
+>>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
 		</div>
 	    </div>
 		</br>
@@ -99,7 +135,11 @@ fucntion loadXMLDoc()
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
+<<<<<<< HEAD
 		<input name="txtCurrPkgValidity" type="text" id="txtCurrPkgValidity" class="form-control medium" style="width:100%;" />
+=======
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
+>>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
 		</div>
 	    </div>
 		</br>
@@ -115,7 +155,11 @@ fucntion loadXMLDoc()
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
+<<<<<<< HEAD
 		<input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
+=======
+		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"  />
+>>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
 		</div>
 	    </div>
 		</br>
@@ -187,8 +231,12 @@ fucntion loadXMLDoc()
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
+<<<<<<< HEAD
         <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
         onfocus="loadXMLDoc()" />
+=======
+ <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="loadXMLDoc()"/> 
+>>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
 		</div>
 	    </div>
 		</br>
@@ -216,7 +264,7 @@ fucntion loadXMLDoc()
     </br>
     </br>
     </div>
-    
+ 
    
 <!--<script>
 function myFunction() {
@@ -229,7 +277,7 @@ function myFunction() {
     document.getElementById("txtPrice").innerHTML= price;
 }
 </script>-->
-
+ <!--<input type="text" name="pkgid" value="<%= userList[1].pkgid %>" />-->
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
 	  <input type="submit" class="btn btn-primary"></a> 

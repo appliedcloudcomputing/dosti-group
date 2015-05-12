@@ -135,7 +135,8 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	 	//Parse.Cloud.useMasterKey();
 	 	console.log("PARAMETERS : "+ JSON.stringify(req.pramas))
 		console.log("In main js save feedback");
-    feed.save({    
+    feed.save({  
+    		name : req.params.name,
             username : req.params.userName,
             subject : req.params.subject,
             desc : req.params.desc,
