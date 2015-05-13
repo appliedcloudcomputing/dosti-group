@@ -5,11 +5,9 @@
 <!-- BEGIN HEAD -->
 <head>
 
-
  <script type="text/javascript">
 
-fucntion loadXMLDoc()
-
+function loadXMLDoc()
 {
     alert("In Function");
     var xmlhttp;
@@ -35,9 +33,7 @@ fucntion loadXMLDoc()
     xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
     xmlhttp.send();
 }
-
 </script>    
-
 <% include partials/head.html %>
 </head>
 
@@ -87,21 +83,11 @@ fucntion loadXMLDoc()
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
-
-		<input name="txtCurrPkgName" type="text" id="txtCurrPkgName" class="form-control medium" style="width:100%;" />
-
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
-
-		</div>
-	    </div>
-		</br>
-
         <input type="hidden" name="f_name" id="f_name"/>
         <input name="txtCurrPkgName" type="text" id="txtCurrPkgName" class="form-control medium" style="width:100%;" />
         </div>
         </div>
         </br>
-
     </br>
     </br>
         </div>
@@ -113,21 +99,11 @@ fucntion loadXMLDoc()
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
-
-		<input name="txtCurrPkgValidity" type="text" id="txtCurrPkgValidity" class="form-control medium" style="width:100%;" />
-
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" />
-
-		</div>
-	    </div>
-		</br>
-
         <input type="hidden" name="f_name" id="f_name"/>
         <input name="txtCurrPkgValidity" type="text" id="txtCurrPkgValidity" class="form-control medium" style="width:100%;" />
         </div>
         </div>
         </br>
-
     </br>
     </br>
         </div>
@@ -139,15 +115,6 @@ fucntion loadXMLDoc()
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
-
-		<input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
-
-		<input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;"  />
-
-		</div>
-	    </div>
-		</br>
-
         <input type="hidden" name="f_name" id="f_name"/>
         <input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
         </div>
@@ -155,7 +122,6 @@ fucntion loadXMLDoc()
         </br>
     </br>
     </br>
-
     </br>
     </br>
     </br>
@@ -197,7 +163,7 @@ fucntion loadXMLDoc()
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
-        <select class="form-control" name="newPkgValidity" id="newpkgValidity">
+        <select class="form-control" name="newPkgValidity" id="newPkgValidity">
             <% for(var i = 0; i < pkgList.length; i++)
                      { %>                     
            <option value="<%= pkgList[i].pkgvalidity %>">
@@ -221,18 +187,12 @@ fucntion loadXMLDoc()
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
-
-		</div>
-	    </div>
-		</br>
-
         <input type="hidden" name="f_name" id="f_name"/>
         <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
-        onfocus="loadXMLDoc()" />
+         onfocus="loadXMLDoc()" />
         </div>
         </div>
         </br>
-
     </br>
     </br>
         </div>
