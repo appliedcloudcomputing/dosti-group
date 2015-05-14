@@ -24,7 +24,11 @@ router.get('/', function(req, res, next) {
             users.forEach(function(user) 
             {
               var _user = {
-                pkid: user.id,
+
+               
+                pkgid:user.id,
+
+               
                 pkname: user.get('pkname'),
                 pkgvalidity:user.get('pkgvalidity'),
                 pkgprice:user.get('pkgprice')
@@ -56,8 +60,16 @@ console.log("Change Package called");
 
   
   
+
+/*console.log("Pkg Decription :"+ req.body.newPkgName);
+=======
+console.log("Pkg Decription :"+ req.body.PkgName);
+>>>>>>> 5a2a78235a8f954b52948be6648bc0df4d48d82c
+	//console.log("Pkg Price :"+ req.body.newPkgPrice);
+=======
 /*console.log("Pkg Decription :"+ req.body.newPkgName);
   //console.log("Pkg Price :"+ req.body.newPkgPrice);
+>>>>>>> be500a3248ce20d0a7342a7df6b5c5b4cca25c2c
 console.log("Pkg Validity :"+ req.body.newPkgValidity);
   
 });*/
