@@ -30,6 +30,156 @@
 
         <!--PAGE CONTENT -->
         
+		
+		<div id="content">
+
+            <div class="inner" style="min-height:1200px;">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        <center><h3><strong><font color="blue">Add User Form</font></strong></h3></center>
+
+
+
+                    </div>
+                </div>
+
+                <hr />
+        <div class="container">
+		<!--Form start-->
+        <form method="post" class="basic-form" action="/adduser/save" name="form" id= "form">
+          <!--Success/Error Message on submit start-->
+          
+                   
+          <div class="row">  
+            <div class="boxed">
+
+			<div class="inner no-radius">
+                  <div class="row">
+				  <div class="col-md-6 form-group">
+                        <label for="name">Full Name :</label>
+						<div class="form-group input-group">
+						<span class="input-group-addon"><i class=" icon-user"></i></span>
+                        <input type="name" class="form-control" name="name" id="name"  placeholder="Enter Full Name" required  autofocus />                       
+                        <input type="hidden" id="id" name="id" />                    
+                    </div>
+					</div>
+                      
+                      
+			
+                    <div class="col-md-6 form-group">
+                      <label for="username">Username :</label>
+					  <div class="form-group input-group">
+						<span class="input-group-addon"><i class=" icon-user"></i></span>
+                      <input type="username" class="form-control" name="username" id="username"  placeholder="Use alphanumeric characters and limit it to 8!" required 
+                       pattern="\d{8}" />
+                    </div>
+					</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <label for="email">E-Mail :</label>
+					  <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-envelope-alt"></i></span>
+                      <input type="email" class="form-control" name="email" id="email"  placeholder="Enter Email ID" required/>
+                    </div>
+					</div>
+                         
+                    <div class="col-md-6">
+                      <label for="usertype">User Type :</label>
+					  <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-group"></i></span>
+                      <select id="userType" name="userType" placeholder="Please select User Type" class="form-control">
+                          
+                              <option value="Admin" selected>Admin</option>
+                          
+                             <option value="User">User</option>
+                                                                              
+							<option value="Franchise">Franchise</option>                        
+                         
+                      </select>
+                    </div>
+                  </div>
+				  </div>
+
+                   
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <label for="password">Password :</label>
+                      <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-lock"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="rep-password">Repeat Password :</label>
+                      <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-lock"></i></span>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Re Enter Same Password" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="row">  
+                    <div class="col-md-6 form-group">
+                       <label for="phone">Telephone No :</label>
+					   <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-phone-sign"></i></span>
+                       <input type="phone" class="form-control" name="telephone" id="telephone"  placeholder="Enter TelePhone Number" required />
+                    </div>
+					</div>
+                    <div class="col-md-6 form-group">
+                       <label for="phone form-group">Mobile No :</label>
+					   <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-tablet"></i></span>
+                       <input type="mobile" class="form-control" name="mobile" id="mobile"  placeholder="Enter Mobile Number" required 
+                       pattern="\d{10}" />
+                    </div>
+                  </div>
+				  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <label for="address">Address :</label>
+					  <div class="form-group input-group">
+						<span class="input-group-addon"><i class="icon-home"></i></span>
+                      <textarea name="address" class="form-control" id="address" placeholder="Enter Address..." required></textarea>
+                    </div>
+					</div>
+					
+                    <div class="col-md-6 form-group">
+                      <label for="address">Note :</label>
+					  <div class="form-group input-group">
+						<span class="input-group-addon"><i class=" icon-edit"></i></span>
+                      <textarea name="note" class="form-control" id="note" placeholder="write a note..." required></textarea>
+                    </div>
+					</div>
+                  </div>
+
+				 
+                  <div class="row">  
+                    <div class="col-md-6 text-left">
+                      <button type="button" class="btn btn-lg btn-primary" name="submit" id="submit">
+                      <i class="fa fa-check"></i> Save</button>
+                    </div>          
+                    <div class="col-md-6 text-right">
+                        <button type="reset"  class="btn btn-lg btn-success">
+                          <i class="fa fa-reply"></i>Reset</button>
+                    </div>
+                  </div>
+                    
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+</section>
+		
+		
        <!--END PAGE CONTENT -->
 
 
