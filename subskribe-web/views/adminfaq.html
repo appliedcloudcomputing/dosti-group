@@ -73,6 +73,7 @@
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
 		<input name="txtQuestion" type="text" id="txtQuestion" class="form-control medium" style="width:100%;" />
 		</div>
+       
 	    </div>
 		</br>
     </br>
@@ -109,19 +110,23 @@
 		<div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
 		<input type="hidden" name="f_name" id="f_name"/>
-        <textarea name="txtAnswer" rows="10" cols="40" id="txtAnswer" placeholder="Be Specific"></textarea>
+        <textarea name="txtAnswer" rows="10" cols="40" id="txtAnswer" placeholder="Be Specific" rows="40" cols="10"></textarea>
 		
-
+        <label name="lblCount" id="lblCount"></label>
         </div>
 	    </div>
+
 		</br>
+        
     </br>
     </br>
+
 		</div>
 
 
     
-    <div class="form-group">        
+    <div class="form-group"> 
+
       <div class="col-sm-offset-2 col-sm-10">
 
       <input type="submit" class="btn btn-primary" /></a> 
@@ -154,7 +159,21 @@
    <!-- FOOTER -->
     <% include partials/footer.html %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-      
+     
+      <script>
+            $(document).ready(function() {
+                var text_max = 99;
+                $('#lblCount').html(text_max + ' characters remaining');
+
+                $('#txtAnswer').keyup(function() {
+                    var text_length = $('#txtAnswer').val().length;
+                    var text_remaining = text_max - text_length;
+
+                    $('#lblCount').html(text_remaining + ' characters remaining');
+                });
+            });
+            </script>
+
     <!--END FOOTER -->
      <!-- GLOBAL SCRIPTS -->
     <% include partials/scripts.html %>

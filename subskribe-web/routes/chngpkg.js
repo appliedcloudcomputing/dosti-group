@@ -52,7 +52,8 @@ router.get('/', function(req, res, next) {
 
  
 /*router.post('/save', function(req, res, next) {
-console.log("Change Package called");*/
+console.log("Change Package called");
+
   
   
 /*console.log("Pkg Decription :"+ req.body.newPkgName);
@@ -64,7 +65,26 @@ console.log("Pkg Validity :"+ req.body.newPkgValidity);
 
 router.get('/pkgprice', function(req, res, next) {
 console.log("Pricing Method called");
-console.log("Package Name:"+req.query.id);  
+console.log("Package Name:"+req.query.q);  
+var Package = Parse.Object.extend("Package");
+var query = new Parse.Query(Package);
+var results;
+query.equalTo("pkname", req.query.q);
+query.find({
+  success: function(results) {
+    console.log("Successful");
+    var info = {
+      pkgprice : results.get('pkgprice'),
+    }
+
+    console.log(results.get('pkgprice'));
+  },
+  error: function(error) {
+    console.log("Failure");
+  }
+});
+
+
 });
 
 module.exports = router;
