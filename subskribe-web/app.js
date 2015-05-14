@@ -38,6 +38,9 @@ var admindashboard = require('./routes/admindashboard');
 var adminfeedbacklist = require('./routes/adminfeedbacklist');
 var adminfaq = require('./routes/adminfaq');
 var userfaq = require('./routes/userfaq');
+var speedtest = require('./routes/speedtest');
+var customercare = require('./routes/customercare');
+var adduser = require('./routes/adduser');
 //var userenquiry = require('./routes/userenquiry');
 var app = express();
 
@@ -63,9 +66,7 @@ app.use('/login', login);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/cwd',cwd);
-
 app.use('/editform',editform);
-
 app.use('/feedback',feedback);
 //app.use('/adminreg',adminreg);
 app.use('/chngpkg',chngpkg);
@@ -77,6 +78,9 @@ app.use('/adminfeedbacklist',adminfeedbacklist);
 app.use('/adminfaq',adminfaq);
 app.use('/userfaq',userfaq);
 //app.use('/userenquiry',userenquiry);
+app.use('/speedtest',speedtest);
+app.use('/specustomercare',customercare);
+app.use('/adduser',adduser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
