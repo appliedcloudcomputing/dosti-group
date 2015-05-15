@@ -5,6 +5,8 @@ var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
 var pkg = require('cloud/admin/creatpkg.js');
 var faq = require('cloud/admin/adminfaq.js');
+var que = require('cloud/user/savequery.js');
+
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
 	ParametersEmpty: 'Please provide complete details',
@@ -232,4 +234,29 @@ Parse.Cloud.define('addfaq', function(req, res) {
 	}
 	});
 
-	
+
+/********************************* Saving query  ***********************/
+
+Parse.Cloud.define('saveQuery', function(req, res) {
+	 	//Parse.Cloud.useMasterKey();
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.params))
+		console.log("In main js save query");
+    que.save({  
+    		name : req.params.name,
+            username : req.params.userName,
+            subject : req.params.subject,
+            about : req.params.about,
+            desc : req.params.desc,
+            datetime : req.params.datetime,
+
+			success: function(message){
+             res.success(message);
+        },
+                error: function(error){
+                    res.error(error);
+                }
+            });
+       
+        
+    });
+
