@@ -61,7 +61,7 @@
                         <label for="name">Full Name :</label>
 						<div class="form-group input-group">
 						<span class="input-group-addon"><i class=" icon-user"></i></span>
-                        <input type="name" class="form-control" name="name" id="name"  placeholder="Enter Full Name" required  autofocus />                       
+                        <input type="text" class="form-control" name="txtFullName" id="txtFullName"  placeholder="Enter Full Name" required  autofocus />                       
                         <input type="hidden" id="id" name="id" />                    
                     </div>
 					</div>
@@ -72,8 +72,8 @@
                       <label for="username">Username :</label>
 					  <div class="form-group input-group">
 						<span class="input-group-addon"><i class=" icon-user"></i></span>
-                      <input type="username" class="form-control" name="username" id="username"  placeholder="Use alphanumeric characters and limit it to 8!" required 
-                       pattern="\d{8}" />
+      <input type="text" class="form-control" name="txtUserName" id="txtUserName"  placeholder="Use alphanumeric characters and limit it to 8!" required />
+                      
                     </div>
 					</div>
                   </div>
@@ -83,7 +83,7 @@
                       <label for="email">E-Mail :</label>
 					  <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-envelope-alt"></i></span>
-                      <input type="email" class="form-control" name="email" id="email"  placeholder="Enter Email ID" required/>
+                      <input type="text" class="form-control" name="txtEmail" id="txtEmail"  placeholder="Enter Email ID" required/>
                     </div>
 					</div>
                          
@@ -91,7 +91,7 @@
                       <label for="usertype">User Type :</label>
 					  <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-group"></i></span>
-                      <select id="userType" name="userType" placeholder="Please select User Type" class="form-control">
+                      <select id="ddUserType" name="ddUserType" placeholder="Please select User Type" class="form-control">
                           
                               <option value="Admin" selected>Admin</option>
                           
@@ -110,14 +110,14 @@
                       <label for="password">Password :</label>
                       <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-lock"></i></span>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                        <input type="password" class="form-control" id="txtPassword" name="txtPassword" placeholder="Enter Password">
                       </div>
                     </div>
                     <div class="col-md-6 form-group">
                       <label for="rep-password">Repeat Password :</label>
                       <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-lock"></i></span>
-                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Re Enter Same Password" class="form-control">
+                        <input type="password" id="txtRePassword" name="txtRePassword" placeholder="Re Enter Same Password" class="form-control">
                       </div>
                     </div>
                   </div>
@@ -128,14 +128,14 @@
                        <label for="phone">Telephone No :</label>
 					   <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-phone-sign"></i></span>
-                       <input type="phone" class="form-control" name="telephone" id="telephone"  placeholder="Enter TelePhone Number" required />
+                       <input type="phone" class="form-control" name="txtTelePhone" id="txtTelePhone"  placeholder="Enter TelePhone Number" required />
                     </div>
 					</div>
                     <div class="col-md-6 form-group">
                        <label for="phone form-group">Mobile No :</label>
 					   <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-tablet"></i></span>
-                       <input type="mobile" class="form-control" name="mobile" id="mobile"  placeholder="Enter Mobile Number" required 
+                       <input type="mobile" class="form-control" name="txtMobile" id="txtMobile"  placeholder="Enter Mobile Number" required 
                        pattern="\d{10}" />
                     </div>
                   </div>
@@ -146,7 +146,7 @@
                       <label for="address">Address :</label>
 					  <div class="form-group input-group">
 						<span class="input-group-addon"><i class="icon-home"></i></span>
-                      <textarea name="address" class="form-control" id="address" placeholder="Enter Address..." required></textarea>
+                      <textarea name="txtAddress" class="form-control" id="txtAddress" placeholder="Enter Address..." required></textarea>
                     </div>
 					</div>
 					
@@ -154,7 +154,7 @@
                       <label for="address">Note :</label>
 					  <div class="form-group input-group">
 						<span class="input-group-addon"><i class=" icon-edit"></i></span>
-                      <textarea name="note" class="form-control" id="note" placeholder="write a note..." required></textarea>
+                      <textarea name="txtNote" class="form-control" id="txtNote" placeholder="write a note..." required></textarea>
                     </div>
 					</div>
                   </div>
@@ -162,8 +162,9 @@
 				 
                   <div class="row">  
                     <div class="col-md-6 text-left">
-                      <button type="button" class="btn btn-lg btn-primary" name="submit" id="submit">
-                      <i class="fa fa-check"></i> Save</button>
+                      <!--button type="button" class="btn btn-lg btn-primary" name="submit" id="submit">
+                      <i class="fa fa-check"></i> Save</button-->
+                      <input type="submit" name="submit" id="submit" />
                     </div>          
                     <div class="col-md-6 text-right">
                         <button type="reset"  class="btn btn-lg btn-success">
