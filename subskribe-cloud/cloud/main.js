@@ -156,7 +156,77 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	
 
 	
-/********************************* admin faq create **********************/
+/********************************* admin User Create **********************/
+Parse.Cloud.define('adminsaveUser', function(req, res) {
+	console.log("Admin save user called main.js");
+	Parse.Cloud.useMasterKey();
+
+	if(!req.params.id || req.params.id == 0){																//if(!req.params.id || req.params.id == 0) {
+		user.save({
+			name: req.params.name,
+			username: req.params.username,
+			email: req.params.email,
+			usertype: req.params.usertype,
+			password: req.params.password,
+			mobile: req.params.mobile,
+			telephone: req.params.telephone,
+			address: req.params.address,
+			personalNote: req.params.personalNote,	
+				
+					
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+
+
+
+	} else { console.log("Save User Update");
+		console.log(req.params.id);
+			console.log(req.params.name);
+			console.log(req.params.username);
+			console.log(req.params.dob);
+			console.log(req.params.mobile);
+			console.log(req.params.telephone);
+			console.log(req.params.conntype);
+			console.log(req.params.address);
+			//console.log(req.params.conatctme);
+			console.log(req.params.email);
+
+		user.update({
+			
+			id: req.params.id,
+			name: req.params.name,
+			username : req.params.username,
+			dob: req.params.dob,
+			mobile: req.params.mobile,
+			telephone: req.params.telephone,
+			email: req.params.email,
+			conntype : req.params.conntype,
+			//password : req.params.password,
+			address: req.params.address,
+
+			//contactTime: req.params.contactme,
+			//personalNote: req.params.personalNote,
+			//hideval : req.params.hideval,
+
+			//contactTime: req.params.contactme,
+			//personalNote: req.params.personalNote,
+			//usertype: req.params.usertype,
+			
+
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
 
 
 	

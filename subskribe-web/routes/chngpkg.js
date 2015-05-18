@@ -55,10 +55,40 @@ router.get('/', function(req, res, next) {
 });
 
  
-/*router.post('/save', function(req, res, next) {
+router.post('/save', function(req, res, next) {
 console.log("Change Package called");
 
-  
+ var currentUser = Parse.User.current();
+   if (currentUser) 
+  {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+    var  data = {
+       name : currentUser.get("name"),
+       username : currentUser.get("username"),
+       email : currentUser.get("email"),
+    } ;
+
+    Parse.Cloud.run('savePackage', data, {
+      success: function(message) {
+        var response = {
+          message: message,
+          status: 200
+        }
+        res.end(JSON.stringify(response));
+      },
+      error: function(error) {
+        var response = {
+          message: error.message,
+          status: error.code
+        }
+        res.end(JSON.stringify(response));
+      }
+    }); 
+  } else {
+    res.redirect('/login');
+  } 
+});
+
   
 
 /*console.log("Pkg Decription :"+ req.body.newPkgName);
@@ -85,11 +115,8 @@ query.equalTo("pkname", req.query.q);
 query.find({
   success: function(results) {
     console.log("Successful");
-    var info = {
-      pkgprice : results.get('pkgprice'),
-    }
-
-    console.log(results.get('pkgprice'));
+   
+   
   },
   error: function(error) {
     console.log("Failure");
