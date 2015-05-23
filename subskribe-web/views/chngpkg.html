@@ -163,7 +163,7 @@ function loadXMLDoc()
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
-        <select class="form-control" name="newPkgValidity" id="newPkgValidity">
+        <select class="form-control" name="newPkgValidity" id="newPkgValidity" unique="true">
             <% for(var i = 0; i < pkgList.length; i++)
                      { %>                     
            <option value="<%= pkgList[i].pkgvalidity %>">
@@ -189,7 +189,7 @@ function loadXMLDoc()
         <span class="input-group-addon"><i class="icon-inr"></i></span>
         <input type="hidden" name="f_name" id="f_name"/>
         <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
-         onfocus="loadXMLDoc()" />
+         />
         </div>
         </div>
         </br>

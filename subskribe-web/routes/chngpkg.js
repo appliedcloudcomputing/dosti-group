@@ -78,25 +78,41 @@ console.log("Pkg Validity :"+ req.body.newPkgValidity);
 router.get('/pkgprice', function(req, res, next) {
 console.log("Pricing Method called");
 console.log("Package Name:"+req.query.q);  
-var Package = Parse.Object.extend("Package");
-var query = new Parse.Query(Package);
-var results;
-query.equalTo("pkname", req.query.q);
-query.find({
-  success: function(results) {
-    console.log("Successful");
-    var info = {
-      pkgprice : results.get('pkgprice'),
-    }
-
-    console.log(results.get('pkgprice'));
-  },
-  error: function(error) {
-    console.log("Failure");
+if (currentUser) {  
+    var _clients = [];
+    var Client = Parse.Object.extend('Client');
+    var clientQuery = new Parse.Query(Client);
+    clientQuery.equalTo("pkname", req.query.q);
+    clientQuery.find({
+      success:function(clients) {
+        if(clients) {
+          
+          for(var i = 0; i < clients.length; i++) {
+            var response = {};
+            console.log('CLIENTS: ' + clients[i].get('pkgprice'));
+            //console.log('address1: ' + clients[i].get('address1'));
+            response.id = clients[i].id;
+            response.name = clients[i].get('pkgprice');
+            //response.address1 = clients[i].get('address1');
+            //response.address2 = clients[i].get('address2');
+            //response.address3 = clients[i].get('address3');
+            //console.log("ADDRESS 3 :"+clients[i].get('address3'));
+            //response.city = clients[i].get('city');
+            _clients.push(response);
+          }
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(_clients));
+        } else {
+          console.log("No Package Found");
+        }
+      },
+      error:function(clients ,error){
+        console.log("Get Clients Error : "+ error.code + ", Message: "+ error.message);
+      }
+    });
+  } else {
+    res.redirect('/');
   }
-});
-
-
 });
 
 module.exports = router;
