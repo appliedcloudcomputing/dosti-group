@@ -42,6 +42,9 @@ var speedtest = require('./routes/speedtest');
 var customercare = require('./routes/customercare');
 var adduser = require('./routes/adduser');
 var adminquerylist = require('./routes/adminquerylist');
+var homepage = require('./routes/homepage');
+var adminlogin = require('./routes/adminlogin');
+var payment = require('./routes/payment');
 //var userenquiry = require('./routes/userenquiry');
 var app = express();
 
@@ -83,7 +86,9 @@ app.use('/speedtest',speedtest);
 app.use('/customercare',customercare);
 app.use('/adduser',adduser);
 app.use('/adminquerylist',adminquerylist);
-
+app.use('/homepage',homepage);
+app.use('/adminlogin',adminlogin); 
+app.use('/payment',payment);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
    

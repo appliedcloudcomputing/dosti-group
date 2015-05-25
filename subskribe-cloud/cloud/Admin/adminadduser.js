@@ -17,6 +17,7 @@ exports.save = function(params) {
 	{
 		params.error(Response.ParametersEmpty);
 	} else {*/
+<<<<<<< HEAD
 		console.log("In Save Of Admin Add User");
 		console.log("**********************SAVING CALLED ");
 		//SAVING USER
