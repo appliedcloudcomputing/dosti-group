@@ -1,40 +1,33 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-
- <script type="text/javascript">
-
-function loadXMLDoc()
-{
-    alert("In Function");
-    var xmlhttp;
-
-    if(window.XMLHttpRequest)
-    {
-        xmlhttp=new XMLHttpRequest();
-
-        var pkgname=document.getElementById("newPkgName").value;
-        alert(pkgname);
-
-        var pkgvalidity=document.getElementById("newPkgValidity").value;
-        alert(pkgvalidity);
-    }
-    xmlhttp.onreadystatechange=function()
-    {
-        if(xmlhttp.readystate==4 && xmlhttp.status==200)
-        {
-            document.getElementById("txtPrice").innerHTML=xmlhttp.responseText;
-
-        }
-    }
-    xmlhttp.open("GET","/chngpkg/pkgprice?q="+pkgname,true);
-    xmlhttp.send();
-}
-</script>    
 <% include partials/head.html %>
+<script type="text/javascript">
+          
+        function popitup(){
+          var pkgname=document.getElementById("newPkgName").value;         
+          $.get("/chngpkg/pkgprice?q="+pkgname,function(data){
+            alert("DATA CALLED"+ data);
+            var obj = jQuery.parseJSON(data);
+            if(obj.status == 200 )
+            {
+                // SUCCESSFULLY 
+                //SHOW VALUE IN TEXT BOX
+                $( "#txtPrice" ).val(obj.pkgprice);
+            }
+            else
+            {
+              // ERROR OCCURED
+              //SHOW ERROR MESSAGE IN DIV PARA TAG
+              $( "#message p" ).html(obj.message);
+            }
+          });
+        }
+  </script>   
+
 </head>
 
     <!-- END HEAD -->
@@ -188,8 +181,8 @@ function loadXMLDoc()
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
         <input type="hidden" name="f_name" id="f_name"/>
-        <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" 
-         />
+        <input name="txtPrice" type="text" id="txtPrice" class="form-control medium" style="width:100%;" onfocus="popitup()"
+          />
         </div>
         </div>
         </br>
@@ -219,7 +212,7 @@ function loadXMLDoc()
     </div>
     
    
-
+<input name="txtError" type="text" id="txtError" class="form-control medium" style="width:100%;" />
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       <input type="submit" class="btn btn-primary"></a> 
@@ -261,7 +254,7 @@ $( "#liChangepackage" ).addClass( "active" );
     <!-- GLOBAL SCRIPTS -->
     <% include partials/scripts.html %>
     <!-- End GLOBAL SCRIPTS -->
-<script src="/javascripts/package/events.js"></script>
+
 
 </body>
 
