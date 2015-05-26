@@ -28,6 +28,41 @@
         }
   </script>   
 
+<script type="text/javascript">
+    
+    function fromtodates(){
+        alert("Time To Show Dates");
+
+        document.getElementById("txtFromdate").value = Date();
+
+        var d = new Date();
+
+        var a=d.getDate();
+        alert(a);
+
+        var b=d.getDay();
+        alert(b);
+
+        var month=d.getMonth();
+        alert(month);
+
+        var yr=d.getFullYear();
+        alert(yr);
+
+        document.getElementById("txtFromdate").value = a+"-"+month+"-"+yr;
+
+        alert("End");
+
+       var x = document.getElementById("newPkgValidity").value;
+       alert("Value Of X="+x);
+
+
+       
+       alert("Value Of Next Month="+(month+x));
+       
+    }
+</script>
+
 </head>
 
     <!-- END HEAD -->
@@ -109,7 +144,11 @@
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
         <input type="hidden" name="f_name" id="f_name"/>
-        <input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;" />
+        <input name="txtCurrPrice" type="text" id="txtCurrPrice" class="form-control medium" style="width:100%;"  />
+        <br/>
+         <input name="txtName" type="hidden" id="txtName" class="form-control medium" style="width:100%;" value="<%= user.name %>" readonly />
+        <input name="txtEmail" type="hidden" id="txtEmail" class="form-control medium" style="width:100%;" value="<%= user.email %>" readonly />
+           
         </div>
         </div>
         </br>
@@ -156,7 +195,7 @@
         <div class="col-lg-4 " style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar"></i></span>
-        <select class="form-control" name="newPkgValidity" id="newPkgValidity" unique="true">
+        <select class="form-control" name="newPkgValidity" id="newPkgValidity" >
             <% for(var i = 0; i < pkgList.length; i++)
                      { %>                     
            <option value="<%= pkgList[i].pkgvalidity %>">
@@ -190,6 +229,37 @@
     </br>
         </div>
 
+<div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong> From :<span style="color: red;"></strong>
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-inr"></i></span>
+        <input type="hidden" name="f_name" id="f_name"/>
+        <input name="txtFromdate" type="text" id="txtFromdate" class="form-control medium" style="width:100%;" onfocus="fromtodates()" />
+        </div>
+        </div>
+        </br>
+    </br>
+    </br>
+        </div>
+
+        <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong> To :<span style="color: red;"></strong>
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-inr"></i></span>
+        <input type="hidden" name="f_name" id="f_name"/>
+        <input name="txtTodate" type="text" id="txtTodate" class="form-control medium" style="width:100%;" />
+        </div>
+        </div>
+        </br>
+    </br>
+    </br>
+        </div>
     
 
 <div class="col-lg-12">
@@ -212,7 +282,7 @@
     </div>
     
    
-<input name="txtError" type="text" id="txtError" class="form-control medium" style="width:100%;" />
+
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       <input type="submit" class="btn btn-primary"></a> 

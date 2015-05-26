@@ -7,6 +7,7 @@ var pkg = require('cloud/Admin/creatpkg.js');
 var faq = require('cloud/Admin/adminfaq.js');
 var que = require('cloud/user/savequery.js');
 var adduser = require('cloud/Admin/adminadduser.js');
+var savepkg = require('cloud/user/chngpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -157,7 +158,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 	
 
 	
-<<<<<<< HEAD
+
 /********************************* admin User Create **********************/
 Parse.Cloud.define('adminsaveUser', function(req, res) {
 	console.log("Admin save user called main.js");
@@ -229,9 +230,9 @@ Parse.Cloud.define('adminsaveUser', function(req, res) {
 		});
 	}
 });
-=======
-/********************************* admin adding users **********************/
->>>>>>> 8965622233dba2ec3a6abfbcc149e2251c2a8fee
+
+/********************************* admin adding users **********************
+
 
 
 	Parse.Cloud.define('adminsaveUser', function(req, res) {
@@ -303,7 +304,7 @@ Parse.Cloud.define('adminsaveUser', function(req, res) {
 			}
 		});
 	}
-});
+});*/
 
 
 
@@ -393,6 +394,33 @@ Parse.Cloud.define('saveQuery', function(req, res) {
             desc : req.params.desc,
             datetime : req.params.datetime,
 
+			success: function(message){
+             res.success(message);
+        },
+                error: function(error){
+                    res.error(error);
+                }
+            });
+       
+        
+    });
+
+
+
+/********************************* Selecting And Saving Package  ***********************/
+
+Parse.Cloud.define('savePackage', function(req, res) {
+	 	//Parse.Cloud.useMasterKey();
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.params))
+		console.log("In main js save Package");
+    savepkg.save({  
+    		name : req.params.name,
+            email : req.params.email,
+            pkgname : req.params.pkgname,
+            pkgvalidity : req.params.pkgvalidity,
+            pkgprice : req.params.pkgprice,
+            fromdate : req.params.fromdate,
+            todate : req.params.todate,
 			success: function(message){
              res.success(message);
         },

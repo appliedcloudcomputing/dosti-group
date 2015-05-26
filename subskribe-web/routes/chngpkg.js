@@ -14,6 +14,7 @@ router.get('/', function(req, res, next)
     console.log("CURRENT USER : "+ JSON.stringify(currentUser));
     var _u = {
        name : currentUser.get("name"),
+       email : currentUser.get("email")
     }
      var pkgList = [];
       var Package = Parse.Object.extend("Package");
@@ -78,5 +79,40 @@ console.log(_u);
 });
 
  });
+
+
+router.post('/save', function(req, res, next) {
+  console.log("Called Save Package Post Method");
+  
+  console.log("Pkg Name :"+ req.body.newPkgName);
+  console.log("Pkg Validity :"+ req.body.newPkgValidity);
+  console.log("Pkg Price :"+ req.body.txtPrice);
+  console.log("Name :"+ req.body.txtName);
+  console.log("User Name :"+ req.body.txtEmail);
+  
+  
+
+var pkginfo = {
+          'name' :req.body.txtName,
+          'email' :req.body.txtEmail,
+          'fromdate' :req.body.txtFromdate,
+          'todate' :req.body.txtTodate,
+          'pkgName':req.body.newPkgName,  
+          'pkgValidity':req.body.newPkgValidity,
+          'pkgPrice': req.body.txtPrice,
+           };
+
+ Parse.Cloud.run('savePackage', pkginfo, {
+      success: function(message) {
+        console.log("Success.....Package Save Successfully");
+      },
+      error: function(error) {
+        console.log("Error..........");
+      }
+});
+
+
+});
+
 
 module.exports = router;

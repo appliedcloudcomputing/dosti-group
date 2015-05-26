@@ -1,4 +1,4 @@
-var User = Parse.Object.extend("User");
+var SavePackage = Parse.Object.extend("SavePackage");
 
 var Response = {
 	ParametersEmpty: "Please provide complete details",
@@ -17,24 +17,19 @@ exports.save = function(params) {
 	{
 		params.error(Response.ParametersEmpty);
 	} else {*/
-
-		console.log("In Save Of Admin Add User");
+		console.log("In Save");
 		console.log("**********************SAVING CALLED ");
 		//SAVING USER
-		var user = new User();
-		user.set("name", params.name);
-		user.set("dob", "-");
-		user.set("username",params.username)
-		user.set("mobile", params.mobile);
-		user.set("telephone", params.telephone);
-		user.set("email", params.email);
-		user.set("password",params.password);
-		user.set("connectiontype", "-");
-		user.set("address", params.address);
-		user.set("contactTime", "-");
-		user.set("personalNote", params.personalNote);
-		user.set("usertype",params.usertype);
-		user.save(null, {
+		var savepkg = new SavePackage();
+		savepkg.set("name", params.name);
+		savepkg.set("email", params.email);
+		savepkg.set("packname", params.pkgname);
+		savepkg.set("packvalidity", params.pkgvalidity);
+		savepkg.set("packprice", params.pkgprice);
+		savepkg.set("fromdate",params.fromdate);
+		savepkg.set("todate", params.todate);
+		
+		savepkg.save(null, {
 			success: function(user) {
 				console.log("User Save successfully");
 				params.success(Response.SaveSuccess);
