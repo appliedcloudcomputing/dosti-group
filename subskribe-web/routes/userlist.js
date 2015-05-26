@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/userlist', function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log("User Listing Called");
   var userlist = [];
 

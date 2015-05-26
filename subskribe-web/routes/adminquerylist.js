@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/adminquerylist', function(req, res, next) {
+//router.get('/adminquerylist', function(req, res, next) {
+  router.get('/', function(req, res, next) {
   console.log("Query Listing Called");
   var queryList = [];
 

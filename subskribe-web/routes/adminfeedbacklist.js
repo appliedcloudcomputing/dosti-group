@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/adminfeedbacklist', function(req, res, next) {
+//router.get('/adminfeedbacklist', function(req, res, next) {
+  router.get('/', function(req, res, next) {
+
   console.log("Feedback Listing Called");
   var userlist = [];
 

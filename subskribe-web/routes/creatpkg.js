@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/creatpkg', function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log("Called Create package page");
     res.render('creatpkg');
     
