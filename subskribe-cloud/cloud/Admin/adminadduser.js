@@ -17,28 +17,30 @@ exports.save = function(params) {
 	{
 		params.error(Response.ParametersEmpty);
 	} else {*/
-		console.log("In Save");
-		console.log("**********************SAVING CALLED In Admin Add user ");
+<<<<<<< HEAD
+		console.log("In Save Of Admin Add User");
+		console.log("**********************SAVING CALLED ");
 		//SAVING USER
-		var adduser = new User();
-		adduser.set("name", params.name);
-		adduser.set("username", params.username);
-		adduser.set("email", params.email);
-		adduser.set("usertype", params.usertype);
-		adduser.set("password",params.password);
-		adduser.set("telephone", params.telephone);
-		adduser.set("mobile", params.mobile);
-		adduser.set("address", params.contactme);
-		adduser.set("personalNote", params.personalNote);
-		//adduser.set("username",params.email);
-		//adduser.set("usertype",params.hideval);
-		adduser.save(null, {
+		var user = new User();
+		user.set("name", params.name);
+		user.set("dob", "-");
+		user.set("username",params.username)
+		user.set("mobile", params.mobile);
+		user.set("telephone", params.telephone);
+		user.set("email", params.email);
+		user.set("password",params.password);
+		user.set("connectiontype", "-");
+		user.set("address", params.address);
+		user.set("contactTime", "-");
+		user.set("personalNote", params.personalNote);
+		user.set("usertype",params.usertype);
+		user.save(null, {
 			success: function(user) {
-				console.log("Admin User Save successfully");
+				console.log("User Save successfully");
 				params.success(Response.SaveSuccess);
 			},
 			error: function(user, error) {
-				console.log("ERROR IN SAVING USER By ADMIN: " + error.message);
+				console.log("ERROR IN SAVING USER : " + error.message);
 				params.error(Response.InternalServerError);
 			}
  		});

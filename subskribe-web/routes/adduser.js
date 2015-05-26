@@ -27,19 +27,17 @@ router.post('/save', function(req, res, next) {
 
   var data = {
           'name':req.body.txtFullName, 
-          'mobile': req.body.txtUserName, 
-          'telephone':req.body.txtEmail,
-          'dob' : req.body.ddUserType,
-          'email': req.body.txtPassword,
-          'conntype' : req.body.txtRePassword,
-           'password': req.body.txtPassword,
-         'contactme' : req.body.txtTelePhone,
-          'address':  req.body.txtMobile,
-          'personalNote':req.body.txtAddress,
-          'usertype' : req.body.txtNote,
+          'username': req.body.txtUserName, 
+          'email':req.body.txtEmail,
+          'usertype' : req.body.ddUserType,
+          'password': req.body.txtPassword,
+         'telephone' : req.body.txtTelePhone,
+          'mobile':  req.body.txtMobile,
+          'address':req.body.txtAddress,
+          'personalnote' : req.body.txtNote,
         };
 
-    Parse.Cloud.run('saveUser', data, {
+    Parse.Cloud.run('adminsaveUser', data, {
       success: function(message) {
         var response = {
           message: message,
