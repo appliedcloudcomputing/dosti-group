@@ -8,6 +8,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) 
 {
    console.log("Change Package");
+   var currpkg={};
     var currentUser = Parse.User.current();
    if (currentUser) 
   {
@@ -16,6 +17,28 @@ router.get('/', function(req, res, next)
        name : currentUser.get("name"),
        email : currentUser.get("email")
     }
+
+var SavePackage = Parse.Object.extend("SavePackage");
+var query = new Parse.Query(SavePackage);
+query.equalTo("email", _u.email);
+query.first({
+  success: function(results) {
+    console.log("In Success");
+    currpkg={
+      currpkgname : results.get('packname'),
+      currpkgvalidity : results.get('packvalidity'),
+      currpkgprice : results.get('packprice')
+    }
+   console.log(JSON.stringify(currpkg));
+     },
+  error: function(error) {
+    console.log("In Error");
+  }
+});
+
+
+
+
      var pkgList = [];
       var Package = Parse.Object.extend("Package");
       var userQuery = new Parse.Query(Package);
@@ -34,7 +57,7 @@ router.get('/', function(req, res, next)
                 }
               pkgList.push(_user);
             });
-            res.render('chngpkg', {pkgList: pkgList, user : _u});
+            res.render('chngpkg', {pkgList: pkgList, user : _u,currpkg : currpkg});
            } else 
            {
             console.log('NO Package PRESENT');

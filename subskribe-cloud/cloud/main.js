@@ -3,11 +3,11 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/Admin/creatpkg.js');
-var faq = require('cloud/Admin/adminfaq.js');
+var pkg = require('cloud/admin/creatpkg.js');
+var faq = require('cloud/admin/adminfaq.js');
 var que = require('cloud/user/savequery.js');
-var adduser = require('cloud/Admin/adminadduser.js');
-var savepkg = require('cloud/user/chngpkg.js');
+var adduser = require('cloud/admin/adminadduser.js');
+var savepack = require('cloud/user/chngpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
@@ -413,12 +413,16 @@ Parse.Cloud.define('savePackage', function(req, res) {
 	 	//Parse.Cloud.useMasterKey();
 	 	console.log("PARAMETERS : "+ JSON.stringify(req.params))
 		console.log("In main js save Package");
-    savepkg.save({  
+
+		Parse.Cloud.useMasterKey();
+
+		if(req.params.id || req.params.id == 0){
+    savepack.save({  
     		name : req.params.name,
             email : req.params.email,
-            pkgname : req.params.pkgname,
-            pkgvalidity : req.params.pkgvalidity,
-            pkgprice : req.params.pkgprice,
+            pkgName : req.params.pkgName,
+            pkgValidity : req.params.pkgValidity,
+            pkgPrice : req.params.pkgPrice,
             fromdate : req.params.fromdate,
             todate : req.params.todate,
 			success: function(message){
@@ -427,8 +431,26 @@ Parse.Cloud.define('savePackage', function(req, res) {
                 error: function(error){
                     res.error(error);
                 }
-            });
-       
-        
-    });
-
+           // });
+        });
+} else { console.log("Update Package");
+		
+		savepack.update({
+			
+			id: req.params.id,
+			name : req.params.name,
+            email : req.params.email,
+            pkgName : req.params.pkgName,
+            pkgValidity : req.params.pkgValidity,
+            pkgPrice : req.params.pkgPrice,
+            fromdate : req.params.fromdate,
+            todate : req.params.todate,
+			success: function(message) {
+				res.success(message);
+			},
+			error: function(error) {
+				res.error(error);
+			}
+		});
+	}
+});
