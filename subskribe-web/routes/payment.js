@@ -3,6 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
 	console.log("In User Payment page");
+ var currpkg={};
   var currentUser = Parse.User.current();
   if (currentUser) {
     console.log("CURRENT USER : "+ JSON.stringify(currentUser));
@@ -15,7 +16,29 @@ router.get('/', function(req, res, next) {
        address : currentUser.get("address"),
 
     }
-      res.render('payment', {user : _user});
+
+    
+   var SavePackage = Parse.Object.extend("SavePackage");
+    var query = new Parse.Query(SavePackage);
+    query.equalTo("email", _user.email);
+    query.first({
+      success: function(results) {
+        console.log("In Success Of Payment");
+          currpkg={
+            currpkgname : results.get('packname'),
+            currpkgvalidity : results.get('packvalidity'),
+            currpkgprice : results.get('packprice')
+                 }
+               
+   console.log(JSON.stringify(currpkg));
+     },
+  error: function(error) {
+    console.log("In Error");
+  }
+});
+    
+      
+      res.render('payment', {user : _user,currpkg : currpkg});
 
   } else {
       // show the signup or login page
