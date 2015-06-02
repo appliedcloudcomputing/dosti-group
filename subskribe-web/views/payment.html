@@ -86,7 +86,11 @@
         <div class="col-lg-4" style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-hand-right"></i></span>
-        <input type="text" name="txtCurrentplan" id="txtCurrentplan" class="form-control"  value="<%= currpkg.currpkgname %>" />
+
+       
+
+        <input type="text" name="txtCurrentplan" id="txtCurrentplan" class="form-control" value="<%= currpkg.currpkgname %>" readonly />
+
 		<!--input name="txtUsername" type="text" id="txtEmail" class="form-control medium" style="width:100%;" required="required"-->
     </div>
         </div>
@@ -103,7 +107,9 @@
         <div class="col-lg-4" style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-calendar-empty"></i></span>
-        <input type="text" name="txtValidity" id="txtValidity" class="form-control"  value="<%= currpkg.currpkgvalidity %>" />
+
+        <input type="text" name="txtValidity" id="txtValidity" class="form-control" readonly value="<%= currpkg.currpkgvalidity %>" />
+
 		<!--input name="txtUsername" type="text" id="txtEmail" class="form-control medium" style="width:100%;" required="required"-->
     </div>
         </div>
@@ -120,7 +126,9 @@
         <div class="col-lg-4" style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-inr"></i></span>
-        <input type="text" name="txtAmount" id="txtAmount" class="form-control"  value="<%= currpkg.currpkgprice %>" />
+
+        <input type="text" name="txtAmount" id="txtAmount" class="form-control" readonly value="<%= currpkg.currpkgprice %>" />
+>>>>>>> 1a15b6335acbcb370978adc3e51406ffc1d399d0
 		<!--input name="txtUsername" type="text" id="txtEmail" class="form-control medium" style="width:100%;" required="required"-->
     </div>
         </div>
