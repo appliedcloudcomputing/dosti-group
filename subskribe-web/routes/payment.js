@@ -16,19 +16,19 @@ router.get('/', function(req, res, next) {
        address : currentUser.get("address"),
 
     }
-<<<<<<< HEAD
+
 
     
-   var SavePackage = Parse.Object.extend("SavePackage");
-=======
+   //var SavePackage = Parse.Object.extend("SavePackage");
+
     var currpkg={};
     var SavePackage = Parse.Object.extend("SavePackage");
->>>>>>> 1a15b6335acbcb370978adc3e51406ffc1d399d0
+
     var query = new Parse.Query(SavePackage);
     query.equalTo("email", _user.email);
     query.first({
       success: function(results) {
-<<<<<<< HEAD
+
         console.log("In Success Of Payment");
           currpkg={
             currpkgname : results.get('packname'),
@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
     
       
       res.render('payment', {user : _user,currpkg : currpkg});
-=======
+
       console.log("In Success");
           currpkg={
           currpkgname : results.get('packname'),
@@ -62,7 +62,7 @@ router.get('/', function(req, res, next) {
 });
 
       
->>>>>>> 1a15b6335acbcb370978adc3e51406ffc1d399d0
+
 
   } else {
       // show the signup or login page
