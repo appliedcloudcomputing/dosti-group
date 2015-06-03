@@ -23,6 +23,7 @@ exports.save = function(params) {
 		feed.set("username", params.username);
 		feed.set("subject", params.subject);
 		feed.set("description", params.desc);
+		feed.set("dates", param.dates);
 
 		feed.save(null, {
 			success: function(feed) {

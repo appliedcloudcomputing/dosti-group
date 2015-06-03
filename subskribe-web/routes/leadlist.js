@@ -1,45 +1,53 @@
 var express = require('express');
 var router = express.Router();
 
-
+//router.get('/adminfaq', function(req, res, next) {
   router.get('/leadlist', function(req, res, next) {
-var d= new Date();
-console.log(d);
+  console.log("Called Leadlist page");
 
-  	var feedbacklist = [];
+  var d = new Date();
+  d.setDate(d.getDate() - 1);
+  console.log(d);
+   //res.render('leadlist');
+   
+   var feedList = [];
 
-  	 var Feedback = Parse.Object.extend("Feedback");
-      var userQuery = new Parse.Query(Feedback);
-     userQuery.startsWith("createdAt", d );
-      userQuery.first({
+      var Feedback = Parse.Object.extend("Feedback");
+      var userFeedback = new Parse.Query(Feedback);
+      //var userQuery = new Parse.Query(Parse.Feedback);
+      userFeedback
+     .startsWith("createdAt", d );
+      userFeedback.first({
         success: function(users) 
         {
-          console.log('Feedback Listing SUCCESS');
+          console.log('Feedback Found SUCCESS');
           if(users) {
             users.forEach(function(user) 
             {
-              var _feedlist = {
-               
+              var _user = {
+                //id : user.id,
                 name : user.get('name'),
-                username:user.get('username'),
-                subject :user.get('subject'),
-                desc : user.get('description')
-               
+                username : user.get('username'),
+                subject : user.get('subject'),
+                
                           }
-              feedbacklist.push(_feedlist);
+              feedList.push(_user);
             });
-            res.render('leadlist', {feedbacklist: feedbacklist});
+            res.render('leadlist', {feedList: feedList});
            } 
 
            else 
            {
-            console.log('NO Today`s Feedback PRESENT');
+            console.log('NO Feedback PRESENT');
            }
         },
         error: function(error) {
-          console.log('ERROR In FINDING Today`s Feedback: ' + error.message);
+          console.log('ERROR FINDING Feedback: ' + error.message);
         }
       });
+
+ 
+        
 });
 
-  module.exports = router;
+module.exports = router;

@@ -144,6 +144,7 @@ Parse.Cloud.define('chngPassword', function(req, res) {
             username : req.params.userName,
             subject : req.params.subject,
             desc : req.params.desc,
+            dates : req.params.dates,
 			success: function(message){
              res.success(message);
         },

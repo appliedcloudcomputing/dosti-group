@@ -17,10 +17,6 @@ router.get('/', function(req, res, next) {
 
     }
 
-
-    
-   //var SavePackage = Parse.Object.extend("SavePackage");
-
     var currpkg={};
     var SavePackage = Parse.Object.extend("SavePackage");
 
@@ -28,7 +24,7 @@ router.get('/', function(req, res, next) {
     query.equalTo("email", _user.email);
     query.first({
       success: function(results) {
-
+/*<<<<<<< HEAD
         console.log("In Success Of Payment");
           currpkg={
             currpkgname : results.get('packname'),
@@ -45,7 +41,7 @@ router.get('/', function(req, res, next) {
     
       
       res.render('payment', {user : _user,currpkg : currpkg});
-
+=======*/
       console.log("In Success");
           currpkg={
           currpkgname : results.get('packname'),
