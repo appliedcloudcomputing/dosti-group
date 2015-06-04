@@ -3,10 +3,10 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/admin/creatpkg.js');
-var faq = require('cloud/admin/adminfaq.js');
+var pkg = require('cloud/Admin/creatpkg.js');
+var faq = require('cloud/Admin/adminfaq.js');
 var que = require('cloud/user/savequery.js');
-var adduser = require('cloud/admin/adminadduser.js');
+var adduser = require('cloud/Admin/adminadduser.js');
 var savepack = require('cloud/user/chngpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
@@ -393,7 +393,7 @@ Parse.Cloud.define('saveQuery', function(req, res) {
             subject : req.params.subject,
             about : req.params.about,
             desc : req.params.desc,
-            datetime : req.params.datetime,
+            dates : req.params.dates,
 
 			success: function(message){
              res.success(message);
@@ -417,7 +417,7 @@ Parse.Cloud.define('savePackage', function(req, res) {
 
 		Parse.Cloud.useMasterKey();
 
-		if(req.params.id || req.params.id == 0){
+		if(!req.params.id || req.params.id == 0){
     savepack.save({  
     		name : req.params.name,
             email : req.params.email,
@@ -426,6 +426,7 @@ Parse.Cloud.define('savePackage', function(req, res) {
             pkgPrice : req.params.pkgPrice,
             fromdate : req.params.fromdate,
             todate : req.params.todate,
+            dates : req.params.dates,
 			success: function(message){
              res.success(message);
         },
@@ -446,6 +447,7 @@ Parse.Cloud.define('savePackage', function(req, res) {
             pkgPrice : req.params.pkgPrice,
             fromdate : req.params.fromdate,
             todate : req.params.todate,
+            dates : req.params.dates,
 			success: function(message) {
 				res.success(message);
 			},

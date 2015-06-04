@@ -112,7 +112,7 @@ router.post('/save', function(req, res, next) {
   console.log("Pkg Price :"+ req.body.txtPrice);
   console.log("Name :"+ req.body.txtName);
   console.log("User Name :"+ req.body.txtEmail);
-  
+  console.log("Dates :"+ req.body.txtDate);
   
 
 var pkginfo = {
@@ -123,6 +123,7 @@ var pkginfo = {
           'pkgName':req.body.newPkgName,  
           'pkgValidity':req.body.newPkgValidity,
           'pkgPrice': req.body.txtPrice,
+          'dates' : req.body.txtDate,
            };
 
  Parse.Cloud.run('savePackage', pkginfo, {

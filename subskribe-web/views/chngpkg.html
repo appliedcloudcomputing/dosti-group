@@ -47,6 +47,21 @@
         
         document.getElementById("txtTodate").value= d;
 
+var d=new Date();
+
+      var a=d.getDate();
+     // alert(a);
+
+      var b=d.getMonth()+1;
+     // alert(b);
+
+      var c=d.getFullYear();
+     // alert(c);
+
+   // alert(a+"/"+b+"/"+c);
+    var x= a+"/"+b+"/"+c;
+   // alert(x);
+    document.getElementById("txtDate").value = x;
 
        /* var a=d.getDate();
         alert(a);
@@ -293,7 +308,7 @@
     </div>
     
    
-
+<input type="hidden" name="txtDate" id="txtDate" sclass="form-control" Value="" />
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       <input type="submit" class="btn btn-primary"></a> 

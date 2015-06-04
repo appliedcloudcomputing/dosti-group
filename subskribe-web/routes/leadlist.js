@@ -10,14 +10,12 @@ var router = express.Router();
   console.log(d);
    //res.render('leadlist');
    
-   var feedList = [];
+   var userlist = [];
 
       var Feedback = Parse.Object.extend("Feedback");
-      var userFeedback = new Parse.Query(Feedback);
+      var userQuery = new Parse.Query(Feedback);
       //var userQuery = new Parse.Query(Parse.Feedback);
-      userFeedback
-     .startsWith("createdAt", d );
-      userFeedback.first({
+      userQuery.find({
         success: function(users) 
         {
           console.log('Feedback Found SUCCESS');
@@ -25,15 +23,16 @@ var router = express.Router();
             users.forEach(function(user) 
             {
               var _user = {
-                //id : user.id,
-                name : user.get('name'),
-                username : user.get('username'),
-                subject : user.get('subject'),
                 
+                name : user.get('name'),
+                username:user.get('username'),
+                subject :user.get('subject'),
+                desc : user.get('description'),
+               
                           }
-              feedList.push(_user);
+              userlist.push(_user);
             });
-            res.render('leadlist', {feedList: feedList});
+           // res.render('leadlist', {userlist: userlist});
            } 
 
            else 
@@ -46,8 +45,82 @@ var router = express.Router();
         }
       });
 
+var pkgchnglist = [];
+
+      var Feedback = Parse.Object.extend("Feedback");
+      var userQuery = new Parse.Query(Feedback);
+      //var userQuery = new Parse.Query(Parse.Feedback);
+      userQuery.find({
+        success: function(users) 
+        {
+          console.log('Change PackageFound SUCCESS');
+          if(users) {
+            users.forEach(function(user) 
+            {
+              var _chngpkg = {
+                
+                name : user.get('name'),
+                email : user.get('email'),
+                packname : user.get('packname'),
+                packprice : user.get('packprice'),
+               
+                          }
+              pkgchnglist.push(_chngpkg);
+            });
+           // res.render('leadlist', {pkgchnglist : pkgchnglist});
+           } 
+
+           else 
+           {
+            console.log('NO Change Package PRESENT');
+           }
+        },
+        error: function(error) {
+          console.log('ERROR FINDING Change Package: ' + error.message);
+        }
+      });
+
+
+
+var quelist = [];
+
+      var Query = Parse.Object.extend("Query");
+      var userQuery = new Parse.Query(Query);
+      //var userQuery = new Parse.Query(Parse.Feedback);
+      userQuery.find({
+        success: function(users) 
+        {
+          console.log('Query Found SUCCESS');
+          if(users) {
+            users.forEach(function(user) 
+            {
+              var _que = {
+                
+                name : user.get('name'),
+                username:user.get('username'),
+                subject :user.get('subject'),
+                desc : user.get('description'),
+                about : user.get('about'),
+               
+                          }
+              quelist.push(_que);
+            });
+            //res.render('leadlist', {quelist: quelist , userlist: userlist});
+           } 
+
+           else 
+           {
+            console.log('NO Feedback PRESENT');
+           }
+           res.render('leadlist', {quelist: quelist , userlist: userlist , pkgchnglist : pkgchnglist});
+        },
+        error: function(error) {
+          console.log('ERROR FINDING Feedback: ' + error.message);
+        }
  
-        
-});
+      });
+      
+   
+    });
 
 module.exports = router;

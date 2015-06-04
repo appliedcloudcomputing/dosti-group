@@ -24,7 +24,7 @@ exports.save = function(params) {
 		que.set("subject", params.subject);
 		que.set("description", params.desc);
 		que.set("about", params.about);
-		que.set("datetime", params.datetime);
+		que.set("dates", params.dates);
 		
 
 		que.save(null, {

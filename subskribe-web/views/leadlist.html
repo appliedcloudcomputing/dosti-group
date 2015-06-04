@@ -46,136 +46,96 @@
                 </div>
 
                 <hr />
-
-<form action="/leadlist/save" method="post">          
-	<div class="row">
-    <div id="UpdatePanel1">
-                            <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <i class="fa fa-clock-o fa-fw"></i> Timeline
-                            </div>
-                            <div class="panel-body">
-                                <ul class="timeline">
-                                    <li>
-                                        <div class="timeline-badge success">
-                                            <i class=" icon-pencil"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Feedbacks</h4>
-                                                <p>
-                                                    <small class="text-muted"><i class="icon-check icon-2x"></i>11 hours ago via Twitter</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                             <% for(var i = 0; i < feedList.length; i++) { %>
-     <p><b><%= feedList[i].name %>.....<%= feedList[i].username %></b>added Feedback with Subject<b><%= feedList[i].subject %>
-                                                <% } %>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-inverted">
-                                        <div class="timeline-badge warning">
-                                            <i class="icon-credit-card"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Timeline Event</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Aliquam in metus eu lectus aliquet egestas.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-badge danger">
-                                            <i class="icon-map-marker"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Timeline Event</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Lorem ipsum dolor sit scelerisque vulputate. Aliquam in metus eu lectus aliquet egestas.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-inverted">
-                                        <div class="timeline-badge">
-                                            <i class="icon-envelope-alt"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Timeline Event</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in metus eu lectus aliquet egestas.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-badge info">
-                                            <i class="icon-check"></i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Timeline Event</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Aliquam in metus eu lectus aliquet egestas.</p>
-                                                <hr />
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                        
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="#">Action</a>
-                                                        </li>
-                                                        <li><a href="#">Another action</a>
-                                                        </li>
-                                                        <li><a href="#">Something else here</a>
-                                                        </li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#">Separated link</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-
+<div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Feedback 
+                        </div>
+                        <div class="panel-body">
+                            <p> <% for(var i = 0; i < userlist.length; i++) { %>
+     <b><%= userlist[i].name %>.....<%= userlist[i].username %></b>added Feedback with Subject<b><%= userlist[i].subject %>
+                                                <% } %></p>
+                        </div>
+                        <div class="panel-footer">
+                            Panel Footer
                         </div>
                     </div>
                 </div>
-
-
-
-
-    
-
-				 </form>   
-						
-					</div>
-				</div>
-	
-
-
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Query
+                        </div>
+                        <div class="panel-body">
+                            <p><% for(var i = 0; i < quelist.length; i++) { %>
+     <b><%= quelist[i].name %>.....<%= quelist[i].username %></b>asked Query about <%= quelist[i].about %> With Subject<b><%= quelist[i].subject %>
+                                                <% } %></p>
+                        </div>
+                        <div class="panel-footer">
+                             Panel Footer
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Package Changed
+                        </div>
+                        <div class="panel-body">
+                            <p><% for(var i = 0; i < pkgchnglist.length; i++) { %>
+<b><%= pkgchnglist[i].name %>.....<%= pkgchnglist[i].email %></b>Changed Package With <%= pkgchnglist[i].packname %> having price of<b>
+    <%= pkgchnglist[i].packprice %>
+                                                <% } %></p>
+                        </div>
+                        <div class="panel-footer">
+                            Panel Footer
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Info Panel
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        </div>
+                        <div class="panel-footer">
+                            Panel Footer
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            Warning Panel
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        </div>
+                        <div class="panel-footer">
+                            Panel Footer
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Danger Panel
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        </div>
+                        <div class="panel-footer">
+                            Panel Footer
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-
-
-        </div>
-       <!--END PAGE CONTENT -->
-
-
-    </div>
 
      <!--END MAIN WRAPPER -->
 

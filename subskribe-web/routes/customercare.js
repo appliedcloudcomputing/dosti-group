@@ -28,6 +28,7 @@ router.post('/save', function(req, res, next) {
   console.log(req.body.txtQueryDesc);
   console.log(req.body.txtUsername);
   console.log(req.body.txtName);
+  console.log(req.body.txtDate);
 
 
   var feeddata ={
@@ -36,7 +37,7 @@ router.post('/save', function(req, res, next) {
     'about' : req.body.txtQueryAbout,
     'subject' : req.body.txtQuerySubject,
     'desc' : req.body.txtQueryDesc,
-    'datetime' : req.body.txtDate,
+    'dates' : req.body.txtDate,
     
   } ;
 

@@ -26,6 +26,7 @@ exports.save = function(params) {
 		console.log(params.pkgPrice);
 		console.log(params.fromdate);
 		console.log(params.todate);
+		console.log(params.dates);
 		//SAVING USER
 		var savepkg = new SavePackage();
 		savepkg.set("name", params.name);
@@ -35,6 +36,7 @@ exports.save = function(params) {
 		savepkg.set("packprice", params.pkgPrice);
 		savepkg.set("fromdate",params.fromdate);
 		savepkg.set("todate", params.todate);
+		savepkg.set("dates", params.dates);
 		
 		savepkg.save(null, {
 			success: function(user) {
@@ -68,6 +70,7 @@ exports.update = function(params) {
 					savepkg.set("packprice", params.pkgPrice);
 					savepkg.set("fromdate",params.fromdate);
 					savepkg.set("todate", params.todate);
+					savepkg.set("dates", params.dates);
 					savepkg.save(null, {
 						success: function(user) {
 							params.success(Response.UpdateSuccess);
