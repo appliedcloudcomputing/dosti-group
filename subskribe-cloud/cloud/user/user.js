@@ -33,6 +33,7 @@ exports.save = function(params) {
 		user.set("personalNote", params.personalNote);
 		user.set("username",params.email);
 		user.set("usertype",params.hideval);
+		user.set("dates",params.dates);
 		user.save(null, {
 			success: function(user) {
 				console.log("User Save successfully");

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD-->
+<head>
+    <title>Feedback Form</title>
+<% include partials/head.html %>
+<script type="text/javascript">
+    function catchDate() {       
+
+      //alert("Function called");
+
+      var d=new Date();
+
+      var a=d.getDate();
+     // alert(a);
+
+      var b=d.getMonth()+1;
+     // alert(b);
+
+      var c=d.getFullYear();
+     // alert(c);
+
+   // alert(a+"/"+b+"/"+c);
+    var x= a+"/"+b+"/"+c;
+   // alert(x);
+    document.getElementById("txtDate").value = x;
+   }
+
+    </script>
+
+
+</head>
+    <!-- END  HEAD-->
+    <!-- BEGIN BODY-->
+<body class="padTop53 " >
+
+     <!-- MAIN WRAPPER -->
+    <div id="wrap">
+
+
+         <!-- HEADER SECTION -->
+        <% include partials/navbar.html %>
+        <!-- END HEADER SECTION -->
+
+
+
+        <!-- MENU SECTION -->
+      <% include partials/user_menubar.html %>
+        <!--END MENU SECTION -->
+
+
+        <!--PAGE CONTENT -->
+        <div id="content">
+
+            <div id="content">
+
+            <div class="inner">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        <h2> Full Calendar </h2>
+
+
+
+                    </div>
+                </div>
+
+                <hr />
+                  <div class="row">
+                    <div class="col-lg-12">
+
+                <div class="box">
+  <header>
+      <h5>Calendar</h5>
+  </header>
+  <div class="body">
+      <div class="row">
+      <div class="col-lg-3">
+          <div class="well well-small">
+          <div id="add-event-form">
+              <fieldset>
+              <legend>Add Custom Event</legend>
+              <span class="help-block">Event Title</span>
+              <input id="title" name="title" placeholder="event title" class="form-control input-small" type="text">
+              <label class="radio">
+                  <input name="priority" value="label label-default" checked="" type="radio">
+                  <span class="label label-default">default</span>
+              </label>
+              <label class="radio">
+                  <input name="priority" value="label label-warning" type="radio">
+                  <span class="label label-warning">warning</span>
+              </label>
+              <label class="radio">
+                  <input name="priority" value="label label-success" type="radio">
+                  <span class="label label-success">success</span>
+              </label>
+              <label class="radio">
+                  <input name="priority" value="label label-info" type="radio">
+                  <span class="label label-info">info</span>
+              </label>
+              <label class="radio">
+                  <input name="priority" value="label label-danger" type="radio">
+                  <span class="label label-danger">danger</span>
+              </label>
+              <br>
+              <button id="add-event" type="button" class="btn btn-sm btn-default">Add Event</button>
+              </fieldset>
+          </div>
+
+          </div>
+          <div class="well well-small">
+          <h4>Draggable Events</h4>
+          <ul id="external-events" class="list-inline">
+              <li style="position: relative; z-index: auto; left: 0px; top: 0px;" class="external-event ui-draggable"><span class="label label-default">My Event 1</span></li>
+              <li style="position: relative;" class="external-event ui-draggable"><span class="label label-danger">My Event 2</span></li>
+              <li style="position: relative;" class="external-event ui-draggable"><span class="label label-success">My Event 3</span></li>
+              <li style="position: relative;" class="external-event ui-draggable"><span class="label label-warning">My Event 4</span></li>
+              <li style="position: relative;" class="external-event ui-draggable"><span class="label label-info">My Event 5</span></li>
+          <li style="position: relative; z-index: auto; left: 0px; top: 0px;" class="external-event ui-draggable"><span class="label label-danger">Payment</span></li></ul>
+
+          <label class="checkbox inline" for="drop-remove">
+              <input id="drop-remove" type="checkbox">
+              remove after drop
+          </label>
+          </div>
+      </div>
+      <div id="calendar" class="col-lg-9 fc fc-ltr"><table class="fc-header" style="width:100%"><tbody><tr><td class="fc-header-left"></td><td class="fc-header-center"><span class="fc-header-title"><h2>June 2015</h2></span></td><td class="fc-header-right"><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-prev fc-state-default fc-corner-left"><i class="icon-chevron-left"></i></span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-today fc-state-default fc-state-disabled">today</span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-month fc-state-default fc-state-active">month</span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-agendaWeek fc-state-default">week</span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-agendaDay fc-state-default">day</span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-next fc-state-default fc-corner-right"><i class="icon-chevron-right"></i></span></td></tr></tbody></table><div class="fc-content" style="position: relative; min-height: 1px;"><div unselectable="on" class="fc-view fc-view-month fc-grid" style="position: relative; -moz-user-select: none; display: block; min-height: 1px;"><div style="position:absolute;z-index:8;top:0;left:0"><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end label label-default" style="position: absolute; z-index: 8; left: 873px; width: 169px; top: 65px;"><div class="fc-event-inner"><span class="fc-event-time">4a</span><span class="fc-event-title">My Event 1</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-hori fc-event-draggable fc-event-start fc-event-end label label-danger" style="position: absolute; z-index: 8; left: 873px; width: 169px; top: 44px;"><div class="fc-event-inner"><span class="fc-event-title">Payment</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div></div><div class="fc-cell-overlay" style="position: absolute; z-index: 3; top: 463px; left: 0px; width: 174px; height: 147px; display: none;"></div><table class="fc-border-separate" style="width:100%" cellspacing="0"><thead><tr class="fc-first fc-last"><th style="width: 174px;" class="fc-day-header fc-sun fc-widget-header fc-first">Sun</th><th style="width: 174px;" class="fc-day-header fc-mon fc-widget-header">Mon</th><th style="width: 174px;" class="fc-day-header fc-tue fc-widget-header">Tue</th><th style="width: 174px;" class="fc-day-header fc-wed fc-widget-header">Wed</th><th style="width: 174px;" class="fc-day-header fc-thu fc-widget-header">Thu</th><th style="width: 174px;" class="fc-day-header fc-fri fc-widget-header">Fri</th><th class="fc-day-header fc-sat fc-widget-header fc-last">Sat</th></tr></thead><tbody><tr class="fc-week fc-first"><td class="fc-day fc-sun fc-widget-content fc-other-month fc-first" data-date="2015-05-31"><div style="min-height: 147px;"><div class="fc-day-number">31</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content" data-date="2015-06-01"><div><div class="fc-day-number">1</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content" data-date="2015-06-02"><div><div class="fc-day-number">2</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content" data-date="2015-06-03"><div><div class="fc-day-number">3</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content" data-date="2015-06-04"><div><div class="fc-day-number">4</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-today fc-state-highlight" data-date="2015-06-05"><div><div class="fc-day-number">5</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-last" data-date="2015-06-06"><div><div class="fc-day-number">6</div><div class="fc-day-content"><div style="position: relative; height: 42px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-first" data-date="2015-06-07"><div style="min-height: 146px;"><div class="fc-day-number">7</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content" data-date="2015-06-08"><div><div class="fc-day-number">8</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content" data-date="2015-06-09"><div><div class="fc-day-number">9</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content" data-date="2015-06-10"><div><div class="fc-day-number">10</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content" data-date="2015-06-11"><div><div class="fc-day-number">11</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content" data-date="2015-06-12"><div><div class="fc-day-number">12</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-last" data-date="2015-06-13"><div><div class="fc-day-number">13</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-first" data-date="2015-06-14"><div style="min-height: 146px;"><div class="fc-day-number">14</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content" data-date="2015-06-15"><div><div class="fc-day-number">15</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content" data-date="2015-06-16"><div><div class="fc-day-number">16</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content" data-date="2015-06-17"><div><div class="fc-day-number">17</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content" data-date="2015-06-18"><div><div class="fc-day-number">18</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content" data-date="2015-06-19"><div><div class="fc-day-number">19</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-last" data-date="2015-06-20"><div><div class="fc-day-number">20</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-first" data-date="2015-06-21"><div style="min-height: 146px;"><div class="fc-day-number">21</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content" data-date="2015-06-22"><div><div class="fc-day-number">22</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content" data-date="2015-06-23"><div><div class="fc-day-number">23</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content" data-date="2015-06-24"><div><div class="fc-day-number">24</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content" data-date="2015-06-25"><div><div class="fc-day-number">25</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content" data-date="2015-06-26"><div><div class="fc-day-number">26</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-last" data-date="2015-06-27"><div><div class="fc-day-number">27</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td></tr><tr class="fc-week"><td class="fc-day fc-sun fc-widget-content fc-first" data-date="2015-06-28"><div style="min-height: 146px;"><div class="fc-day-number">28</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content" data-date="2015-06-29"><div><div class="fc-day-number">29</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content" data-date="2015-06-30"><div><div class="fc-day-number">30</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-other-month" data-date="2015-07-01"><div><div class="fc-day-number">1</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-other-month" data-date="2015-07-02"><div><div class="fc-day-number">2</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-other-month" data-date="2015-07-03"><div><div class="fc-day-number">3</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-other-month fc-last" data-date="2015-07-04"><div><div class="fc-day-number">4</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td></tr><tr class="fc-week fc-last"><td class="fc-day fc-sun fc-widget-content fc-other-month fc-first" data-date="2015-07-05"><div style="min-height: 145px;"><div class="fc-day-number">5</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-mon fc-widget-content fc-other-month" data-date="2015-07-06"><div><div class="fc-day-number">6</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-tue fc-widget-content fc-other-month" data-date="2015-07-07"><div><div class="fc-day-number">7</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-wed fc-widget-content fc-other-month" data-date="2015-07-08"><div><div class="fc-day-number">8</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-thu fc-widget-content fc-other-month" data-date="2015-07-09"><div><div class="fc-day-number">9</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-fri fc-widget-content fc-other-month" data-date="2015-07-10"><div><div class="fc-day-number">10</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-day fc-sat fc-widget-content fc-other-month fc-last" data-date="2015-07-11"><div><div class="fc-day-number">11</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td></tr></tbody></table></div><div unselectable="on" class="fc-view fc-view-agendaDay fc-agenda" style="position: relative; -moz-user-select: none; display: none;"><table style="width:100%" class="fc-agenda-days fc-border-separate" cellspacing="0"><thead><tr class="fc-first fc-last"><th style="width: 52px;" class="fc-agenda-axis fc-widget-header fc-first">&nbsp;</th><th class="fc-fri fc-col0 fc-widget-header">Friday 6/5</th><th style="width: 17px;" class="fc-agenda-gutter fc-widget-header fc-last">&nbsp;</th></tr></thead><tbody><tr class="fc-first fc-last"><th class="fc-agenda-axis fc-widget-header fc-first">&nbsp;</th><td class="fc-col0 fc-fri fc-widget-content fc-state-highlight fc-today"><div style="height: 881px;"><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td style="width: 17px;" class="fc-agenda-gutter fc-widget-content fc-last">&nbsp;</td></tr></tbody></table><div style="position: absolute; z-index: 2; left: 0px; width: 100%; top: 22px;"><div style="position:absolute;z-index:8;top:0;left:0"></div><table style="width:100%" class="fc-agenda-allday" cellspacing="0"><tbody><tr><th style="width: 52px;" class="fc-widget-header fc-agenda-axis">all-day</th><td><div class="fc-day-content"><div style="position: relative; height: 0px;"></div></div></td><th style="width: 17px;" class="fc-widget-header fc-agenda-gutter">&nbsp;</th></tr></tbody></table><div class="fc-agenda-divider fc-widget-header"><div class="fc-agenda-divider-inner"></div></div><div style="position: absolute; width: 100%; overflow-x: hidden; overflow-y: auto; height: 843px;"><div style="position:relative;width:100%;overflow:hidden"><div style="position:absolute;z-index:8;top:0;left:0"><div class="fc-event fc-event-vert fc-event-draggable fc-event-start fc-event-end label label-default ui-draggable ui-resizable" style="position: absolute; z-index: 8; top: 167px; left: 54px; width: 1073.38px; height: 139.05px;"><div class="fc-event-inner"><div class="fc-event-time">4:00 - 7:30</div><div class="fc-event-title">My Event 1</div></div><div class="fc-event-bg"></div><div class="ui-resizable-handle ui-resizable-s">=</div></div></div><table class="fc-agenda-slots" style="width:100%" cellspacing="0"><tbody><tr class="fc-slot0 "><th style="width: 52px;" class="fc-agenda-axis fc-widget-header">12am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot1 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot2 "><th class="fc-agenda-axis fc-widget-header">1am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot3 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot4 "><th class="fc-agenda-axis fc-widget-header">2am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot5 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot6 "><th class="fc-agenda-axis fc-widget-header">3am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot7 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot8 "><th class="fc-agenda-axis fc-widget-header">4am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot9 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot10 "><th class="fc-agenda-axis fc-widget-header">5am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot11 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot12 "><th class="fc-agenda-axis fc-widget-header">6am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot13 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot14 "><th class="fc-agenda-axis fc-widget-header">7am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot15 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot16 "><th class="fc-agenda-axis fc-widget-header">8am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot17 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot18 "><th class="fc-agenda-axis fc-widget-header">9am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot19 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot20 "><th class="fc-agenda-axis fc-widget-header">10am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot21 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot22 "><th class="fc-agenda-axis fc-widget-header">11am</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot23 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot24 "><th class="fc-agenda-axis fc-widget-header">12pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot25 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot26 "><th class="fc-agenda-axis fc-widget-header">1pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot27 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot28 "><th class="fc-agenda-axis fc-widget-header">2pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot29 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot30 "><th class="fc-agenda-axis fc-widget-header">3pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot31 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot32 "><th class="fc-agenda-axis fc-widget-header">4pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot33 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot34 "><th class="fc-agenda-axis fc-widget-header">5pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot35 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot36 "><th class="fc-agenda-axis fc-widget-header">6pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot37 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot38 "><th class="fc-agenda-axis fc-widget-header">7pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot39 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot40 "><th class="fc-agenda-axis fc-widget-header">8pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot41 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot42 "><th class="fc-agenda-axis fc-widget-header">9pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot43 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot44 "><th class="fc-agenda-axis fc-widget-header">10pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot45 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot46 "><th class="fc-agenda-axis fc-widget-header">11pm</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr><tr class="fc-slot47 fc-minor"><th class="fc-agenda-axis fc-widget-header">&nbsp;</th><td class="fc-widget-content"><div style="position:relative">&nbsp;</div></td></tr></tbody></table><div class="fc-cell-overlay" style="position: absolute; z-index: 3; top: 167px; left: 52px; width: 1151px; height: 84px; display: none;"></div></div></div></div></div></div></div>
+      </div>
+  </div>
+
+
+            </div>
+   <!-- FOOTER -->
+    <% include partials/footer.html %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+      <script>
+$( "#liCalender" ).addClass( "active" );
+</script>
+
+        <script>
+            $(document).ready(function() {
+                var text_max = 99;
+                $('#lblCount').html(text_max + ' characters remaining');
+
+                $('#txtDesc').keyup(function() {
+                    var text_length = $('#txtDesc').val().length;
+                    var text_remaining = text_max - text_length;
+
+                    $('#lblCount').html(text_remaining + ' characters remaining');
+                });
+            });
+            </script>
+    <!--END FOOTER -->
+     <!-- GLOBAL SCRIPTS -->
+    <% include partials/scripts.html %>
+    <!-- END GLOBAL SCRIPTS -->
+</body>
+    <!-- END BODY-->
+    
+</html>
