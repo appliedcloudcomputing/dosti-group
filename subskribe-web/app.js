@@ -50,6 +50,7 @@ var franchrequest = require('./routes/franchrequest');
 var usercalender = require('./routes/usercalender');
 var adminlist = require('./routes/adminlist');
 var pastchanges = require('./routes/pastchanges');
+var admincwd = require('./routes/admincwd');
 //var userenquiry = require('./routes/userenquiry');
 var app = express();
 
@@ -86,6 +87,7 @@ app.use('/admindashboard',admindashboard);
 app.use('/adminfeedbacklist',adminfeedbacklist);
 app.use('/adminfaq',adminfaq);
 app.use('/userfaq',userfaq);
+app.use('/admincwd',admincwd);
 //app.use('/userenquiry',userenquiry);
 app.use('/speedtest',speedtest);
 app.use('/customercare',customercare);

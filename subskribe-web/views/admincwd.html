@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD-->
+<head>
+    <title>Change Password Form</title>
+<% include partials/head.html %>
+<script type="text/javascript">
+    function verify() {       
+
+      alert("Function called");
+      var username = document.getElementById('userName').value;
+      var hideusername = document.getElementById('hideusername').value;
+
+     // alert(username);
+      //alert(hideusername);
+      if(username != hideusername)
+      {
+        alert ("Enter Proper User Name");
+      }
+
+      var newpassword = document.getElementById('newPassword').value;
+      var confirmpassword = document.getElementById('confirmPassword').value;
+      alert ("Checking for New and confirm password");
+      if(newpassword != confirmpassword)
+      {
+        alert("Password not matching");
+      }
+      
+   }
+
+    </script>
+</head>
+    <!-- END  HEAD-->
+    <!-- BEGIN BODY-->
+<body class="padTop53 " >
+
+     <!-- MAIN WRAPPER -->
+    <div id="wrap">
+
+
+         <!-- HEADER SECTION -->
+        <% include partials/navbar.html %>
+        <!-- END HEADER SECTION -->
+
+
+
+        <!-- MENU SECTION -->
+      <% include partials/admin_menubar.html %>
+        <!--END MENU SECTION -->
+
+
+        <!--PAGE CONTENT -->
+        <div id="content">
+
+            <div class="inner" style="min-height:1200px;">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        <center><h3><strong><font color="blue">Change Password</font></strong></h3></center>
+
+
+
+                    </div>
+                </div>
+
+                <hr />
+
+<form action="/cwd/save" method="post">            
+    <div class="row">
+    <div id="UpdatePanel1">
+
+        <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>User Name</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4" style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class=" icon-user"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="userName" type="text" id="userName" class="form-control medium" style="width:100%;" required="required" placeholder="Enter User Name"/>
+        <!--input name="txtUsername" type="text" id="txtEmail" class="form-control medium" style="width:100%;" required="required"-->
+    </div>
+        </div>
+    </br>
+    </br>
+    </br>
+    </div>
+
+<div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Old Password</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-lock"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="oldPassword" type="password" id="oldPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter Old Password"/>
+        </div>
+        </div>
+    </br>
+    </br>
+    </br>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>New Password</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-unlock-alt"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="newPassword" type="password" id="newPassword" class="form-control medium" style="width:100%;" required="required" placeholder="Enter New Password"/>
+        </div>
+        </div>
+    </br>
+    </br>
+    </br>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="col-lg-2" style="padding: 5px;">
+        <strong>Confirm Password</strong><span style="color: red;"></span>
+        <br />
+        </div>
+        <div class="col-lg-4 " style="padding: 5px;">
+        <div class="form-group input-group">
+        <span class="input-group-addon"><i class="icon-unlock-alt"></i></span>
+        <input type="hidden" name="password" id="password" />
+        <input name="confirmPassword" type="password" id="confirmPassword" class="form-control medium" style="width:100%;" required="required"/>
+        </div>
+        </div>
+    </br>
+    </br>
+    </br>
+    </div>
+
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" class="btn btn-primary"  onclick="verify()" /></a> 
+        <!--button type="submit" class="btn btn-default">Submit</button-->
+
+      </div>
+                
+                       
+            </div>
+                 </form>   
+                        
+                    </div>
+                </div>
+    
+
+
+            </div>
+
+
+
+
+        </div>
+       <!--END PAGE CONTENT -->
+
+
+    </div>
+
+     <!--END MAIN WRAPPER -->
+
+   <!-- FOOTER -->
+    <% include partials/footer.html %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+      <script>
+$( "#liChangepassword" ).addClass( "active" );
+</script>
+    <!--END FOOTER -->
+     <!-- GLOBAL SCRIPTS -->
+    <% include partials/scripts.html %>
+    <!-- END GLOBAL SCRIPTS -->
+</body>
+    <!-- END BODY-->
+    
+</html>
