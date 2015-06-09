@@ -49,6 +49,7 @@ var leadlist = require('./routes/leadlist');
 var franchrequest = require('./routes/franchrequest');
 var usercalender = require('./routes/usercalender');
 var adminlist = require('./routes/adminlist');
+var pastchanges = require('./routes/pastchanges');
 //var userenquiry = require('./routes/userenquiry');
 var app = express();
 
@@ -97,6 +98,7 @@ app.use('/leadlist',leadlist);
 app.use('/franchrequest',franchrequest);
 app.use('/usercalender',usercalender);
 app.use('/adminlist',adminlist);
+app.use('/pastchanges',pastchanges);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
    

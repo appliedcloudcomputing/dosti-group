@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD-->
+<head>
+    <title>Past Changes</title>
+<% include partials/head.html %>
+</head>
+    <!-- END  HEAD-->
+    <!-- BEGIN BODY-->
+<body class="padTop53 " >
+
+     <!-- MAIN WRAPPER -->
+    <div id="wrap">
+
+    <!--Page Level Script-->
+    <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
+    <!--End Page Level Script-->
+
+         <!-- HEADER SECTION -->
+        <% include partials/navbar.html %>
+        <!-- END HEADER SECTION -->
+
+
+
+        <!-- MENU SECTION -->
+      <% include partials/admin_menubar.html %>
+        <!--END MENU SECTION -->
+
+
+        <!--PAGE CONTENT -->
+        <div id="content">
+
+            <div class="inner" style="min-height:1200px;">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        <center><h3><strong><font color="blue">Past Changes</font></strong></h3></center>
+
+
+
+                    </div>
+                </div>
+
+                <hr />
+
+   <!-- FOOTER -->
+    <% include partials/footer.html %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+      <script>
+$( "#liFeedback" ).addClass( "active" );
+</script>
+
+        <script>
+            $(document).ready(function() {
+                var text_max = 99;
+                $('#lblCount').html(text_max + ' characters remaining');
+
+                $('#txtDesc').keyup(function() {
+                    var text_length = $('#txtDesc').val().length;
+                    var text_remaining = text_max - text_length;
+
+                    $('#lblCount').html(text_remaining + ' characters remaining');
+                });
+            });
+            </script>
+    <!--END FOOTER -->
+     <!-- GLOBAL SCRIPTS -->
+    <% include partials/scripts.html %>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!-- END GLOBAL SCRIPTS -->
+</body>
+    <!-- END BODY-->
+    
+</html>
