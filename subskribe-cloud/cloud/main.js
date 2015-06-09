@@ -3,10 +3,10 @@
 var user = require('cloud/user/user.js');
 var cwd = require('cloud/user/changepass.js');
 var feed = require('cloud/user/feedback.js');
-var pkg = require('cloud/admin/creatpkg.js');
-var faq = require('cloud/admin/adminfaq.js');
+var pkg = require('cloud/Admin/creatpkg.js');
+var faq = require('cloud/Admin/adminfaq.js');
 var que = require('cloud/user/savequery.js');
-var adduser = require('cloud/admin/adminadduser.js');
+var adduser = require('cloud/Admin/adminadduser.js');
 var savepack = require('cloud/user/chngpkg.js');
 
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
