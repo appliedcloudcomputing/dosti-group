@@ -7,12 +7,29 @@
 <head>
     <title>Contact Us/Query Form</title>
 <% include partials/head.html %>
-
 <script type="text/javascript">
-function myFunction() {
-document.getElementById('txtDate').value= Date();
-}
-</script>
+    function catchDate() {       
+
+      //alert("Function called");
+
+      var d=new Date();
+
+      var a=d.getDate();
+     // alert(a);
+
+      var b=d.getMonth()+1;
+     // alert(b);
+
+      var c=d.getFullYear();
+     // alert(c);
+
+   // alert(a+"/"+b+"/"+c);
+    var x= a+"/"+b+"/"+c;
+   // alert(x);
+    document.getElementById("txtDate").value = x;
+   }
+
+    </script>
 </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -50,7 +67,7 @@ document.getElementById('txtDate').value= Date();
 
                 <hr />
 
-<form action="/customercare/save" method="post" onload="myFunction()">          
+<form action="/customercare/save" method="post">          
   <div class="row">
     <div id="UpdatePanel1">
 
@@ -65,7 +82,7 @@ document.getElementById('txtDate').value= Date();
         <input type="text" name="txtUsername" class="form-control" value="<%= user.email %>" readonly />
 <input name="txtName" type="hidden" id="txtName" class="form-control medium" style="width:100%;" required="required" hide value="<%= user.name %>">
 
-<input name="txtDate" type="hidden" id="txtDate" class="form-control medium" style="width:100%;" required="required" >
+
 
     </div>
         </div>
@@ -82,7 +99,7 @@ document.getElementById('txtDate').value= Date();
         <div class="col-lg-4" style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-pencil"></i></span>
-        <input type="text" name="txtQueryAbout" class="form-control" id="txtQueryAbout" placeholder="Enter Query Keywords" required="required" />
+<input type="text" name="txtQueryAbout" class="form-control" id="txtQueryAbout" placeholder="Enter Query Keywords" required="required" onfocus="catchDate()" />
         <!--input name="txtUsername" type="text" id="txtEmail" class="form-control medium" style="width:100%;" required="required"-->
     </div>
         </div>
@@ -129,7 +146,7 @@ document.getElementById('txtDate').value= Date();
     </br>
     </br>
     </div>
-    
+    <input type="hidden" name="txtDate" id="txtDate" class="form-control"  required="required"  value=" "  />
 <input type="hidden" name="txtName" class="form-control"  required="required"  value="<%= user.name %>" readonly />
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">

@@ -67,4 +67,37 @@ router.get('/', function(req, res, next) {
   
 });
 
+
+
+router.post('/save', function(req, res, next) {
+    console.log("Called Payment page");
+    console.log(req.body.txtLogin);
+  console.log(req.body.txtCurrentplan);
+  console.log(req.body.txtValidity);
+  console.log(req.body.txtAmount);
+  console.log(req.body.txtEmailid);
+  console.log(req.body.txtContact);
+  console.log(req.body.txtAddress);
+  console.log(req.body.txtDate)
+
+  var pay={
+    'name' : req.body.txtLogin,
+    'email' : req.body.txtEmailid,
+    'planname' : req.body.txtCurrentplan,
+    'validity' : req.body.txtValidity,
+    'amount' : req.body.txtAmount,
+    'dates' : req.body.txtDate,
+
+  };
+
+  Parse.Cloud.run('makePayment', pay, {
+      success: function(message) {
+        console.log("Success.....Moving To Cloud Code ...... Payment");
+      },
+      error: function(error) {
+        console.log("Error..........");
+      }
+});
+});
+
 module.exports = router;

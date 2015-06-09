@@ -8,7 +8,8 @@ var faq = require('cloud/Admin/adminfaq.js');
 var que = require('cloud/user/savequery.js');
 var adduser = require('cloud/Admin/adminadduser.js');
 var savepack = require('cloud/user/chngpkg.js');
-
+var pay = require('cloud/user/makepayment.js');
+var adminadduser = require('cloud/Admin/adminadduser.js');
 //RESPONSE MESSAGE FOR ALL CLOUD FUNCTIONS
 var Response = {
 	ParametersEmpty: 'Please provide complete details',
@@ -39,6 +40,7 @@ Parse.Cloud.define('saveUser', function(req, res) {
 			contactme: req.params.contactme,
 			personalNote: req.params.personalNote,	
 			hideval : req.params.usertype,	
+			dates : req.params.dates,
 					
 			success: function(message) {
 				res.success(message);
@@ -163,10 +165,11 @@ Parse.Cloud.define('chngPassword', function(req, res) {
 /********************************* admin User Create **********************/
 Parse.Cloud.define('adminsaveUser', function(req, res) {
 	console.log("Admin save user called main.js");
+	console.log("PARAMETERS : "+ JSON.stringify(req.pramas));
 	Parse.Cloud.useMasterKey();
 
 	if(!req.params.id || req.params.id == 0){																//if(!req.params.id || req.params.id == 0) {
-		user.save({
+		adminadduser.save({
 			name: req.params.name,
 			username: req.params.username,
 			email: req.params.email,
@@ -175,7 +178,7 @@ Parse.Cloud.define('adminsaveUser', function(req, res) {
 			mobile: req.params.mobile,
 			telephone: req.params.telephone,
 			address: req.params.address,
-			personalNote: req.params.personalNote,	
+			personalnote: req.params.personalnote,	
 				
 					
 			success: function(message) {
@@ -200,7 +203,7 @@ Parse.Cloud.define('adminsaveUser', function(req, res) {
 			//console.log(req.params.conatctme);
 			console.log(req.params.email);
 
-		user.update({
+		adminadduser.update({
 			
 			id: req.params.id,
 			name: req.params.name,
@@ -393,7 +396,7 @@ Parse.Cloud.define('saveQuery', function(req, res) {
             subject : req.params.subject,
             about : req.params.about,
             desc : req.params.desc,
-            datetime : req.params.datetime,
+            dates : req.params.dates,
 
 			success: function(message){
              res.success(message);
@@ -417,7 +420,7 @@ Parse.Cloud.define('savePackage', function(req, res) {
 
 		Parse.Cloud.useMasterKey();
 
-		if(req.params.id || req.params.id == 0){
+		if(!req.params.id || req.params.id == 0){
     savepack.save({  
     		name : req.params.name,
             email : req.params.email,
@@ -426,6 +429,7 @@ Parse.Cloud.define('savePackage', function(req, res) {
             pkgPrice : req.params.pkgPrice,
             fromdate : req.params.fromdate,
             todate : req.params.todate,
+            dates : req.params.dates,
 			success: function(message){
              res.success(message);
         },
@@ -446,6 +450,7 @@ Parse.Cloud.define('savePackage', function(req, res) {
             pkgPrice : req.params.pkgPrice,
             fromdate : req.params.fromdate,
             todate : req.params.todate,
+            dates : req.params.dates,
 			success: function(message) {
 				res.success(message);
 			},
@@ -455,3 +460,29 @@ Parse.Cloud.define('savePackage', function(req, res) {
 		});
 	}
 });
+
+
+/************************************ Make Payment *******************************/
+
+Parse.Cloud.define('makePayment', function(req, res) {
+	 	//Parse.Cloud.useMasterKey();
+	 	console.log("PARAMETERS : "+ JSON.stringify(req.params))
+		console.log("In main js Make Payment");
+    pay.save({  
+    		name : req.params.name,
+            email : req.params.email,
+            planname : req.params.planname,
+            validity : req.params.validity,
+            amount : req.params.amount,
+            dates : req.params.dates,
+
+			success: function(message){
+             res.success(message);
+        },
+                error: function(error){
+                    res.error(error);
+                }
+            });
+       
+        
+    });

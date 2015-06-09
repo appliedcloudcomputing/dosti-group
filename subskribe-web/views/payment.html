@@ -7,6 +7,29 @@
 <head>
 
 <title>Payment Form</title>
+<script type="text/javascript">
+    function catchDate() {       
+
+      //alert("Function called");
+
+      var d=new Date();
+
+      var a=d.getDate();
+     // alert(a);
+
+      var b=d.getMonth()+1;
+     // alert(b);
+
+      var c=d.getFullYear();
+     // alert(c);
+
+   // alert(a+"/"+b+"/"+c);
+    var x= a+"/"+b+"/"+c;
+   // alert(x);
+    document.getElementById("txtDate").value = x;
+   }
+
+    </script>
 
 <% include partials/head.html %>
 </head>
@@ -48,7 +71,7 @@
 
                 <hr />
 
-<form action="/speedtest/save" method="post">            
+<form action="/payment/save" method="post" >            
     <div class="row">
     <div id="UpdatePanel1">
 	
@@ -181,7 +204,7 @@
     <div class="col-lg-4" style="padding: 5px;">
         <div class="form-group input-group">
         <span class="input-group-addon"><i class="icon-home"></i></span>
-        <textarea name="txtAddress" id="txtAddress" class="form-control"  required="required" ><%= user.address %>
+        <textarea name="txtAddress" id="txtAddress" onfocus="catchDate()" class="form-control"  required="required" ><%= user.address %>
         </textarea>
         
     </div>
@@ -192,6 +215,7 @@
     </br>
     </div>	
 	
+    <input type="text" name="txtDate" id="txtDate" value="" />
         
 <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">

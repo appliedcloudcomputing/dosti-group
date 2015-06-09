@@ -1,4 +1,4 @@
-var Query = Parse.Object.extend("Query");
+var Payment = Parse.Object.extend("Payment");
 
 var Response = {
 	ParametersEmpty: "Please provide complete details",
@@ -16,24 +16,23 @@ exports.save = function(params) {
 
 
 
-		console.log("****** Saving Query ************ ");
+		console.log("****** Making Payment ************ ");
 
-		var que = new Query();
-		que.set("name", params.name);
-		que.set("username", params.username);
-		que.set("subject", params.subject);
-		que.set("description", params.desc);
-		que.set("about", params.about);
-		que.set("dates", params.dates);
-		
+		var pay = new Payment();
+		pay.set("name", params.name);
+		pay.set("email", params.email);
+		pay.set("planname", params.planname);
+		pay.set("validity", params.validity);
+		pay.set("amount", params.amount);
+		pay.set("dates", params.dates);
 
-		que.save(null, {
-			success: function(que) {
-				console.log("query Save successfully");
+		pay.save(null, {
+			success: function(pay) {
+				console.log("Payment Done successfully");
 				params.success(Response.SaveSuccess);
 			},
-			error: function(que, error) {
-				console.log("ERROR IN SAVING query : " + error.message);
+			error: function(pay, error) {
+				console.log("ERROR IN Making Payment : " + error.message);
 				params.error(Response.InternalServerError);
 			}
  		});

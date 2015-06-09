@@ -32,7 +32,7 @@ exports.save = function(params) {
 		user.set("connectiontype", "-");
 		user.set("address", params.address);
 		user.set("contactTime", "-");
-		user.set("personalNote", params.personalNote);
+		user.set("personalNote", params.personalnote);
 		user.set("usertype",params.usertype);
 		user.save(null, {
 			success: function(user) {
