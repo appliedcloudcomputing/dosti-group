@@ -104,5 +104,41 @@ router.post('/save', function(req, res, next) {
     });
 });
 
+
+router.post('/uploadImage',function(req,res){
+  console.log("Upload image called");
+  console.log("File : "+req.body.uploadImage);
+  console.log(req.body.txtId);
+
+  
+  var base64Data = new Buffer(req.body.uploadImage);
+  console.log(" "+base64Data.name);
+  var parseFile = new Parse.File("a.JPEG",{base64: new Buffer(req.body.uploadImage).toString('base64')});
+  console.log("File  : "+parseFile.toString('base64'));
+ 
+  parseFile.save().then(function() {
+    console.log("***************** FILE SAVE SUCCESS ********************");
+              Parse.Cloud.useMasterKey();
+              var query = new Parse.Query(Parse.User);
+              query.equalTo("objectId",req.body.txtId);
+              query.first({
+                success: function(results) 
+                {
+                 results.set("profileImg",parseFile);
+                 results.save(null, {
+                   success: function(results) {
+                   res.end("Uploaded success fully");
+                   },
+                   error: function(gameScore, error) {
+                       console.log('Failed to create new object, with error code: ' + error.description);
+                       }
+                   });
+                }
+              })
+  }, function(error) {
+    console.log("************** FILE SAVE ERROR *************** :"+error.message);
+  });
+});
+
 module.exports = router;     
 

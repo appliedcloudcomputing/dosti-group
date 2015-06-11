@@ -19,16 +19,28 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
+  
 
-  Parse.User.logIn(username,password, { 
-    success: function(user) {
+  Parse.User.logIn(username,password, {
+     success: function(user) {
       if(user) {
         console.log("USER FOUND");
+        if(user.get("usertype") == "Admin"){
+          console.log("Admin Login............. Inner If");
+          res.redirect('/admindashboard');
+
+        }
+        else if(user.get("usertype") == "User"){
+          console.log("Inner Else");
+          res.redirect('/dashboard');
+        }
         //req.session.user = JSON.stringify(user);
-        res.redirect('/dashboard');
+        console.log("Outer If");
+       // res.redirect('/dashboard');
       }
       
        else {
+        console.log("Outer Else");
         console.log("USER NOT FOUND");
         res.render('login', {title: 'Login', message: Response.InvalidLogin}); 
       }           

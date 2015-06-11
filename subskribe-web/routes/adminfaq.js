@@ -4,9 +4,19 @@ var router = express.Router();
 //router.get('/adminfaq', function(req, res, next) {
   router.get('/', function(req, res, next) {
   console.log("Called Add FAQ page");
-    res.render('adminfaq');
-    
-        
+  var currentUser = Parse.User.current();
+  if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+   var _user = {
+      name : currentUser.get("name"),
+   }
+      res.render('adminfaq', {error: ""});
+
+  } else {
+     //show the signup or login page
+  res.render('login', {title: 'Login', message: Response.InvalidLogin});
+}   
+
 });
 
 router.post('/save', function(req, res, next) {

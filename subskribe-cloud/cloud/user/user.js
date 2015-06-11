@@ -48,14 +48,15 @@ exports.save = function(params) {
 };
 
 exports.update = function(params) {
-	console.log("User updated successfully");
+	console.log("In User update Section");
 
 
 
 	if(!params || !params.id || !params.name || !params.dob || !params.mobile || !params.telephone || !params.email 
-		 || !params.address) {
+		|| !params.address) {
 		params.error(Response.ParametersEmpty);
 	} else {
+
 		var currentUser = Parse.User.current();
 		if(!currentUser){
 			params.error(Response.LoginError);
@@ -64,7 +65,10 @@ exports.update = function(params) {
 		console.log("In Update");
 
 		var userQuery = new Parse.Query(User);
-		userQuery.get(params.id, {  
+		//console.log("Aap Ho");
+		//userQuery.get(params.id, {  
+			userQuery.equalTo("email", params.email);
+		userQuery.first({ 
 				success: function(user) {
 				if(user) {
 					user.set("name", params.name);
@@ -77,7 +81,7 @@ exports.update = function(params) {
 
 					//user.set("personalNote", params.personalNote);
 					user.set("lastUpdatedBy", currentUser);
-					//user.set("username", username);
+					user.set("username", params.username);
 					//user.set("password", password);
 					//	user.set("usertype", usertype);
 

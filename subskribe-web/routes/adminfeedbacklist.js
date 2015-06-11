@@ -3,7 +3,19 @@ var router = express.Router();
 
 //router.get('/adminfeedbacklist', function(req, res, next) {
   router.get('/', function(req, res, next) {
+    console.log("Admin Feedback Listing");
+var currentUser = Parse.User.current();
+  if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+   var _user = {
+      name : currentUser.get("name"),
+   }
+      res.render('adminfeedbacklist', {error: ""});
 
+  } else {
+     //show the signup or login page
+  res.render('login', {title: 'Login', message: Response.InvalidLogin});
+} 
   console.log("Feedback Listing Called");
   var userlist = [];
 

@@ -4,6 +4,20 @@ var router = express.Router();
 //router.get('/adminquerylist', function(req, res, next) {
   router.get('/', function(req, res, next) {
   console.log("Query Listing Called");
+
+var currentUser = Parse.User.current();
+  if (currentUser) {
+    console.log("CURRENT USER : "+ JSON.stringify(currentUser));
+   var _user = {
+      name : currentUser.get("name"),
+   }
+      res.render('adminquerylist', {error: ""});
+
+  } else {
+     //show the signup or login page
+  res.render('login', {title: 'Login', message: Response.InvalidLogin});
+} 
+
   var queryList = [];
 
       var Query = Parse.Object.extend("Query");
