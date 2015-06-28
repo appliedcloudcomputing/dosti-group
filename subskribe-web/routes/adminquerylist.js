@@ -42,13 +42,15 @@ var currentUser = Parse.User.current();
                           }
               queryList.push(_user);
             });
-            res.render('adminquerylist', {queryList: queryList});
+            console.log("I am Here");
+            //res.render('adminquerylist', {queryList : queryList});
            } 
 
            else 
            {
             console.log('NO Query PRESENT');
            }
+           res.render('adminquerylist', {queryList : queryList});
         },
         error: function(error) {
           console.log('ERROR FINDING Query: ' + error.message);
